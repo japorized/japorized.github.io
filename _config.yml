@@ -14,5 +14,5 @@ github_username:  japorized
 markdown: kramdown
 
 # Gems
-gems:
-	- octopress-date-format
+#gems:
+#  - octopress-date-format
