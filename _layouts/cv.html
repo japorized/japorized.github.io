@@ -2,10 +2,36 @@
 layout: default
 ---
 <div class="post">
+	<div class="cv-block">
+		<h1 id="cv_header">Curriculum Vitae</h1>
+		<div class="section-container">
+				<div class="my_picture">
+					<img src="{{ site.my_avatar | prepend: site.baseurl }}"/>
+				</div>
+				<div class="my_details">
+					<h1>Japorized</h1>
+					<span>Student (major Actuarial Science)</span>
 
-  <header class="post-header">
-    <h1 class="post-title">Curriculum Vitae</h1>
-  </header>
+					<ul>
+						<li class="label-left">Date of Birth:</li>
+						<li>10 Feb 1995</li>
+						<li class="label-left">Location:</li>
+						<li>Malaysia</li>
+						<li class="label-left">Email:</li>
+						<li>{{ site.email }}</li>
+						<li class="label-left">Website:</li>
+						<li>japorized.github.io</li>
+					</ul>
+				</div>
+		</div>
+	</div>
+
+	<div class="academics-block">
+		<h1 id="cv_header"><span class="fa fa-tachometer"></span> Skills</h1>
+		<div class="section-container">
+			
+		</div>
+	</div>
 
   <article class="post-content">
     {{ content }}

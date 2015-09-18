@@ -4,8 +4,8 @@ title: About
 permalink: /about/
 ---
 
-<center><img src="{{ site.my_avatar }}" id="my_avatar"/></center>
-<div id="my_desc">20 | Student | Actuarial Science | f(x) |  | Photography | Taekwondo | Programming | Design | Anime | Philosophy | Coffee & Tea</div>
+<center><img src="{{ site.my_avatar }}" class="my_avatar"/></center>
+<div id="my_desc">20 | Student | Actuarial Science | f(x) | <span class="fa fa-apple"></span> | Photography | Taekwondo | Programming | Design | Anime | Philosophy | Gaming | Coffee & Tea</div>
 
 <center style="font-weight: bold; font-size: 50px; padding: 20px 0 20px 0;">HULLO!!</center>
 <center style="font-family: Helvetica;">I am Johnson, and I prefer to be known as Japorized on the web.</center>
@@ -22,7 +22,7 @@ I also love programming and designing, and I have cooperated with a few friends 
 <br /><br />
 <center>Before ending my brief self-intro...</center>
 
-<center style="font-family: Helvetica; font-weight: bold; font-size: 20px">I <3 COFFEE & TEA</center><br />
+<center style="font-family: Helvetica; font-weight: bold; font-size: 20px">I <span class="fa fa-heart"></span> COFFEE & TEA</center><br />
 
 So if you have good coffee or tea to share, or you know of a good place for these, do let me know!
 

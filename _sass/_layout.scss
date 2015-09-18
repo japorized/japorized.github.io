@@ -135,6 +135,13 @@
     width:         calc(45% - (#{$spacing-unit} / 2));
 }
 
+.copyright {
+    width: 100%;
+    font-size: $smaller-font-size;
+    text-align: center;
+    margin: 10px auto;
+}
+
 @include media-query($on-laptop) {
     .footer-col-1,
     .footer-col-2 {
@@ -191,6 +198,11 @@
 /**
  * Posts
  */
+.post {
+    width: 90%;
+    margin: 0 auto;
+}
+
 .post-header {
     margin-bottom: $spacing-unit;
 }
@@ -251,12 +263,9 @@
 /**
  * Japorized
  */
- #my_avatar {
-    max-width: 100px;
-    max-height: 100px;
-    background: #fff;
-    padding: 1px;
-    border: 1px solid #000;
+ .my_avatar {
+    max-width: 128px;
+    max-height: 128px;
  }
 
  #my_desc {
@@ -267,3 +276,57 @@
     color: #898989;
     font-size: $small-font-size;
  }
+
+ /**
+  * CV
+  */
+  h1#cv_header {
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    border-bottom: 0.5px solid #ccc;
+    position: relative;
+  }
+
+  .section-container {
+    margin-bottom: 50px;
+    padding: 40px;
+    @extend %clearfix;
+  }
+
+  .my_picture {
+    float: left;
+    vertical-align: top;
+    width: 150px;
+    height: 150px;
+  }
+
+  .my_details {
+    margin-left: 30px;
+    vertical-align: top;
+    float: left;
+    width: 495px;
+    font-size: $small-font-size;
+  }
+
+  .my_details h1 {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 30px;
+    -webkit-margin-after: 0 !important;
+  }
+
+  .my_details span {
+    color: #00a0dd;
+  }
+
+  .my_details ul {
+    list-style: none;
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  .my_details ul li.label-left {
+    float: left;
+    width: 110px;
+  }
