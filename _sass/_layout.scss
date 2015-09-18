@@ -330,3 +330,86 @@
     float: left;
     width: 110px;
   }
+
+  /*
+   * Pies
+   */
+   .universal_container {
+    background: #3f3f3f;
+    height: 280px;
+}
+.pieContainer {
+    position: relative;
+    color: #fff;
+    height: 100px;
+    width: 100px;
+    padding: 20px;
+    float: left;
+}
+.pieBackground {
+    z-index: 2;
+    background: #3f3f3f;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.pieDesc {
+    position: absolute;
+    font-size: 14px;
+    height: 80px;
+    width: 80px;
+    padding: 10px;
+    z-index: 3;
+    display: table;
+}
+.pieDesc span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.half1 {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    /*clip: rect(0, 100px, 100px, 50px);*/
+}
+.half2 {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.pie-mask {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+}
+.pie {
+    background: #adff2f;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    clip: rect(0, 50px, 100px, 0);
+}
