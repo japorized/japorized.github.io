@@ -188,8 +188,6 @@
     font-size: 24px;
 }
 
-
-
 /**
  * Posts
  */
@@ -209,6 +207,7 @@
 
 .post-content {
     margin-bottom: $spacing-unit;
+    font-family: $post-typeface;
 
     h2 {
         font-size: 32px;
@@ -234,3 +233,37 @@
         }
     }
 }
+
+/**
+ * Buttons
+ */
+ #bigbtn {
+    width: 45%;
+    background: #e9e9e9;
+    padding: 20px;
+    border-radius: 20px;
+ }
+
+#bigbtn:hover {
+    background: #d9d9d9;
+}
+
+/**
+ * Japorized
+ */
+ #my_avatar {
+    max-width: 100px;
+    max-height: 100px;
+    background: #fff;
+    padding: 1px;
+    border: 1px solid #000;
+ }
+
+ #my_desc {
+    font-family: $base-font-family !important;
+    width: 50%;
+    margin: 10px auto;
+    text-align: center;
+    color: #898989;
+    font-size: $small-font-size;
+ }

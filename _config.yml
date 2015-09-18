@@ -1,14 +1,24 @@
 # Site settings
 title: Japorized
 email: johnson5756@live.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+
+#description: > # this means to ignore newlines until "baseurl:"
+#  Write an awesome description for your new site here. You can edit this
+#  line in _config.yml. It will appear in your document head meta (for
+#  Google search results) and in your feed.xml site description.
+
+description: > # This will go up till "baseurl:"
+  This is a description and it can go
+  multiple lines until the next variable.
+
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://japorized.github.io" # the base hostname & protocol for your site
+facebook_username: Japorized
 twitter_username: johnson_5756
 github_username:  japorized
+my_avatar: /assets/img/avatar.png
+my_age: 20
+pagination: 5
 
 # Build settings
 markdown: kramdown
