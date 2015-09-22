@@ -44,5 +44,5 @@ $(document).ready(function() {
 				}
 	  	});
 		},  800);
-	
+	console.log($(".post-content > .hellos").text());
 });
