@@ -291,6 +291,7 @@
   .section-container {
     margin-bottom: 50px;
     padding: 40px;
+    text-align: center;
     @extend %clearfix;
   }
 
@@ -307,40 +308,82 @@
     float: left;
     width: 495px;
     font-size: $small-font-size;
+    text-align: left;
+
+    h1 {
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 30px;
+        -webkit-margin-after: 0 !important;
+    }
+
+    span {
+        color: #00a0dd;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        margin-top: 10px;
+
+        li.label-left {
+            float: left;
+            width: 110px;
+        }
+    }
   }
 
-  .my_details h1 {
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 30px;
-    -webkit-margin-after: 0 !important;
-  }
+  .skillstab {
+    ul {
+        list-style: none;
+        display: inline-block;
 
-  .my_details span {
-    color: #00a0dd;
-  }
+        li {
+            float: left;
+            width: 150px;
+            padding: 10px;
+            margin: 0 10px;
+            border: .5px solid #ddd;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -o-border-radius: 10px;
+            border-radius: 10px;
+            cursor: pointer;
 
-  .my_details ul {
-    list-style: none;
-    margin: 0;
-    margin-top: 10px;
-  }
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
 
-  .my_details ul li.label-left {
-    float: left;
-    width: 110px;
+            &.skill_active, &:active {
+                background: #eee;
+                -webkit-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
+                -moz-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
+                -o-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
+                box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
+            }
+
+            &:hover {
+                background: #eee;
+            }
+        }
+    }
   }
 
   /*
    * Pies
    */
+    .outer_pieContainer {
+        display: inline-block;
+    }
+
     .pieContainer {
         position: relative;
-        color: #fff;
         height: 150px;
         width: 150px;
         padding: 20px;
         float: left;
+        margin: 0 20px;
     }
     .pieBackground {
         z-index: 2;
@@ -410,4 +453,42 @@
         -o-border-radius: 50%;
         border-radius: 50%;
         clip: rect(0, 75px, 150px, 0);
+    }
+
+    /*
+     * Bars
+     */
+
+    .outer_barContainer {
+        text-align: left;
+        display: none;
+
+        ul {
+            list-style: none;
+            display: inline-block;
+            margin: 0;
+            margin-left: 0;
+
+            li {
+                &.label-left {
+                    float: left;
+                    width: 150px;
+                    height: 30px;
+                    vertical-align: middle;
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .barContainer {
+        height: 22px;
+        padding: 4px;
+        vertical-align: middle;
+    }
+
+    .bar {
+            height: 16px;
+            margin-left: 150px;
     }
