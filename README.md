@@ -1,4 +1,5 @@
-# japorized.github.io
+# Japorized
+(http://japorized.github.io)<br />
 This is the repository to my GitHub page.<br />
 Go ahead and poke around if you want to.<br />
 If you're taking anything, do remember to give credits to the wonderful creators of each snippet or library.
