@@ -7,7 +7,7 @@ permalink: /about/
 <center><img src="{{ site.my_avatar }}" class="my_avatar"/></center>
 <div id="my_desc">20 | Student | Actuarial Science | f(x) | <span class="fa fa-apple"></span> | Photography | Taekwondo | Programming | Design | Anime | Philosophy | Gaming | Coffee & Tea</div>
 
-<center style="font-weight: bold; font-size: 50px; padding: 20px 0 20px 0;">HULLO!!</center>
+<center class="hellos" style="font-weight: bold; font-size: 50px; padding: 20px 0 20px 0;">HULLO!!</center>
 <center style="font-family: Helvetica;">I am Johnson, and I prefer to be known as Japorized on the web.</center>
 <br />
 I believe the little description under my avatar has covered most of who and what I am, and a few of my interests as well. But nothing beats a little self-introduction.
@@ -28,3 +28,6 @@ So if you have good coffee or tea to share, or you know of a good place for thes
 
 <br /><br /><br />
 <center><a href="/cv/"><span id="bigbtn">Check out my CV</span></a></center>
+
+<!-- Footend Scripts -->
+<script type="text/javascript" src="/jquery/about_scripts.js"></script>
