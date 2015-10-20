@@ -24,5 +24,9 @@ pagination: 5
 markdown: kramdown
 
 # Gems
-#gems:
-#  - octopress-date-format
+gems:
+  - octopress-date-format
+
+# Date format
+date_format: "ordinal"
+time_format: "%H:%M"     # 24 hour time
