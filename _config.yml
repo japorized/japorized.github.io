@@ -63,7 +63,7 @@ paginate: 5
 fb-share: True
 twitter-share: True
 reddit-share: True
-disqus-shortname: "Japorized"
+disqus-shortname: "japorized"
 
 ###############
 # Life Events #
