@@ -1,0 +1,31 @@
+---
+layout: post
+section-type: post
+title: First Post!
+category: personal
+tags: #personal
+---
+
+Let's kick off the site with a geeky, web-developer-esque greeting...
+
+# Hello, World!
+
+There.
+
+So I have finally decided to migrate from [my old blog](http://japorized.blogspot.com) from blogspot.com to here on GitHub pages. Many things here at still at the stage of experiments and ideas, and I am still exploring the many (or perhaps infinite) possibilities that I can reach out to by hosting my blog from a GitHub repo.
+
+In a more layman manner of speech, you have lurked into my evil experiment laboratory!
+## HAHA
+Welome
+
+I'll include some formalities here to show my gratitude for those who have helped me made this site possible, even though, very likely, they did not directly help me, met with me, or even talked to me before.
+
+Many thanks to [{ PannosSakkos }](https://github.com/PanosSakkos/personal-jekyll-theme) to have created this wonderful Jekyll theme. I will be utilizing this theme for quite some time, and will further modify it with my personal touches. Do check out the GitHub repo if you're also interested in using the theme (it's that link right up there).
+
+I'm also utilizing some Javascript libraries here, namely the ever-so-fearsome-but-awesome [jQuery](http://jquery.com), the [Lazy Load Plugin](http://www.appelsiini.net/projects/lazyload) for better quality of life on the blog, and the awesome [FontAwesome](https://fortawesome.github.io/Font-Awesome/).
+
+More will be added here as I continue to enlarge my repo (I may change the formatting as it gets bigger) so poke around and you shall see them coming up.
+
+In the meantime, there are still a few more things that I've yet to tinker with with this theme, and I shall just take my sweet time exploring.
+
+And so this ends my first post. Hope you'd poke around some time and see you around.
