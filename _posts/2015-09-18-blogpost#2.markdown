@@ -1,7 +1,0 @@
----
-title: Blogpost#2
-layout: post
-date: 2015-09-18 08:54:47
----
-
-This is blog post number 2.

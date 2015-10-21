@@ -1,32 +1,135 @@
+
 # Site settings
-title: Japorized
-email: johnson5756@live.com
 
-#description: > # this means to ignore newlines until "baseurl:"
-#  Write an awesome description for your new site here. You can edit this
-#  line in _config.yml. It will appear in your document head meta (for
-#  Google search results) and in your feed.xml site description.
+url: "https://japorized.github.io"
 
-description: > # This will go up till "baseurl:"
-  This is a description and it can go
-  multiple lines until the next variable.
+# If you're hosting your site at a Project repository on GitHub pages
+# (https://yourusername.github.io/repository-name)
+# and NOT your user repository (https://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
 
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://japorized.github.io" # the base hostname & protocol for your site
-facebook_username: Japorized
-twitter_username: johnson_5756
-github_username:  japorized
-my_avatar: /assets/img/avatar.png
-my_age: 20
-pagination: 5
+baseurl: ""
 
-# Build settings
-markdown: kramdown
+# google-tracking-id: "<YOUR GOOGLE TRACKING ID>"
 
-# Gems
-gems:
-  - octopress-date-format
+# Forces https everywhere in your website, except when you serve it locally
 
-# Date format
-date_format: "ordinal"
-time_format: "%H:%M"     # 24 hour time
+force-https: True
+
+#############
+# HTML Head #
+#############
+
+author: "Japorized"
+lang: "en"
+title: "{ Japorized }"
+favicon: "/img/favicon.ico"
+email: "johnson5756@live.com"
+description: "Japorized's personal blog. Blogging mainly for personal takes, sharing of interest, some development, and a little whining (sometimes)"
+keywords: "japorized, personal, blog, johnsonng"
+
+################
+# Intro layout #
+################
+
+black-favicon: "/img/black-lab-glass.ico"
+background-img: "../img/intro-bg.jpg"
+me-img: "/img/avatar.png"
+
+##############################
+# Dynamic Text on the header #
+##############################
+
+dynamic-typing: True
+shuffle: True	# Shuffle the lines.
+loop: True
+loop-count:	False # Set False for infinite loop, or set any number for finite loop.
+type-speed:	10		# Default 10
+start-delay: 200	# Default 200
+delete-delay: 5000	# Default 5000
+lines:			# You can add HTML Tags in the Text
+  - text: "Flying too high and afraid to fall hard?"
+  - text: "Fly higher to have more airtime to regain flight when falling."
+  - text: "Where’s your will to be weird?"
+  - text: "Don't stop dreaming! But do remember to face reality..."
+
+########
+# Blog #
+########
+
+post-preview-words: 128
+
+paginate: 5
+
+fb-share: True
+twitter-share: True
+reddit-share: True
+disqus-shortname: "Japorized"
+
+###############
+# Life Events #
+###############
+
+events:
+  - image: "/img/career/uwaterloo.jpeg"
+    date: "Coming January 2016"
+    description: "Pursuing degree @ UWaterloo"
+  - image: "/img/career/sunway.jpeg"
+    date: "August 2013 - July 2015"
+    description: "American Degree Transfer Programme"
+  - image: "/img/career/hualian.jpg"
+    date: "January 2008 - December 2012"
+    description: "High School"
+
+# First image of the Career timeline
+career-img: "/img/career/default.png"
+
+##################
+# Contact layout #
+##################
+
+email: "johnson5756@live.com"
+
+##################
+# Social Buttons #
+##################
+
+social:
+  - title: "facebook"
+    url: "https://facebook.com/Japorized"
+  - title: "twitter"
+    url: "https://twitter.com/Johnson_5756"
+  - title: "github"
+    url: "https://github.com/Japorized"
+  - title: "rss"
+    url: "/feed.xml"
+
+############
+# 404 page #
+############
+
+404-img: "/img/labtocat.png"
+
+################################################################################
+
+# Tread carefully if you want to change the variables below this point!
+
+# Navigation bar links
+# Blog link in the blog and post pages will point to the blog.html#blog
+# In the default page it will point to the preview of the last post
+
+pages_list:
+  About: 'about'
+  Blog: 'blog'
+  Study: 'study'
+  Contact: 'contact'
+
+# Pagination path
+paginate_path: "blog/page:num"
+
+# Enable minification SASS
+sass:
+  style: compressed
+
+# Exclusion list from the generated _site
+exclude: ["Rakefile", "LICENSE", "readme.markdown", "vendor"]

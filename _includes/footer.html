@@ -1,53 +1,12 @@
-<footer class="site-footer">
 
-  <div class="wrapper">
+ <!-- Footer Start -->
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col  footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col  footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            <a href="https://github.com/{{ site.github_username }}">
-              <span class="icon fa fa-github">
-              </span>
-
-              <span class="username">{{ site.github_username }}</span>
-            </a>
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            <a href="https://twitter.com/{{ site.twitter_username }}">
-              <span class="icon fa fa-twitter">
-              </span>
-
-              <span class="username">{{ site.twitter_username }}</span>
-            </a>
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col  footer-col-3">
-        <p class="text">{{ site.description }}</p>
-      </div>
+<footer>
+    <div class="container text-center">
+        <p>Copyright &copy; {{ site.author }} {{ site.time | date: "%Y" }}</p>
     </div>
-
-    <div class="copyright">
-      Created by Japorized | Hosted on <a href="https://github.com" target="_tab">GitHub</a> | Powered by <a href="http://jekyll.com" target="_tab">Jekyll</a><br />
-      Special thanks to <a href="https://fortawesome.github.io/Font-Awesome/" target="_tab">Font Awesome</a>
-    </div>
-
-  </div>
-
 </footer>
+
+<p><br><br><br><br><br><br></p>
+
+<!-- Footer End -->
