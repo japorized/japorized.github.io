@@ -24,7 +24,6 @@ author: "Japorized"
 lang: "en"
 title: "{ Japorized }"
 favicon: "/img/favicon.ico"
-email: "johnson5756@live.com"
 description: "Japorized's personal blog. Blogging mainly for personal takes, sharing of interest, some development, and a little whining (sometimes)"
 keywords: "japorized, personal, blog, johnsonng"
 
@@ -32,7 +31,7 @@ keywords: "japorized, personal, blog, johnsonng"
 # Intro layout #
 ################
 
-black-favicon: "/img/black-lab-glass.ico"
+black-favicon: "/img/black-favicon.ico"
 background-img: "../img/intro-bg.jpg"
 me-img: "/img/avatar.png"
 
@@ -48,10 +47,10 @@ type-speed:	10		# Default 10
 start-delay: 200	# Default 200
 delete-delay: 5000	# Default 5000
 lines:			# You can add HTML Tags in the Text
-  - text: "Flying too high and afraid to fall hard?"
-  - text: "Fly higher to have more airtime to regain flight when falling."
+  - text: "Are you afraid of falling hard while you fly high?"
   - text: "Where’s your will to be weird?"
-  - text: "Don't stop dreaming! But do remember to face reality..."
+  - text: "Don't stop dreaming! But do remember to reality matters still."
+  - text: "Do you not see that your troubles are simply a microcosm of a whole?"
 
 ########
 # Blog #
@@ -108,7 +107,7 @@ social:
 # 404 page #
 ############
 
-404-img: "/img/labtocat.png"
+404-img: "/img/404.png"
 
 ################################################################################
 
