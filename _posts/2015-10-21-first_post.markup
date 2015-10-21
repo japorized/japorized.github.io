@@ -3,7 +3,7 @@ layout: post
 section-type: post
 title: First Post!
 category: personal
-tags: #personal
+tags: [ 'personal' ]
 ---
 
 Let's kick off the site with a geeky, developer-esque greeting...

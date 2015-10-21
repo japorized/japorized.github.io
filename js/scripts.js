@@ -1,10 +1,5 @@
 $(document).ready(function() {
 
-	// LazyLoad 1.9.3
-	$("img").lazyload({
-		effect: "fadeIn"
-	});
-
 	// CV Skills Tab
 	$(".skillstab ul li").click(function() {
 		if ( $(this).text() === "Development" ) {
@@ -20,4 +15,9 @@ $(document).ready(function() {
 		}
 	});
 	
+    // LazyLoad 1.9.3
+	$("img").lazyload({
+		effect: "fadeIn"
+	});
+    
 });
