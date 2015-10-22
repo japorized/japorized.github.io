@@ -35,7 +35,7 @@
 
   <!-- Disqus -->
 
-  {% if page.section-type == "post" %}
+  {% if page.section-type == "post" or page.section-type == "default" %}
 
     <script type="text/javascript">
     var disqus_shortname = '{{ site.disqus-shortname }}';
@@ -71,7 +71,7 @@
 
 {% endif %}
 
-{% if page.section-type == "post" %}
+{% if page.section-type == "post" or page.section-type == "default" or page.section-type == "default_markdown" %}
 
   <!-- Share buttons Start -->
 
