@@ -19,5 +19,6 @@ $(document).ready(function() {
 	$("img").lazyload({
 		effect: "fadeIn"
 	});
+    // not working for unknown reasons - error returns function undefined
     
 });
