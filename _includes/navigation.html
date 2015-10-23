@@ -32,13 +32,40 @@
                     </li>
                   {% endfor %}
 
-                {% else %}
+                {% elsif page.section-type == "blog" or page.section-type == "post" or page.section-type="tag" %}
                   <!-- Blog, Post, Tag pages-->
                   {% for p in site.pages_list %}
                     {% if page.section-type == "blog" and p[0] == "Blog" %}
                       <!-- Blog button in blog.html doesn't refresh the page -->
                       <li>
                         <a class="page-scroll" href="#blog"> {{ p[0] }} </a>
+                      </li>
+                    {% elsif p[0] == "Blog" %}
+                      <li>
+                        <a class="page-scroll" href="{{site.baseurl}}/blog/index.html"> {{ p[0] }} </a>
+                      </li>
+                    {% elsif p[0] == "About" %}
+                      <li>
+                        <a class="page-scroll" href="{{site.baseurl}}/fullabout/index.html"> {{ p[0] }} </a>
+                      </li>
+                    {% else %}
+                      <li>
+                        <a class="page-scroll" href="{{site.baseurl}}/index.html#{{ p[1] }}"> {{ p[0] }} </a>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                
+                {% else %}
+                  <!-- About & section-type Default pages -->
+                  {% for p in site.pages_list %}
+                    {% if page.title == "About" and p[0] == "About" %}
+                      <!-- About button in fullabout/index.html doesn't refresh the page -->
+                      <li>
+                        <a class="page-scroll" href="#about"> {{ p[0] }} </a>
+                      </li>
+                    {% elsif p[0] == "About" %}
+                      <li>
+                        <a class="page-scroll" href="{{site.baseurl}}/fullabout/index.html"> {{ p[0] }} </a>
                       </li>
                     {% elsif p[0] == "Blog" %}
                       <li>
