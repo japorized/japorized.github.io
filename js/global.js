@@ -5,6 +5,11 @@ $(function() {
 		effect: "fadeIn"
 	});
     
+    $("#instafeed a img.lazy").lazyload({
+        effect : "fadeIn"
+    });
+
+    
     /* qTip tooltips */
     $('[title!=""]').qtip({
         style: {

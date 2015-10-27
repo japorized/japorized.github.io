@@ -120,6 +120,7 @@ pages_list:
   About: 'about'
   Blog: 'blog'
   Study: 'study'
+  Gallery: 'gallery'
   Contact: 'contact'
 
 # Pagination path
