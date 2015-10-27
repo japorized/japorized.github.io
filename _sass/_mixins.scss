@@ -56,14 +56,20 @@
   .skillstab {
     ul {
         list-style: none;
-        display: inline-block;
+        display: block;
+        text-align: center;
 
         li {
-            float: left;
-            width: 150px;
-            padding: 10px;
             margin: 0 10px;
-            border: .5px solid #ddd;
+            display: inline;
+
+            a {
+                color: $light;
+                font-size: 2vmin;
+                width: 25vmin;
+                padding: 10px 20px;
+                display: inline-block;
+                border: .5px solid #ddd;
             -webkit-border-radius: 10px;
             -moz-border-radius: 10px;
             -o-border-radius: 10px;
@@ -75,23 +81,28 @@
             -moz-transition: all 0.2s ease-in-out;
             -o-transition: all 0.2s ease-in-out;
             transition: all 0.2s ease-in-out;
-
+            }
+            
             &.skill_active, &:active {
-                background: $light;
-                color: $dark;
-                -webkit-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
+                a {
+                    background: $light;
+                    color: $dark;
+                    -webkit-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
                 -moz-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
                 -o-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
                 box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
+                }
             }
 
             &:hover {
+                a {
                 background: $light;
                 color: $dark;
                 -webkit-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
                 -moz-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
                 -o-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
                 box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
+                }
             }
         }
     }
@@ -171,7 +182,7 @@
         border-radius: 50%;
     }
     .pie {
-        background: #adff2f;
+        background: $dark;
         position: absolute;
         height: 150px;
         width: 150px;
@@ -189,34 +200,27 @@
     .outer_barContainer {
         text-align: left;
         display: none;
-
-        ul {
-            list-style: none;
-            display: inline-block;
-            margin: 0;
-            margin-left: 0;
-
-            li {
-
-                &.label-left {
-                    float: left;
-                    width: 150px;
-                    height: 30px;
-                    vertical-align: middle;
-                    font-weight: bold;
-                    font-size: 14px;
+        
+        div {
+            &.label-left {
+                float: left;
+                width: 25%;
+                vertical-align: middle;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 14px;
+            }
+            
+            &.skill-bar {
+                width: 67.5%;
+                margin-left: 25%;
+                background-color: #2e2e2e;
+                border: 1px solid #3f3f3f;
+                
+                div.skill-width {
+                    height: 14px;
                 }
             }
         }
-    }
-
-    .barContainer {
-        height: 22px;
-        padding: 4px;
-        vertical-align: middle;
-    }
-
-    .bar {
-            height: 16px;
-            margin-left: 150px;
+        
     }

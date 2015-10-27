@@ -1,5 +1,11 @@
 $(function() {
-    // qTip tooltips
+    
+    /* LazyLoad 1.9.3 */
+	$("img").lazyload({
+		effect: "fadeIn"
+	});
+    
+    /* qTip tooltips */
     $('[title!=""]').qtip({
         style: {
             classes: 'qtip-dark qtip-shadow qtip-rounded'
@@ -13,6 +19,6 @@ $(function() {
         style: {
             classes: 'qtip-dark qtip-shadow qtip-rounded'
         }
-    })
+    });
     
 });
