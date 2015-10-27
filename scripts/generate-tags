@@ -16,7 +16,12 @@ Dir.foreach(POSTS_DIR) do |post|
       puts('[+] Generating #' + tag + ' page')
 
       File.open(TAGS_DIR + tag + '.html', 'w') {|f| f.write(
-      "---\nlayout: tag\nsection-type: tag\ntitle: " + tag + "\n---\n## Tag")}
+      "---\nlayout: tag\nsection-type: tag\ntitle: " + tag + "\n---\n## Tag")
+          }
+
+      File.open(TAGS_DIR + 'index.html', 'a') {|f|
+          f << "\n**\[#" + tag + "\]\(" + tag + ".html\)**  "
+      }
 
     end
   }
