@@ -24,7 +24,11 @@ I'll include some formalities here to show my gratitude for those who have helpe
 
 Many thanks to [{ PannosSakkos }](https://github.com/PanosSakkos/personal-jekyll-theme) to have created this wonderful Jekyll theme. I will be utilizing this theme for quite some time, and will further modify it with my personal touches. Do check out the GitHub repo if you're also interested in using the theme (it's that link right up there).
 
-I'm also utilizing some Javascript libraries here, namely the ever-so-fearsome-but-awesome [jQuery](http://jquery.com), the [Lazy Load Plugin](http://www.appelsiini.net/projects/lazyload) for better quality of life on the blog, and the awesome [FontAwesome](https://fortawesome.github.io/Font-Awesome/).
+I'm also utilizing a couple of libraries on the site, so a big thank you for the developers who have made them.  
+[jQuery](http://jquery.com)  
+[Lazy Load Plugin](http://www.appelsiini.net/projects/lazyload)  
+[FontAwesome](https://fortawesome.github.io/Font-Awesome/)  
+[qTip 2](http://qtip2.com)  
 
 More will be added here as I continue to enlarge my repo (I may change the formatting as it gets bigger) so poke around and you shall see them coming up.
 

@@ -152,8 +152,13 @@
 
 {% if page.title == "CV" %}
     <!-- Script for CV page -->
-    <script type="text/javascript" src="../js/cv_page.js"></script>
+    <script type="text/javascript" src="{{site.baseurl}}/js/cv_page.js"></script>
 
+{% endif %}
+
+{% if page.section-type == "post" %}
+    <!-- Scripts for posts -->
+    <script type="text/javascript" src="{{site.baseurl}}/js/post.js"></script>
 {% endif %}
 
     <!-- global.js -->

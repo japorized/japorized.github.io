@@ -1,0 +1,30 @@
+---
+---
+
+@import "variables";
+@import "mixins";
+
+/*-- Styling Embeds --*/
+iframe#youtube, iframe#vimeo {
+    width: 560px;
+    height: 315px;
+    margin: 0;
+    padding: 0;
+}
+
+.embed {
+    text-align: right;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+    padding: 5px;
+    
+    &#youtube_tag {
+        background: #ac0000;
+    }
+    
+    &#vimeo_tag {
+        background: #5895ac;
+    }
+}
