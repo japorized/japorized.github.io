@@ -161,6 +161,37 @@
     <script type="text/javascript" src="{{site.baseurl}}/js/post.js"></script>
 {% endif %}
 
+{% if page.section-type == "index" %}
+    <!-- Instafeed.js -->
+    <script type="text/javascript" src="{{site.baseurl}}/js/instafeed.js"></script>
+    <script type="text/javascript"> 
+    var userFeed = new Instafeed({
+        get: 'user',
+        userId: 305260790,
+        accessToken: '305260790.467ede5.e2395ce0efe44fddbba6dfd3c7a0462b',
+        link: 'true',
+        limit: '5',
+        thumbnail: '180x180',
+        after: function () {
+    var images = $("#instafeed").find('a');
+    $.each(images, function(index, image) {
+      var delay = (index * 75) + 'ms';
+      $(image).css('-webkit-animation-delay', delay);
+      $(image).css('-moz-animation-delay', delay);
+      $(image).css('-ms-animation-delay', delay);
+      $(image).css('-o-animation-delay', delay);
+      $(image).css('animation-delay', delay);
+      $(image).addClass('animated flipInX');
+    });
+  },
+        template: '<a href="{{link}}" target="_blank"><img class="lazy" src="{{image}}" /><div class="likes">{{likes}} <span class="fa fa-heart"></span> {{comments}} <span class="fa fa-comments"></span></div></a>'
+    });
+    userFeed.run();
+
+    </script>
+    <link rel="stylesheet" href="/css/instafeed.css">
+{% endif %}
+
     <!-- global.js -->
     <script src="{{site.baseurl}}/js/global.js"></script>
 
