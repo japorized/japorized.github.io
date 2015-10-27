@@ -64,7 +64,6 @@
             display: inline;
 
             a {
-                color: $light;
                 font-size: 2vmin;
                 width: 25vmin;
                 padding: 10px 20px;
@@ -85,9 +84,9 @@
             
             &.skill_active, &:active {
                 a {
-                    background: $light;
-                    color: $dark;
-                    -webkit-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
+                background: $light;
+                color: $dark;
+                -webkit-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
                 -moz-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
                 -o-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
                 box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);

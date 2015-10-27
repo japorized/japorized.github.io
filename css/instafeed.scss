@@ -1,0 +1,46 @@
+---
+---
+
+@import "variables";
+@import "mixins";
+
+#instafeed a {
+  padding:5px 5px 1px 5px;
+  margin:10px;
+  display:inline-block;
+}
+
+#instafeed img {
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+
+#load-more {
+    font-size: 4vmin;
+    width: 8vmin;
+    height: 8vmin;
+    margin-top: 20px;
+    display: inline-block;
+    border: .5px solid #ddd;
+    cursor: pointer;
+    background: $dark;
+    color: $light;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    
+    &:hover {
+        background: $light;
+        color: $dark;
+        -webkit-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
+        -moz-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
+        -o-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
+        box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
+    }
+}

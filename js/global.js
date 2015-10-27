@@ -1,11 +1,7 @@
 $(function() {
     
-    /* LazyLoad 1.9.3 */
-	$("img").lazyload({
-		effect: "fadeIn"
-	});
-    
-    $("#instafeed a img.lazy").lazyload({
+    /* LazyLoad 1.9.3 */    
+    $("#instafeed img").lazyload({
         effect : "fadeIn"
     });
 
