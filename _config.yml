@@ -69,7 +69,7 @@ disqus-shortname: "japorized"
 ###############
 
 events:
-  - image: "/img/career/uwaterloo.jpeg"
+  - image: "/img/career/uwaterloo.jpg"
     date: "Coming Jan 2016"
     description: "Pursuing actuarial degree @ UWaterloo"
   - image: "/img/career/sunway.jpg"
