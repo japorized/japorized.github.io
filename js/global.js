@@ -1,10 +1,7 @@
 $(function() {
     
-    /* LazyLoad 1.9.3 */    
-    $("#instafeed img").lazyload({
-        effect : "fadeIn"
-    });
-
+    /* LazyLoad 1.9.3 */
+    // nothing here for now
     
     /* qTip tooltips */
     $('[title!=""]').qtip({

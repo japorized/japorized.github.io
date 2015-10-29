@@ -22,9 +22,13 @@ var loadButton = document.getElementById('load-more'),
                 $(image).css('-ms-animation-delay', delay);
                 $(image).css('-o-animation-delay', delay);
                 $(image).css('animation-delay', delay);
+                
+                $(image).find('img').lazyload({
+                    effect : "fadeIn"
+                });
             });
         },
-        // template: '<a href="{{link}}" target="_tab"><img src="{{image}}" /><div class="likes">{{likes}} <span class="fa fa-heart"></span> {{comments}} <span class="fa fa-comments"></span></div></a>' (will only uncomment this once the images can load)
+        template: '<a href="{{link}}" target="_tab"><img src="{{image}}" /><div class="likes">{{likes}} <span class="fa fa-heart"></span> {{comments}} <span class="fa fa-comments"></span></div></a>'
     });
 
         
