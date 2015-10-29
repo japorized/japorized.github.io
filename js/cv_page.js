@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
 	// CV Skills Tab
-	$(".skillstab ul li").click(function() {
-		if ( $(this).children('a').text() === "Development" ) {
+	$(".skillstab .skill_tab").click(function() {
+		if ( $(this).text() === "Development" ) {
 			$(this).siblings().removeClass("skill_active");
 			$(this).addClass("skill_active");
 			$(".outer_barContainer").fadeOut("fast");

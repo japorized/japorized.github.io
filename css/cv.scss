@@ -19,24 +19,25 @@ h1#cv_header {
   }
 
   .my_picture {
-    float: left;
     vertical-align: top;
     width: 150px;
     height: 150px;
+    margin: 0 auto;
   }
 
   .my_details {
-    margin-left: 30px;
     vertical-align: top;
-    width: 495px;
     font-size: 10px;
     text-align: left;
+    padding-left: 20px;
+    margin: 0 auto;
+    margin-bottom: 20px;
 
     h1 {
         font-weight: bold;
         font-size: 30px;
         line-height: 30px;
-        -webkit-margin-after: 0 !important;
+        -webkit-margin-after: 0px;
     }
 
     span {
@@ -47,6 +48,7 @@ h1#cv_header {
         list-style: none;
         margin: 0;
         margin-top: 10px;
+        -webkit-padding-start: 0px;
 
         li.label-left {
             float: left;
@@ -56,58 +58,43 @@ h1#cv_header {
   }
 
   .skillstab {
-    ul {
-        list-style: none;
-        display: block;
-        text-align: center;
-
-        li {
-            margin: 0 10px;
-            display: inline;
-
-            a {
-                font-size: 2vmin;
-                width: 25vmin;
-                padding: 10px 20px;
-                display: inline-block;
-                border: .5px solid #ddd;
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            -o-border-radius: 10px;
-            border-radius: 10px;
-            cursor: pointer;
-            background: $dark;
-            color: $light;
-            -webkit-transition: all 0.2s ease-in-out;
-            -moz-transition: all 0.2s ease-in-out;
-            -o-transition: all 0.2s ease-in-out;
-            transition: all 0.2s ease-in-out;
-            }
+      .skill_tab {
+          text-align: center;
+          padding: 10px 20px;
+          display: inline-block;
+          border: .5px solid #ddd;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -o-border-radius: 10px;
+          border-radius: 10px;
+          cursor: pointer;
+          background: $dark;
+          color: $light;
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
             
-            &.skill_active, &:active {
-                a {
-                background: $light;
-                color: $dark;
-                -webkit-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
-                -moz-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
-                -o-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
-                box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
-                }
-            }
+          &:active, &.skill_active {
+              background: $light;
+              color: $dark;
+              -webkit-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
+              -moz-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
+              -o-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
+              box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
+          }
 
-            &:hover {
-                a {
-                background: $light;
-                color: $dark;
-                -webkit-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
-                -moz-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
-                -o-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
-                box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
-                }
-            }
+          &:hover {
+              background: $light;
+              color: $dark;
+              -webkit-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
+              -moz-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
+              -o-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
+              box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
         }
-    }
+      }
   }
+
 
   /*
    * Pies
@@ -118,36 +105,29 @@ h1#cv_header {
 
     .pieContainer {
         position: relative;
-        max-height: $pie-maxheight;
-        max-width: $pie-maxwidth;
-        width: 20vmin;
-        height: 20vmin;
+        width: $pie-width;
+        height: $pie-height;
         padding-top: 20px;
-        float: left;
-        margin: 0 20px;
+        margin: 10px auto;
     }
     .pieBackground {
         z-index: 2;
         background: $dark;
-        max-height: $pie-maxheight - 25px;
-        max-width: $pie-maxwidth - 25px;
-        height: 17vmin;
-        width: 17vmin;
+        height: $pie-height - 25px;
+        width: $pie-width - 25px;
         position: absolute;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         -o-border-radius: 50%;
         border-radius: 50%;
-        margin-top: 1.5vmin;
-        margin-left: 1.5vmin;
+        margin-top: 12.5px;
+        margin-left: 12.5px;
     }
     .pieDesc {
         position: absolute;
-        font-size: 2vmin;
-        max-height: $pie-maxheight;
-        max-width: $pie-maxwidth;
-        height: 20vmin;
-        width: 20vmin;
+        font-size: 12px;
+        height: $pie-height;
+        width: $pie-width;
         padding: 10px;
         z-index: 3;
         display: table;
@@ -162,10 +142,8 @@ h1#cv_header {
     }
     .half1 {
         position: absolute;
-        max-height: $pie-maxheight;
-        max-width: $pie-maxwidth;
-        height: 20vmin;
-        width: 20vmin;
+        height: $pie-height;
+        width: $pie-width;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         -o-border-radius: 50%;
@@ -179,10 +157,8 @@ h1#cv_header {
     }
     .pie-mask {
         position: absolute;
-        max-height: $pie-maxheight;
-        max-width: $pie-maxwidth;
-        width: 20vmin;
-        height: 20vmin;
+        height: $pie-height;
+        width: $pie-width;
         -webkit-transform: rotate(0deg);
         -moz-transform: rotate(0deg);
         -o-transform: rotate(0deg);
@@ -195,10 +171,8 @@ h1#cv_header {
     .pie {
         background: $dark;
         position: absolute;
-        max-height: $pie-maxheight;
-        max-width: $pie-maxwidth;
-        height: 20vmin;
-        width: 20vmin;
+        height: $pie-height;
+        width: $pie-width;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         -o-border-radius: 50%;
@@ -216,19 +190,18 @@ h1#cv_header {
         
         div {
             &.label-left {
-                float: left;
-                width: 25%;
                 vertical-align: middle;
                 font-weight: bold;
                 font-size: 14px;
                 line-height: 14px;
+                margin-bottom: 5px;
             }
             
             &.skill-bar {
-                width: 67.5%;
-                margin-left: 25%;
                 background-color: #2e2e2e;
                 border: 1px solid #3f3f3f;
+                padding: 0;
+                margin-bottom: 20px;
                 
                 div.skill-width {
                     height: 14px;
