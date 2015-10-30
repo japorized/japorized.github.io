@@ -27,7 +27,7 @@ h1#cv_header {
 
   .my_details {
     vertical-align: top;
-    font-size: 10px;
+    font-size: 13px;
     text-align: left;
     padding-left: 20px;
     margin: 0 auto;
@@ -41,6 +41,7 @@ h1#cv_header {
     }
 
     span {
+        font-size: 10px;
         color: #00a0dd;
     }
 
@@ -56,6 +57,19 @@ h1#cv_header {
         }
     }
   }
+
+.visible-xs {
+    .my_details {
+        text-align: center;
+        padding-left: 0;
+        
+        h5 {
+            // correcting user agent stylesheet
+            -webkit-margin-after: 5px;
+            -webkit-margin-before: 10px;
+        }
+    }
+}
 
   .skillstab {
       .skill_tab {
