@@ -74,7 +74,15 @@ h1#cv_header {
   .skillstab {
       .skill_tab {
           text-align: center;
-          padding: 10px 20px;
+          
+          &.skill_dev, &.skill_des {
+              padding: 10px 20px;
+          }
+          
+          &.m_skill_dev, &.m_skill_des {
+              padding: 10px 10px;
+          }
+          
           display: inline-block;
           border: .5px solid #ddd;
           -webkit-border-radius: 10px;
