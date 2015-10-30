@@ -28,7 +28,7 @@ var loadButton = document.getElementById('load-more'),
                 });
             });
         },
-        template: '<a href="{{link}}" target="_tab"><img src="{{image}}" /><div class="likes">{{likes}} <span class="fa fa-heart"></span> {{comments}} <span class="fa fa-comments"></span></div></a>'
+        template: '<div class="col-md-3 col-sm-3 col-xs-6"><a href="{{link}}" target="_tab"><img src="{{image}}" /><div class="likes">{{likes}} <span class="fa fa-heart"></span> {{comments}} <span class="fa fa-comments"></span></div></a></div>'
     });
 
         
