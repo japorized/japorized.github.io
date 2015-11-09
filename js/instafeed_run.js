@@ -26,9 +26,30 @@ var loadButton = document.getElementById('load-more'),
                 $(image).find('img').lazyload({
                     effect : "fadeIn"
                 });
+                
+            });
+            
+            
+            
+             $.each(images, function(index, image) {
+                 if ( $(image).attr('data-caption') != "" ) {
+                    $(image).qtip({
+                        content: {
+                            text: $(this).attr('data-caption')
+                        },
+                        style: {
+                            classes: 'qtip-dark qtip-shadow qtip-rounded'
+                        },
+                        position: {
+                            my: 'top center',  // Position my top left...
+                            at: 'bottom center', // at the bottom right of...
+                            target: $(image) // my target
+                        }
+                    });
+                 }
             });
         },
-        template: '<div class="col-md-3 col-sm-3 col-xs-12"><a href="{{link}}" target="_tab"><img src="{{image}}" /><div class="likes">{{likes}} <span class="fa fa-heart"></span> {{comments}} <span class="fa fa-comments"></span></div></a></div>'
+        template: '<div class="col-md-3 col-sm-3 col-xs-12"><a href="{{link}}" target="_tab" data-caption="{{caption}}"><img src="{{image}}" /><div class="likes">{{likes}} <span class="fa fa-heart"></span> {{comments}} <span class="fa fa-comments"></span></div></a></div>'
     });
 
         
