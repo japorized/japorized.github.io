@@ -391,3 +391,41 @@ body {
     50% { opacity:0; }
     100% { opacity:1; }
 }
+
+/*
+ * LastFM
+ */
+#lfmMostRecentTrack {
+}
+#lfmMostRecentTrackDate {
+    font-style: italic;
+    font-weight: bold;
+}
+#lfmAlbumContainer {
+    width: 256px;
+    margin: 0 auto;
+}
+#lfmMostRecentTrackImage {
+    display:block;
+    padding:20px 10px;
+    margin: 0 auto;
+    max-width:256px;
+    max-height:256px;
+    
+   
+    &:hover + #lfmAlbumInfo {
+        display: block;
+    }
+}
+#lfmAlbumInfo {
+    display: none;
+    width: 256px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+#lfmMostRecentTrackPlayIcon {
+     vertical-align:bottom;
+     display:none;
+}

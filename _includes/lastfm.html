@@ -1,0 +1,30 @@
+<!-- LastFM Start -->
+
+<section id="{{ page.title }}" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            
+            {{ page.content | markdownify }}
+            
+            
+            <script src="js/lastfmrecenttracks.js"></script>
+            
+            <div class="lfmcontainer cf"></div>
+
+        <div id="lfmMostRecentTrack">
+            <span id="lfmMostRecentTrackDate"></span><br/>
+            <div id="lfmAlbumContainer">
+                <img id="lfmMostRecentTrackImage" src="/img/noartwork.png"/>
+                <div id="lfmAlbumInfo">
+                    <span id="lfmMostRecentTrackArtist"></span> - <img id="lfmMostRecentTrackPlayIcon" src="http://cdn.last.fm/flatness/global/icon_play.png"/> <a id="lfmMostRecentTrackTitle" href="" target="new"></a><br/>
+                    <span id="lfmMostRecentTrackAlbum"></span>
+                </div>
+            </div>
+        </div>
+            
+        <script type="text/javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=Johnson5756&api_key=01705f6cbfe64847cfb253e240ed8edd&limit=1&format=json&callback=lfmMostRecentTrack"></script>
+            
+        </div>
+    </div>
+</section>
+<!-- LastFM End -->
