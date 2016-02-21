@@ -1,7 +1,9 @@
+# Gems
+gems: [jekyll-paginate]
+
 # Site settings
 
 url: "https://japorized.github.io"
-future: true
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (https://yourusername.github.io/repository-name)
@@ -130,9 +132,6 @@ paginate_path: "blog/page:num"
 # Enable minification SASS
 sass:
   style: compressed
-
-gems:
-  - jekyll-paginate
 
 # Exclusion list from the generated _site
 exclude: ["Rakefile", "LICENSE", "readme.markdown", "vendor"]
