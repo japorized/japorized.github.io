@@ -58,14 +58,16 @@ lines:			# You can add HTML Tags in the Text
 # Blog #
 ########
 
+enable-gesture-navigation: true
+
 post-preview-words: 96
 
 paginate: 5
 
 fb-share: True
 twitter-share: True
-reddit-share: True
 disqus-shortname: "japorized"
+syntax-highlight: True
 
 ###############
 # Life Events #
