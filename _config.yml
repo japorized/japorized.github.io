@@ -75,7 +75,7 @@ syntax-highlight: True
 
 events:
   - image: "/img/career/uwaterloo.jpg"
-    date: "Coming Jan 2016"
+    date: "Jan 2016 - Present"
     description: "Pursuing Pure Mathematics major & Actuarial Science minor @ UWaterloo"
   - image: "/img/career/sunway.jpg"
     date: "Aug 2013 - Jul 2015"
@@ -111,7 +111,7 @@ social:
 # 404 page #
 ############
 
-404-img: "/img/404.png"
+err-404-img: "/img/404.png"
 
 ################################################################################
 
@@ -124,7 +124,7 @@ social:
 pages_list:
   About: 'about'
   Blog: 'blog'
-  Study: 'study'
+  Timeline: 'timeline'
   Contact: 'contact'
 
 # Pagination path
