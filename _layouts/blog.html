@@ -14,10 +14,12 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
 
+        {% include swipe-instructions.html %}
+
         {{ page.content | markdownify }}
 
         {% for post in paginator.posts %}
-          <h4 align="left"><strong>{{ post.date | date_to_string }}</strong> <small>. {{ post.category }} .</small> <a href="{{site.baseurl}}{{post.url}}"> <strong>{{ post.title }} </strong> </a> <small><a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></small></h4>
+          {% include post-list.html%}
         {% endfor %}
 
         {% include pagination.html %}
