@@ -21,7 +21,7 @@ Dir.foreach(POSTS_DIR) do |post|
         }
 
       File.open(CATEGORIES_DIR + 'index.html', 'a') {|f|
-        f << "\n**\[#" + category + "\]\(" + category.downcase + ".html\)**  "
+        f << "\n**\[" + category + "\]\(" + category.downcase + ".html\)**  "
       }
 
     end

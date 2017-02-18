@@ -1,5 +1,7 @@
 # Gems
-gems: [jekyll-paginate]
+gems:
+  - jekyll-paginate
+  - jemoji
 
 # Site settings
 

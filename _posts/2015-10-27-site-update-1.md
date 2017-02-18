@@ -10,7 +10,7 @@ Our title may say Site Update #1 but the blog is already nearing its stabilizing
 
 So here's a little music for celebration, as you continue on reading this post.
 
-<iframe id="youtube" src="https://www.youtube.com/embed/ByEH5o4A1kc" frameborder="0" allowfullscreen></iframe>
+{% include youtube.html youtube_id="ByEH5o4A1kc" %}
 
 Most of what I want have already been added into the repo, and I am glad how things are turning out. Having a lot of fun as I continue to find new things to add to the blog but sooner or later, it's gonna run out? I don't think so. This blog will be maintained and slowly making tiny changes over time.
 
@@ -18,7 +18,7 @@ There will most likely not be large makeovers anytime soon, not if our design ha
 
 So here are a rundown of what has happened to the blog since the dawn of time (more specifically, the dawn of the time for this blog):
 
-<pre style="text-align: left;">
+```
 - Header background (my usual wallpaper for everywhere)
 - Changed 'Career' to 'Study' (cause I'm still a student)
 - Added a full About page (link in Homepage)
@@ -30,7 +30,7 @@ So here are a rundown of what has happened to the blog since the dawn of time (m
 - Automated wrapping of embedded videos in posts (a feature that will get further updated)
 - Automated tags generation & indexed tags (check out from /tags/)
 - Added Secret 42 (ahem... This blog is a lab as well, and I'm hinting you where it is)
-</pre>
+```
 
 The blog started off being a normal jekyll blog actually, and I was stuck with how to design it until I met this theme. It hit me that I can do something about the theme and personalize it to my own liking.
 
