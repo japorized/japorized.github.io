@@ -159,11 +159,13 @@
     <script type="text/javascript" src="{{site.baseurl}}/js/post.js"></script>
 {% endif %}
 
-{% if page.section-type == "index" %}
-    <!-- Instafeed.js -->
-    <script type="text/javascript" src="{{site.baseurl}}/js/instafeed.js"></script>
-    <script type="text/javascript" src="{{site.baseurl}}/js/instafeed_run.js"></script>
-    <link rel="stylesheet" href="/css/instafeed.css">
+<!-- Syntax highlighting -->
+{% if site.syntax-highlight and page.section-type == "post" %}
+
+  <!-- Syntax highlight in post pages-->
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 
 {% endif %}
 
