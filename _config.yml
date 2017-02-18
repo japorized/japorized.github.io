@@ -62,7 +62,7 @@ lines:			# You can add HTML Tags in the Text
 
 enable-gesture-navigation: true
 
-post-preview-words: 96
+post-preview-words: 80
 
 paginate: 5
 

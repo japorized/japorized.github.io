@@ -20,11 +20,20 @@
 
               <h3 id="#{{ tag }}">#{{ tag }}</h3>
 
+              <div class="row">
               {% for post in site.posts %}
                 {% if post.tags contains tag %}
-                  <h4 align="left"><strong>{{ post.date | date_to_string }}</strong> <small>. {{ post.category }} .</small> <a href="{{site.baseurl}}{{ post.url }}"> <strong>{{ post.title }} </a> </strong> <small><a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></small></h4>
+                
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <h5 align="left"><strong>{{ post.date | date_to_string }}</strong> <small>. {{ post.category }} .</small></h5>
+                    <h4 align="left"> <a href="{{site.baseurl}}{{ post.url }}"> <strong>{{ post.title }} </a> </strong> <small><a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></small></h4>
+                    {{ post.excerpt | truncatewords: 50 | strip_html | markdownify }}
+                  </div>
+
                 {% endif %}
               {% endfor %}
+
+              </div>
 
             </div>
           </div>
