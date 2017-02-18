@@ -76,18 +76,18 @@ syntax-highlight: True
 ###############
 
 events:
-  - image: "/img/career/uwaterloo.jpg"
+  - image: "/img/timeline/uwaterloo.jpg"
     date: "Jan 2016 - Present"
     description: "Pursuing Pure Mathematics major & Actuarial Science minor @ UWaterloo"
-  - image: "/img/career/sunway.jpg"
+  - image: "/img/timeline/sunway.jpg"
     date: "Aug 2013 - Jul 2015"
     description: "ADTP @ Sunway University"
-  - image: "/img/career/hualian.jpg"
+  - image: "/img/timeline/hualian.jpg"
     date: "Jan 2008 - Dec 2012"
     description: "High School @ SMJK Hua Lian"
 
-# First image of the Career timeline
-career-img: "/img/career/default.png"
+# First image of the Timeline
+timeline-img: "/img/timeline/default.png"
 
 ##################
 # Contact layout #
