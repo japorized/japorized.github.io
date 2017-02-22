@@ -17,7 +17,7 @@
 
 						{% for post in paginator.posts %}
 							{% if forloop.index0 != 0 %}
-								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 50px;">
 									<p class="post-info">{{ post.date | date:"%A, %b %d, %Y" }} <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">. {{ post.category | upcase }} .</a> <a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></p>
 
 									<br style="line-height: 20px;" />
