@@ -18,7 +18,7 @@
 						{% for post in paginator.posts %}
 							{% if forloop.index0 != 0 %}
 								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-									<p class="post-info">{{ post.date | date_to_string }} . <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">{{ post.category | upcase }}</a></p>
+									<p class="post-info">{{ post.date | date:"%A, %b %d, %Y" }} <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">. {{ post.category | upcase }} .</a> <a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></p>
 
 									<br style="line-height: 20px;" />
 
@@ -32,7 +32,7 @@
 							{% else %}
 								<div class="row" style="margin-bottom: 70px;">
 									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-										<span>{{ post.date | date_to_string }} . <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">{{ post.category | upcase }}</a></span>
+										<p class="post-info" style="text-align: center;">{{ post.date | date:"%A, %b %d, %Y" }} <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">. {{ post.category | upcase }} .</a> <a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></p>
 
 										<br />
 

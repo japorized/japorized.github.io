@@ -434,9 +434,23 @@ a.post_catalog_title {
 
 p.post-info {
     text-align: left;
-    line-height: 0.5em;
+    line-height: 1em;
     margin: 0;
     font-size: 14px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+
+    a.category {
+        &:link, &:visited {
+            color: #777;
+            font-weight: 400;
+            font-size: 80%;
+        }
+
+        &:hover, &:active {
+            color: #aaa;
+        }
+    }
 }
 
 span.read_more {
