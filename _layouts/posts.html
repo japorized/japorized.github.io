@@ -1,0 +1,71 @@
+<!-- Post list with extract Layout Start -->
+
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+	{% include head.html %}
+
+	<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+		{% include navigation.html %}
+
+		<section id="{{ page.title }}" class="text-center" style="padding: 100px 10px 0 10px;">
+			<div class="row">
+				<div class="col-lg-10 col-lg-offset-1">
+					{{ page.content | markdownify }}
+					
+					<div>
+
+						{% for post in paginator.posts %}
+							{% if forloop.index0 != 0 %}
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+									<p class="post-info">{{ post.date | date_to_string }} . <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">{{ post.category | upcase }}</a></p>
+
+									<br style="line-height: 20px;" />
+
+									<a class="post_catalog_title" href="{{site.baseurl}}{{post.url}}"><h1 class="medium-title">{{post.title}}</h1>
+
+									<span style="text-align: left;">{{post.excerpt | strip_html | markdownify}}</span>
+
+									<span class="read_more">Read More</span>
+										</a>
+								</div>
+							{% else %}
+								<div class="row" style="margin-bottom: 70px;">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<span>{{ post.date | date_to_string }} . <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">{{ post.category | upcase }}</a></span>
+
+										<br />
+
+										<a class="post_catalog_title" href="{{site.baseurl}}{{post.url}}"><h1 class="large-title">{{post.title}}</h1>
+
+										<span style="text-align: left;">{{post.excerpt | strip_html | markdownify}}</span>
+
+										<span class="read_more">Read More</span>
+										</a>
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="{{ page.title }}" class="container content-section text-center">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					{% include social-buttons.html %}
+				</div>
+			</div>
+		</section>
+
+		{% include footer.html %}
+
+		{% include js.html %}
+
+	</body>
+</html>
+
+
+<!-- Post list with extract Layout End -->

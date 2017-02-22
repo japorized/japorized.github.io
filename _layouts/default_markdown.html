@@ -15,10 +15,11 @@
         
     {{ page.content | markdownify }}
         
+    {% if page.is-math-post == 1 %}
+        Back to my <a href="{{site.baseurl}}/mathjourney">Math notes</a>
+    {% endif %}
+
     {% include share.html %}
-        
-    {% include comments.html %}
-                    
                 </div>
             </div>
         </section>

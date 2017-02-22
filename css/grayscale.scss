@@ -52,12 +52,16 @@ p {
 
 a {
     color: $primary;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-    &:hover,
-    &:focus {
-    text-decoration: none;
+
+    &:link, &:visited {
+        -webkit-transition: color .2s ease-in-out;
+        moz-transition: color .2s ease-in-out;
+        transition: color .2s ease-in-out;
+        text-decoration: none;
+    }
+    
+    &:hover, &:focus {
+        text-decoration: none;
         color: darken($primary, 20%);
     }
 }
@@ -396,3 +400,50 @@ body {
  * LaTeX being friendly with kramdown - Jax
  */
 code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+
+/*
+ * Large Fonts Scaling to viewport
+ */
+h1.large-title {
+    @include responsive-font(5vw, 30px);
+}
+
+h1.medium-title {
+    @include responsive-font(3vw, 25px);
+}
+
+/*
+ * Post Catalog Styles
+ */
+
+a.post_catalog_title {
+    &:link, &:visited {
+        color: #fff;
+    }
+
+    &:hover, &:active {
+        color: #bbb;
+
+        span.read_more {
+            background-color: #bbb;
+            border-color: #bbb;
+            color: #000;
+        }
+    }
+}
+
+p.post-info {
+    text-align: left;
+    line-height: 0.5em;
+    margin: 0;
+    font-size: 14px;
+}
+
+span.read_more {
+    text-align: left;
+    border: 1px solid #fff;
+    padding: 10px;
+    -webkit-transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+    -moz-transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+}
