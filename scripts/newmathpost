@@ -1,0 +1,13 @@
+#!/usr/bin/ruby
+
+MATH_DIR = 'mathjourney/'
+
+dir = ARGV[0]
+filename = ARGV[1]
+
+Dir.mkdir(MATH_DIR + dir) unless File.exists?(MATH_DIR + dir)
+File.open(MATH_DIR + dir + filename + '.html', 'w') {|f| f.write(
+  "---\nlayout: default_markdown\nsection-type: default_markdown\ntitle: <Title>\nis-math-post: 1\n---\n\n# Statement\n\n# Attempted Proof")
+}
+
+puts('[+] Created ' + filename + '.html in ' + MATH_DIR + dir)
