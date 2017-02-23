@@ -24,26 +24,24 @@
 
 									<a class="post_catalog_title" href="{{site.baseurl}}{{post.url}}"><h1 class="medium-title">{{post.title}}</h1>
 
-									<span class="article_excerpt" style="text-align: left;">{{post.excerpt | strip_html | markdownify}}</span>
+									<span class="article_excerpt">{{post.excerpt | strip_html | markdownify}}</span>
 
 									<span class="read_more">Read More</span>
 										</a>
 								</article>
 							{% else %}
-								<div class="row" style="margin-bottom: 70px;">
-									<article class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-										<p class="post-info" style="text-align: center;">{{ post.date | date:"%A, %b %d, %Y" }} <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">. {{ post.category | upcase }} .</a> <a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></p>
+								<article class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<p class="post-info" style="text-align: center;">{{ post.date | date:"%A, %b %d, %Y" }} <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">. {{ post.category | upcase }} .</a> <a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></p>
 
-										<br />
+									<br />
 
-										<a class="post_catalog_title" href="{{site.baseurl}}{{post.url}}"><h1 class="large-title">{{post.title}}</h1>
+									<a class="post_catalog_title" href="{{site.baseurl}}{{post.url}}"><h1 class="large-title">{{post.title}}</h1>
 
-										<span class="article_excerpt" style="text-align: left;">{{post.excerpt | strip_html | markdownify}}</span>
+									<span class="article_excerpt">{{post.excerpt | strip_html | markdownify}}</span>
 
-										<span class="read_more">Read More</span>
-										</a>
-									</article>
-								</div>
+									<span class="read_more">Read More</span>
+									</a>
+								</article>
 							{% endif %}
 						{% endfor %}
 
