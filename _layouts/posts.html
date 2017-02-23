@@ -12,43 +12,50 @@
 			<div class="row">
 				<div class="col-lg-10 col-lg-offset-1">
 					{{ page.content | markdownify }}
-					
-					<div>
+
+					<div id="blog_container" data-curPage="{{ paginator.page }}" data-totalPages="{{ paginator.total_pages }}">
 
 						{% for post in paginator.posts %}
-							{% if forloop.index0 != 0 %}
-								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 50px;">
+							{% if forloop.index0 != 0 or paginator.page != 1 %}
+								<article class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 50px;">
 									<p class="post-info">{{ post.date | date:"%A, %b %d, %Y" }} <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">. {{ post.category | upcase }} .</a> <a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></p>
 
 									<br style="line-height: 20px;" />
 
 									<a class="post_catalog_title" href="{{site.baseurl}}{{post.url}}"><h1 class="medium-title">{{post.title}}</h1>
 
-									<span style="text-align: left;">{{post.excerpt | strip_html | markdownify}}</span>
+									<span class="article_excerpt" style="text-align: left;">{{post.excerpt | strip_html | markdownify}}</span>
 
 									<span class="read_more">Read More</span>
 										</a>
-								</div>
+								</article>
 							{% else %}
 								<div class="row" style="margin-bottom: 70px;">
-									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<article class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<p class="post-info" style="text-align: center;">{{ post.date | date:"%A, %b %d, %Y" }} <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">. {{ post.category | upcase }} .</a> <a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></p>
 
 										<br />
 
 										<a class="post_catalog_title" href="{{site.baseurl}}{{post.url}}"><h1 class="large-title">{{post.title}}</h1>
 
-										<span style="text-align: left;">{{post.excerpt | strip_html | markdownify}}</span>
+										<span class="article_excerpt" style="text-align: left;">{{post.excerpt | strip_html | markdownify}}</span>
 
 										<span class="read_more">Read More</span>
 										</a>
-									</div>
+									</article>
 								</div>
 							{% endif %}
 						{% endfor %}
 
 					</div>
 				</div>
+
+				<div style="clear:both;" />
+				{% assign postCount = site.posts | size %}
+				{% assign postsCovered = site.paginate | plus:offset %}
+				{% if postsCovered < postCount %}
+				  <span class="loadMore">Load more posts</span>
+				{% endif %}
 			</div>
 		</section>
 
@@ -63,6 +70,33 @@
 		{% include footer.html %}
 
 		{% include js.html %}
+
+		<script type="text/javascript">
+		// Inspired by Eduardo Boucas (@eduardoboucas)
+		  $(".loadMore").click(fetchMorePosts);
+
+			function fetchMorePosts() {
+			  var _this = this;
+			  var $blogContainer = $("#blog_container");
+			  var nextPage = parseInt($blogContainer.attr("data-curPage")) + 1;
+			  var totalPages = parseInt($blogContainer.attr("data-totalPages"));
+
+			  $(this).addClass("loading");
+			  
+			  $.get("/blog/page" + nextPage, function (data) {
+			    var htmlData = $.parseHTML(data);
+			    var $articles = $(htmlData).find("article");
+
+			    $blogContainer.attr("data-curPage", nextPage).append($articles);
+
+			    if (totalPages == nextPage) {
+			      $(".loadMore").remove();
+			    }
+
+			    $(_this).removeClass("loading");
+			  });  
+			}
+		</script>
 
 	</body>
 </html>
