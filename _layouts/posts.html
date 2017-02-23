@@ -85,9 +85,11 @@
 			  
 			  $.get("/blog/page" + nextPage, function (data) {
 			    var htmlData = $.parseHTML(data);
-			    var $articles = $(htmlData).find("article");
+			    var $articles = $(htmlData).find("article").hide().css("padding-top", "50px");
 
 			    $blogContainer.attr("data-curPage", nextPage).append($articles);
+
+			    $articles.fadeIn({queue: false, duration: 'slow'}).animate({paddingTop: "-40px"}, 'slow');
 
 			    if (totalPages == nextPage) {
 			      $(".loadMore").remove();
