@@ -67,7 +67,7 @@ Now my ideal way of typing in LaTeX is such that I think more about the math and
 
 With this snippet, when I am in a .tex document (the scope), and when I type the keyword 'summ' and press 'TAB', the command for the summation in LaTeX is pasted and my cursor immediately selects ${1:Iterator}. A second press on 'TAB' will send me to ${2:Upper Bound}, and a third 'TAB' will place me after the summation command. The snippet above allows my input of a summation command to sound similar to how it rolls out from my mouth:
 
-#### "The summation from *iterator* to *upper bound* of...\"
+#### The summation from *iterator* to *upper bound* of...
 
 Not sure if the scope in Snippets is not well-documented or I am just blind, but if you wish to look into what options you have (if you are trying to use the snippet in a different context), here is the [Gist](https://gist.github.com/japorized/30bc17f04fbc1494ece3b1e8dcdbc95f) of it (oohh... a random pun).
 
