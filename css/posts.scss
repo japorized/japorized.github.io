@@ -4,6 +4,19 @@
 @import "variables";
 @import "mixins";
 
+/*-- Images --*/
+img {
+    max-width: 100%;
+}
+
+.post_img {
+    margin-bottom: 45px;
+
+    img {
+        margin-bottom: 10px;
+    }
+}
+
 /*-- Styling Embeds --*/
 .video_container {
     position: relative;
@@ -31,8 +44,9 @@
 /*-- Syntax-Highlighting --*/
 .content-section pre {
     padding: 0;
-}
+    margin-bottom: 25px;
 
-pre code {
-    text-align: left;
+    code {
+        text-align: left;    
+    }
 }
