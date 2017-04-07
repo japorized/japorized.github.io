@@ -81,7 +81,7 @@
 
 			  $(this).addClass("loading");
 			  
-			  $.get("/blog/page" + nextPage, function (data) {
+			  $.get("/blog/page/" + nextPage, function (data) {
 			    var htmlData = $.parseHTML(data);
 			    var $articles = $(htmlData).find("article").hide().css("padding-top", "50px");
 
