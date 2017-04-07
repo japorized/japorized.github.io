@@ -22,7 +22,7 @@ And then the spark of idea came: I wonder if I can have a set up on Sublime Text
 
 *** 
 
-### Congifuring my workspace
+### Configuring my workspace
 
 Turns out that [LaTeXTools](https://github.com/SublimeText/LaTeXTools) (see the package on [packagecontrol.io](https://packagecontrol.io/packages/LaTeXTools)) does exactly everything that I needed, along with a nifty Math-Live Preview right in Sublime Text!
 

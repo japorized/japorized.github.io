@@ -52,7 +52,6 @@ start-delay: 200	# Default 200
 delete-delay: 5000	# Default 5000
 lines:			# You can add HTML Tags in the Text
   - text: "Are you afraid of falling hard while you fly high?"
-  - text: "Where’s your will to be weird?"
   - text: "Don't stop dreaming! But do remember that reality matters still."
   - text: "Do you not see that your troubles are simply a microcosm of a whole?"
 
