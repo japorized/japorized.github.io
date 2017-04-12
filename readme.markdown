@@ -5,10 +5,11 @@ Big thanks to [{ PannosSakkos }](https://github.com/PanosSakkos/personal-jekyll-
 
 ### Special thanks to these sources
 * [jQuery](http://jquery.com)
-* JS Image LazyLoad
-* [FontAwesome](http://fontawesome.io)
+* [FontAwesome](http://fontawesome.io) for awesome icons
 * Eduardo Boucas (@eduardoboucas) for the inspiration on Ajaxifying the Blog Index Page
+* [MathJax](https://www.mathjax.org/) for parsing LaTeX
+* [Featherlight](http://noelboss.github.io/featherlight/) as the light lightbox plugin
+* [Loaders.css](https://connoratherton.com/loaders) for the pure css Pacman loader <3
 
 ### Future plans
-* Implement [smoothState.js](https://github.com/miguel-perez/smoothState.js)
-* Maybe a carousel?
+*no plans??*

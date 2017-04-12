@@ -479,29 +479,43 @@ span.read_more {
     transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
 }
 
-span.loadMore {
-    cursor: pointer;
-    border: 1px solid #fff;
-    padding: 10px;
-
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-
-    &:hover {
-        background: #bbb;
-        border-color: #bbb;
-        color: #000;
-    }
-
+div.loadMore {
     &.loading {
         &::after {
           position: absolute;
           left: 0;
           right: 0;
           width: 100%;
-          content: 'Loading...';
           color: #ddd;
         }
     } 
+
+    .loadMore_txt {
+        cursor: pointer;
+        border: 1px solid #fff;
+        padding: 10px 20px;
+
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            background: #bbb;
+            border-color: #bbb;
+            color: #000;
+        }
+    }
+}
+
+/* * * * * * * * * * *
+ *  Featherlight Style Overriding
+ * * * * * * * * * * */
+.featherlight .featherlight-content {
+    background: #0f0f0f;
+    box-shadow: 0px 0px 5px #555;
+
+    .featherlight-close-icon {
+        background: #444;
+        color: #fff;
+    }
 }
