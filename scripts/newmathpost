@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-MATH_DIR = 'mathjourney/'
+MATH_DIR = 'math/'
 
 dir = ARGV[0]
 filename = ARGV[1]
