@@ -4,7 +4,30 @@
 @import "variables";
 @import "mixins";
 
-/*-- Images --*/
+/* * * * * * * * * * *
+ *  Post Header
+ * * * * * * * * * * */
+.post_desc {
+    color: #777;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.title_img {
+    padding-bottom: 75px;
+
+    img {
+        padding-bottom: 20px;
+    }
+
+    figcaption {
+        color: #777;
+    }
+}
+
+/* * * * * * * * * * *
+ *  Post Body - Image Styling
+ * * * * * * * * * * */
 img {
     max-width: 100%;
 }
@@ -18,7 +41,9 @@ img {
     }
 }
 
-/*-- Styling Embeds --*/
+/* * * * * * * * * * *
+ *  Post Body - Embedment Styling
+ * * * * * * * * * * */
 .video_container {
     position: relative;
     width: 100%;
@@ -42,7 +67,9 @@ img {
     padding: 0;
 }
 
-/*-- Syntax-Highlighting --*/
+/* * * * * * * * * * *
+ *  Post Body - Syntax Highlighting
+ * * * * * * * * * * */
 .content-section pre {
     padding: 0;
     margin-bottom: 25px;

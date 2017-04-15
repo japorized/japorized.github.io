@@ -2,13 +2,14 @@
 layout: post
 section-type: post
 title: Setting up LaTeX on Sublime Text
+description: The following is a documentation of my setup for LaTeX on Sublime Text 3, along with what I have tried as I complete my setup up till my current point. Hopefully my experience will give someone an idea as to what they might want to try if they are setting up a workspace for LaTeX.
+title-img: 
+title-img-caption: 
 category: coding
 tags: [ 'sublimetext3', 'latex', 'mactex', 'macos' ]
 ---
 
 I have long developed the habit of keeping handwritten notes for my studies. Even today, I still hold onto my notes for Calculus from more than 3 years ago. But as I continue on further, it does seem more and more cumbersome to bring all of my finalized hard copies with me to wherever I move, even more so with my current nomadic lifestyle, switching between Co-op jobs and studies every term. And so I have decided to give $$\LaTeX$$ a try.
-
-*The following is a documentation of my setup for LaTeX on Sublime Text 3, along with what I have tried as I complete my setup up till my current point. Hopefully my experience will give someone an idea as to what they might want to try if they are setting up a workspace for LaTeX.*
 
 ***
 

@@ -2,6 +2,9 @@
 layout: post
 section-type: post
 title: Site Update 2
+description: 
+title-img: 
+title-img-caption: 
 category: siteupdate
 tags: [ 'siteupdate' ]
 ---

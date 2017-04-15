@@ -396,14 +396,14 @@ body {
     100% { opacity:1; }
 }
 
-/*
- * LaTeX being friendly with kramdown - Jax
- */
+/* * * * * * * * * * *
+ *  LaTeX being friendly with kramdown - Jax
+ * * * * * * * * * * */
 code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
 
-/*
- * Large Fonts Scaling to viewport
- */
+/* * * * * * * * * * *
+ *  Large font scaling to viewport
+ * * * * * * * * * * */
 h1.large-title {
     @include responsive-font(5vw, 30px);
 }
@@ -412,9 +412,9 @@ h1.medium-title {
     @include responsive-font(3vw, 25px);
 }
 
-/*
- * Post Catalog Styles
- */
+/* * * * * * * * * * *
+ *  Post Catalog Styles
+ * * * * * * * * * * */
 #blog_container article {
     -webkit-transition: background .2s ease-in-out;
     -moz-transition: background .2s ease-in-out;

@@ -2,6 +2,9 @@
 layout: post
 section-type: post
 title: First Post!
+description: 
+title-img: 
+title-img-caption: 
 category: personal
 tags: [ 'personal' ]
 ---
