@@ -10,6 +10,8 @@ Big thanks to [{ PannosSakkos }](https://github.com/PanosSakkos/personal-jekyll-
 * [MathJax](https://www.mathjax.org/) for parsing LaTeX
 * [Featherlight](http://noelboss.github.io/featherlight/) as the light lightbox plugin
 * [Loaders.css](https://connoratherton.com/loaders) for the pure css Pacman loader <3
+* [FitText](https://github.com/davatron5000/FitText.js) auto-scaling the font size for the first blog post
+
 
 ### Future plans (More like a potential list of TODO)
 * Remove single pages for math proofs. Will replace with PDF links instead. To simplify work, create an HTML in _includes to take in the raw link for the PDF from the TeX repo, and use the workaround so that the PDF opens up as a new tab with a better view on Google (rather than on the Github display).
