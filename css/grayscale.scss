@@ -55,7 +55,7 @@ a {
 
     &:link, &:visited {
         -webkit-transition: color .2s ease-in-out;
-        moz-transition: color .2s ease-in-out;
+        -moz-transition: color .2s ease-in-out;
         transition: color .2s ease-in-out;
         text-decoration: none;
     }
@@ -397,7 +397,7 @@ body {
 }
 
 /* * * * * * * * * * *
- *  LaTeX being friendly with kramdown - Jax
+ *  LaTeX being friendly with kramdown - MathJax
  * * * * * * * * * * */
 code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
 

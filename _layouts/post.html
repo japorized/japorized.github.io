@@ -27,7 +27,7 @@
 
         {% unless page.title-img == blank %}
         <figure class="title_img">
-          <img src="{{ page.title-img }}" />
+          <img src="/img/posts/{{ page.title-img }}" />
           <figcaption>{{ page.title-img-caption }}</figcaption>
         </figure>
         
@@ -35,7 +35,7 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
+        <div class="post_content col-lg-8 col-lg-offset-2">
 
           {{ page.content | markdownify }}
 

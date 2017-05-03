@@ -14,21 +14,36 @@
 }
 
 .title_img {
-    padding-bottom: 75px;
+    position: relative;
+    margin-bottom: 75px;
+
+    /*This is used to hide the figcaption*/
+    overflow-y: hidden;
 
     img {
-        padding-bottom: 20px;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
     }
 
     figcaption {
-        color: #777;
+        background: rgba(0,0,0, 0.5);
+        width: 100%;
+        padding: 10px 0;
+        color: #eee;
+        text-align: center;
+
+        position: absolute;
+        bottom: 0;
+        margin-bottom: -50px;
+        z-index: 1;
     }
 }
 
 /* * * * * * * * * * *
  *  Post Body - Image Styling
  * * * * * * * * * * */
-img {
+.post_content img {
     max-width: 100%;
 }
 
