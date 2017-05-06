@@ -10,27 +10,40 @@
 
 		<section id="{{ page.title }}" class="text-center" style="padding: 100px 10px 0 10px;">
 			<div class="row">
-				<div class="col-lg-10 col-lg-offset-1">
+				<div class="col-1"></div>
+				<div class="col-10">
 					{{ page.content | markdownify }}
 
 					<div id="blog_container" data-curPage="{{ paginator.page }}" data-totalPages="{{ paginator.total_pages }}">
 
 						{% for post in paginator.posts %}
 							{% if forloop.index0 != 0 or paginator.page != 1 %}
-								<article class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 50px;">
+								{% capture remainder %}{{ forloop.index0 | modulo: 3 }}{% endcapture %}
+
+								{% if remainder == "1" %}
+								<div class="row">
+								{% endif %}
+
+								<article class="col-4" style="margin-bottom: 50px;">
 									<p class="post-info">{{ post.date | date:"%A, %b %d, %Y" }} <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">. {{ post.category | upcase }} .</a> <a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></p>
 
 									<br style="line-height: 20px;" />
 
 									<a class="post_catalog_title" href="{{site.baseurl}}{{post.url}}"><h1 class="medium-title">{{post.title}}</h1>
 
-									<span class="article_excerpt">{{post.excerpt | strip_html | markdownify | truncatewords: 100}}</span>
+									<span class="article_excerpt">{{post.excerpt | strip_html | markdownify | truncatewords: 50}}</span>
 
 									<span class="read_more">Read More</span>
 										</a>
 								</article>
+
+								{% if remainder == "0" or forloop.last %}
+								</div>
+								{% endif %}
+
 							{% else %}
-								<article class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="row">
+								<article class="col-12">
 									<p class="post-info" style="text-align: center;">{{ post.date | date:"%A, %b %d, %Y" }} <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">. {{ post.category | upcase }} .</a> <a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></p>
 
 									<br />
@@ -42,75 +55,50 @@
 									<span class="read_more">Read More</span>
 									</a>
 								</article>
+								</div>
 							{% endif %}
 						{% endfor %}
 
 					</div>
 				</div>
-
-				<div style="clear:both;" />
-				{% assign postCount = site.posts | size %}
-				{% assign postsCovered = site.paginate | plus:offset %}
-				{% if postsCovered < postCount %}
-				  <div class="col-lg-offset-5 col-lg-2 col-md-offset-5 col-md-2 col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8 loader loadMore">
-				  	<span class="loadMore_txt">Load more posts</span>
-				  	<div class="pacman" style="display: none;">
-				  		<div></div>
-				  		<div></div>
-				  		<div></div>
-				  		<div></div>
-				  		<div></div>
-				  	</div>
-				  </div>
-				{% endif %}
+				<div class="col-1"></div>
 			</div>
+
+			<div style="clear:both;" />
+
+			{% assign postCount = site.posts | size %}
+			{% assign postsCovered = site.paginate | plus:offset %}
+			{% if postsCovered < postCount %}
+			<div class="row">  
+			  <div class="col-3"></div>
+			  <div class="col-6 loader loadMore">
+			  	<span class="loadMore_txt">Load more posts</span>
+			  	<div class="pacman" style="display: none;">
+			  		<div></div>
+			  		<div></div>
+			  		<div></div>
+			  		<div></div>
+			  		<div></div>
+			  	</div>
+			  </div>
+			  <div class="col-3"></div>
+			</div>
+			{% endif %}
 		</section>
 
 		<section id="{{ page.title }}" class="container content-section text-center">
 			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
+				<div class="col-2"></div>
+				<div class="col-8">
 					{% include social-buttons.html %}
 				</div>
+				<div class="col-2"></div>
 			</div>
 		</section>
 
 		{% include footer.html %}
 
 		{% include js.html %}
-
-		<script type="text/javascript">
-		// Inspired by Eduardo Boucas (@eduardoboucas)
-		$(".loadMore").click(fetchMorePosts);
-
-		function fetchMorePosts() {
-		  var _this = this;
-		  var $blogContainer = $("#blog_container");
-		  var nextPage = parseInt($blogContainer.attr("data-curPage")) + 1;
-		  var totalPages = parseInt($blogContainer.attr("data-totalPages"));
-
-		  $(this).addClass("loading");
-		  $(this).find(".loadMore_txt").hide().end().find(".pacman").css('display', 'block');
-		  
-		  window.setTimeout(function(){
-		  	$.get("/blog/page" + nextPage + "/", function (data) {
-			    var htmlData = $.parseHTML(data);
-			    var $articles = $(htmlData).find("article").hide().css("padding-top", "50px");
-
-			    $blogContainer.attr("data-curPage", nextPage).append($articles);
-
-			    $articles.fadeIn({queue: false, duration: 'slow'}).animate({paddingTop: "-40px"}, 'slow');
-
-			    if (totalPages == nextPage) {
-			      $(".loadMore").remove();
-			    }
-
-			    $(_this).find(".pacman").css('display', 'none').end().find(".loadMore_txt").show();
-			    $(_this).removeClass("loading");
-			  });  
-
-		  }, 1500);
-		}
-		</script>
 
 	</body>
 </html>

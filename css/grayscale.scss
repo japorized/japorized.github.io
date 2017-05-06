@@ -10,10 +10,24 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+ * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+ }
+
+ :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+ }
+
 body {
     width: 100%;
     height: 100%;
-    font-family: "Cormorant+Garamond", serif, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0;
+    font-family: "Cormorant+Garamond", serif, "Helvetica Neue", Helvetica,Arial,sans-serif;
+    font-size: 14px;
     color: $light;
     background-color: $dark;
 }
@@ -34,12 +48,46 @@ h6 {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
+
+    small {
+        font-size: 75%;
+        font-weight: 400;
+        line-height: 1;
+        color: #777;
+    }
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+h4 {
+
+    font-size: 1.8rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+    margin: 5px 0;
 }
 
 p {
     margin: 0 0 25px;
     font-size: 18px;
     line-height: 1.5;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
 }
 
 @media(min-width:767px) {
@@ -79,68 +127,117 @@ ol {
   list-style-position: inside;
 }
 
-.navbar-custom {
-    margin-bottom: 0;
-    border-bottom: 1px solid rgba($light, 0.3);
+.fixed {
+    z-index: 101;
+}
+
+.nav {
+    background: #000;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: $dark;
-    .navbar-brand {
-        font-weight: 700;
-            &:focus {
-                outline: none;
-            }
-        .navbar-toggle {
-            padding: 4px 6px;
-            font-size: 16px;
-                color: $light;
-                &:focus,
-                &:active {
-                    outline: none;
-                }
-        }
-    }
+    margin: 0;
+    letter-spacing: 1px;
+    padding: 13px 30px;
+
     a {
         color: $light;
     }
-    .nav {
-        li {
-            &.active {
-            outline: nonte;
-			background-color: rgba($light, 0.3);
+
+    .nav-logo {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .nav-items {
+        position: absolute;
+        margin: 0;
+        right: 30px;
+        line-height: 20px;
+        font-size: 14px;
+
+        .nav-item {
+            padding: 15px 2rem;
         }
-            a {
-                -webkit-transition: background .3s ease-in-out;
-                -moz-transition: background .3s ease-in-out;
-                transition: background .3s ease-in-out;
-                &:hover,
-                &:focus,
-                &.active {
-                    outline: none;
-                    background-color: rgba($light, 0.3);
-                }
+
+        a {
+            -webkit-transition: background .3s ease-in-out;
+            -moz-transition: background .3s ease-in-out;
+            transition: background .3s ease-in-out;
+            &:hover,
+            &:focus,
+            &.active {
+                outline: none;
+                background-color: rgba($light, 0.3);
             }
         }
     }
 }
 
-@media(min-width:767px) {
-    .navbar {
-        padding: 20px 0;
-        border-bottom: none;
+.nav-items.hide-largeScreen {
+    right: 45px;
+    margin-top: 2px;
+
+    span.menu-dropdown {
+        display: block !important;
+        cursor: pointer;
+    }
+}
+
+.smallScreen-menu { /* This should be hidden by default */
+    display: none;
+}
+
+ul.smallScreen-menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: $dark;
+    z-index: 1000;
+
+    a {
+        text-transform: uppercase;
+        color: $light;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
         letter-spacing: 1px;
+
+        &:hover {
+            li {
+                -webkit-transition: background .3s ease-in-out;
+                -moz-transition: background .3s ease-in-out;
+                transition: background .3s ease-in-out;
+                background: rgba($light, 0.3);
+            }
+        }
+    }
+
+    li {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgba($light, 0.3);
+        text-align: center;
+    }
+}
+
+@media(min-width:767px) {
+    .hide-largeScreen {
+        display: none;
+    }
+
+    .nav {
+        border-bottom: none;
         background: transparent;
+        padding: 30px;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
     }
 
     .top-nav-collapse {
-        padding: 0;
+        padding: 13px 30px;
         background-color: $dark;
     }
 
-    .navbar-custom.top-nav-collapse {
+    .nav.top-nav-collapse {
         border-bottom: 1px solid rgba($light, 0.3);
     }
 }
@@ -223,6 +320,16 @@ ol {
             -webkit-animation-timing-function: linear;
             -moz-animation-timing-function: linear;
         }
+    }
+}
+
+.inline-list {
+    padding: 0;
+    list-style: none;
+    display: inline-flex;
+
+    li {
+        padding: 0 5px 0 5px;
     }
 }
 
@@ -505,6 +612,10 @@ div.loadMore {
             color: #000;
         }
     }
+}
+
+.pacman {
+    margin-left: 40%;
 }
 
 /* * * * * * * * * * *
