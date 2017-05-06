@@ -38,7 +38,7 @@
     float: right;
     position: relative;
     width: 100%;
-    padding: 0 20px 0 100px;
+    padding: 5px 20px 0 100px;
     text-align: left;
 }
 
@@ -69,6 +69,17 @@
     color: #fff;
     background-color: #f1f1f1;
     overflow: hidden;
+
+    img {
+        &.img-responsive {
+            max-width: 100%;
+            height: auto;
+        }
+
+        &.img-circle {
+            border-radius: 50%;
+        }
+    }
 }
 
 .img-me {
@@ -98,7 +109,7 @@
 
 .timeline>li.timeline-inverted>.timeline-panel {
     float: right;
-    padding: 0 20px 0 100px;
+    padding: 5px 20px 0 100px;
     text-align: left;
 }
 
@@ -147,8 +158,8 @@
 
     .timeline>li .timeline-panel {
         float: left;
-        width: 41%;
-        padding: 0 20px 20px 30px;
+        width: 38%;
+        padding: 5px 20px 20px 30px;
         text-align: right;
     }
 
@@ -179,7 +190,7 @@
 
     .timeline>li.timeline-inverted>.timeline-panel {
         float: right;
-        padding: 0 30px 20px 20px;
+        padding: 5px 30px 20px 20px;
         text-align: left;
     }
 }
@@ -190,7 +201,7 @@
     }
 
     .timeline>li .timeline-panel {
-        padding: 0 20px 20px;
+        padding: 5px 20px 20px;
     }
 
     .timeline>li .timeline-image {
@@ -217,7 +228,7 @@
     }
 
     .timeline>li.timeline-inverted>.timeline-panel {
-        padding: 0 20px 20px;
+        padding: 5px 20px 20px;
     }
 }
 
@@ -227,7 +238,7 @@
     }
 
     .timeline>li .timeline-panel {
-        padding: 0 20px 20px 100px;
+        padding: 5px 20px 20px 100px;
     }
 
     .timeline>li .timeline-image {
@@ -250,6 +261,6 @@
     }
 
     .timeline>li.timeline-inverted>.timeline-panel {
-        padding: 0 100px 20px 20px;
+        padding: 5px 100px 20px 20px;
     }
 }

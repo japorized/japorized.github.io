@@ -6,10 +6,10 @@
 
 // jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
-    if ($(".navbar").offset().top > 50) {
-        $(".navbar-fixed-top").addClass("top-nav-collapse");
+    if ($(".nav").offset().top > 50) {
+        $(".nav").addClass("top-nav-collapse");
     } else {
-        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+        $(".nav").removeClass("top-nav-collapse");
     }
 });
 
@@ -25,7 +25,20 @@ $(function() {
     });
 });
 
+// Creating a function that toggles between clicks
+jQuery.fn.clickToggle = function(a,b) {
+  function cb(){ [b,a][this._tog^=1].call(this); }
+  return this.on("click", cb);
+};
+
 // Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
+$(".menu-dropdown").clickToggle(function() {
+    $(".smallScreen-menu").slideDown('fast');
+}, function() {
+    $(".smallScreen-menu").slideUp('fast');
+});
+
+$(".smallScreen-menu-list li").click(function(e) {
+    e.preventDefault();
+    $(".smallScreen-menu").slideUp('fast');
 });
