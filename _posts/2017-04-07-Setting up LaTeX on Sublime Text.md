@@ -5,6 +5,7 @@ title: Setting up LaTeX on Sublime Text
 description: The following is a documentation of my setup for LaTeX on Sublime Text 3, along with what I have tried as I complete my setup up till my current point. Hopefully my experience will give someone an idea as to what they might want to try if they are setting up a workspace for LaTeX.
 title-img: 
 title-img-caption: 
+image-folder: Setting-up-LaTeX-on-Sublime-Text/
 category: coding
 tags: [ 'sublimetext3', 'latex', 'mactex', 'macos' ]
 ---
@@ -27,7 +28,7 @@ And then the spark of idea came: I wonder if I can have a set up on Sublime Text
 
 Turns out that [LaTeXTools](https://github.com/SublimeText/LaTeXTools) (see the package on [packagecontrol.io](https://packagecontrol.io/packages/LaTeXTools)) does exactly everything that I needed, along with a nifty Math-Live Preview right in Sublime Text!
 
-{% include image.html src="Setting-up-LaTeX-on-Sublime-Text/latex_math-live_sample.png" caption="Working sample of Math-Live Preview, featuring Riemann-ian Integration and the famous Dirichlet function." %}
+{% include image.html src="latex_math-live_sample.png" caption="Working sample of Math-Live Preview, featuring Riemann-ian Integration and the famous Dirichlet function." %}
 
 In order for the Math-Live Preview to work, I needed Ghostscript. The wiki on LaTeXTools says that it should come with the full distribution of MacTex but running 'which gs' showed me no result in my Terminal. So I installed Ghostscript using Homebrew. The only thing extra to do is to point LaTeXTools to where Ghostscript is installed on my machine, which was not difficult.
 
@@ -44,7 +45,7 @@ Now it would be nice if I can also look at the exported PDF alongside my code wh
 
 With that done, I now have the following workspace:
 
-{% include image.html src="Setting-up-LaTeX-on-Sublime-Text/latex_workspace_sample.png" caption="The Workspace and a happy man" %}
+{% include image.html src="latex_workspace_sample.png" caption="The Workspace and a happy man" %}
 
 ***
 

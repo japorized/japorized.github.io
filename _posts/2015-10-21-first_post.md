@@ -5,6 +5,7 @@ title: First Post!
 description: 
 title-img: 
 title-img-caption: 
+image-folder:
 category: personal
 tags: [ 'personal' ]
 ---

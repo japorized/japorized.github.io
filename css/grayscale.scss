@@ -137,84 +137,64 @@ ol {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     margin: 0;
     letter-spacing: 1px;
-    padding: 13px 30px;
+    padding: 0;
 
     a {
         color: $light;
+        font-weight: 700;
+        line-height: 20px;
     }
 
     .nav-logo {
-        font-weight: 700;
         font-size: 16px;
-        line-height: 20px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 15px 10px;
     }
 
     .nav-items {
-        position: absolute;
-        margin: 0;
-        right: 30px;
-        line-height: 20px;
-        font-size: 14px;
-
-        .nav-item {
-            padding: 15px 2rem;
-        }
-
-        a {
-            -webkit-transition: background .3s ease-in-out;
-            -moz-transition: background .3s ease-in-out;
-            transition: background .3s ease-in-out;
-            &:hover,
-            &:focus,
-            &.active {
-                outline: none;
-                background-color: rgba($light, 0.3);
-            }
-        }
+        width: 100%;
+        margin-top: 10px;
     }
+    
 }
 
-.nav-items.hide-largeScreen {
-    right: 45px;
-    margin-top: 2px;
-
-    span.menu-dropdown {
-        display: block !important;
-        cursor: pointer;
-    }
+span.menu-dropdown {
+    cursor: pointer;
+    margin-right: 15px;
 }
 
-.smallScreen-menu { /* This should be hidden by default */
-    display: none;
-}
-
-ul.smallScreen-menu-list {
+.menu-items {
     list-style: none;
+    position: relative;
+    z-index: 1000;
     margin: 0;
     padding: 0;
-    background: $dark;
-    z-index: 1000;
+    text-align: center;
 
     a {
-        text-transform: uppercase;
-        color: $light;
-        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-        letter-spacing: 1px;
+        padding: 0;
+
+        li {
+            border-bottom: 0.5px solid rgba($light, 0.3);
+        }
 
         &:hover {
             li {
                 -webkit-transition: background .3s ease-in-out;
                 -moz-transition: background .3s ease-in-out;
                 transition: background .3s ease-in-out;
-                background: rgba($light, 0.3);
+                outline: none;
+                background-color: rgba($light, 0.3);
             }
         }
     }
+    
 
     li {
-        padding: 10px 20px;
-        border-bottom: 1px solid rgba($light, 0.3);
-        text-align: center;
+        width: 100%;
+        padding: 10px 15px;
     }
 }
 
@@ -230,6 +210,59 @@ ul.smallScreen-menu-list {
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
+        display: flex;
+        justify-content: space-between;
+
+        .nav-logo {
+            width: auto;
+            padding: 0;
+        }
+
+        .nav-items {
+            width: auto;
+            line-height: 20px;
+            font-size: 14px;
+            margin: 0;
+            background: transparent;
+            position: absolute;
+            right: 0;
+
+            .nav-item {
+                padding: 15px 2rem;
+            }
+
+            a {
+                -webkit-transition: background .3s ease-in-out;
+                -moz-transition: background .3s ease-in-out;
+                transition: background .3s ease-in-out;
+                &:hover,
+                &:focus,
+                &.active {
+                    outline: none;
+                    background-color: rgba($light, 0.3);
+                }
+            }
+
+            .menu-items {
+                text-align: right;
+
+                a:hover {
+                    -webkit-transition: background .3s ease-in-out;
+                    -moz-transition: background .3s ease-in-out;
+                    transition: background .3s ease-in-out;
+                    background: rgba($light, 0.3);
+
+                    li {
+                        background: transparent;
+                    }
+                }
+
+                li {
+                    display: inline;
+                    border-bottom: none;
+                }
+            }
+        }        
     }
 
     .top-nav-collapse {
