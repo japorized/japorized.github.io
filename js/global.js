@@ -1,6 +1,4 @@
-$(document).ready(function() {
-
-	// Inspired by Eduardo Boucas (@eduardoboucas)
+// Inspired by Eduardo Boucas (@eduardoboucas)
 	$(".loadMore").click(fetchMorePosts);
 
 	function fetchMorePosts() {
@@ -31,6 +29,8 @@ $(document).ready(function() {
 
 	  }, 1500);
 	}
+
+$(document).ready(function() {
 
 	// Lazyload Initiate
 	$("img.lazy").lazyload({

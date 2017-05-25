@@ -114,6 +114,10 @@ a {
     }
 }
 
+.col, [class*=" col-"], [class^=col-] {
+    overflow: auto;
+}
+
 .light {
     font-weight: 400;
 }
