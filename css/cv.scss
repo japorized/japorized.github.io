@@ -4,231 +4,58 @@
 @import "variables";
 @import "mixins";
 
-h1#cv_header {
-    font-weight: bold;
-    font-size: 40px;
-    text-align: center;
-    border-bottom: 0.5px solid #ccc;
-    position: relative;
-  }
+// Generics
 
-  .section-container {
-    margin-bottom: 50px;
-    padding: 40px;
-    text-align: center;
-  }
-
-  .my_picture {
-    vertical-align: top;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-  }
-
-  .my_details {
-    vertical-align: top;
-    font-size: 13px;
-    text-align: left;
-    padding-left: 20px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-
-    h1 {
-        font-weight: bold;
-        font-size: 30px;
-        line-height: 30px;
-        -webkit-margin-after: 0px;
-    }
-
-    span {
-        font-size: 10px;
-        color: #00a0dd;
-    }
-
-    ul {
-        list-style: none;
-        margin: 0;
-        margin-top: 10px;
-        -webkit-padding-start: 0px;
-
-        li.label-left {
-            float: left;
-            width: 110px;
-        }
-    }
-  }
-
-.visible-xs {
-    .my_details {
-        text-align: center;
-        padding-left: 0;
-        
-        h5 {
-            // correcting user agent stylesheet
-            -webkit-margin-after: 5px;
-            -webkit-margin-before: 10px;
-        }
-    }
+.center {
+  text-align: center;
 }
 
-  .skillstab {
-      .skill_tab {
-          text-align: center;
-          
-          &.skill_dev, &.skill_des {
-              padding: 10px 20px;
-          }
-          
-          &.m_skill_dev, &.m_skill_des {
-              padding: 10px 10px;
-          }
-          
-          display: inline-block;
-          border: .5px solid #ddd;
-          -webkit-border-radius: 10px;
-          -moz-border-radius: 10px;
-          -o-border-radius: 10px;
-          border-radius: 10px;
-          cursor: pointer;
-          background: $dark;
-          color: $light;
-          -webkit-transition: all 0.2s ease-in-out;
-          -moz-transition: all 0.2s ease-in-out;
-          -o-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out;
-            
-          &:active, &.skill_active {
-              background: $light;
-              color: $dark;
-              -webkit-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
-              -moz-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
-              -o-box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
-              box-shadow: inset 0px 0px 5px 5px rgba(178, 178, 178, 0.3);
-          }
+// Headers
 
-          &:hover {
-              background: $light;
-              color: $dark;
-              -webkit-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
-              -moz-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
-              -o-box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
-              box-shadow: inset 0px 0px 3px 3px rgba(178, 178, 178, 0.1);
-        }
-      }
+h5 {
+  border-bottom: 1px dotted #ddd;
+}
+
+// Hobby Items
+
+.hobby-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hobby-item {
+  border: 1px solid #fff;
+  padding: 20px;
+  height: 90px;
+  width: 90px;
+  vertical-align: middle;
+  border-radius: 50%;
+  text-align: center;
+  margin: 5px;
+
+  span.fa {
+    font-size: 36px;
   }
+}
 
+// Masonry Grid
 
-  /*
-   * Pies
-   */
-    .outer_pieContainer {
-        display: inline-block;
-    }
+.grid-item--width1 {
+  width: 100%;
+}
 
-    .pieContainer {
-        position: relative;
-        width: $pie-width;
-        height: $pie-height;
-        padding-top: 20px;
-        margin: 10px auto;
-    }
-    .pieBackground {
-        z-index: 2;
-        background: $dark;
-        height: $pie-height - 25px;
-        width: $pie-width - 25px;
-        position: absolute;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -o-border-radius: 50%;
-        border-radius: 50%;
-        margin-top: 12.5px;
-        margin-left: 12.5px;
-    }
-    .pieDesc {
-        position: absolute;
-        font-size: 12px;
-        height: $pie-height;
-        width: $pie-width;
-        padding: 10px;
-        z-index: 3;
-        display: table;
+.grid .grid-item {
+  padding: 10px;
+  text-align: left;
+  margin-bottom: 10px;
+}
 
-        span {
-            display: table-cell;
-            color: $light;
-            font-weight: bold;
-            text-align: center;
-            vertical-align: middle;
-        }
-    }
-    .half1 {
-        position: absolute;
-        height: $pie-height;
-        width: $pie-width;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -o-border-radius: 50%;
-        border-radius: 50%;
-    }
-    .half2 {
-        -webkit-transform: rotate(180deg);
-        -moz-transform: rotate(180deg);
-        -o-transform: rotate(180deg);
-        transform: rotate(180deg);
-    }
-    .pie-mask {
-        position: absolute;
-        height: $pie-height;
-        width: $pie-width;
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -o-border-radius: 50%;
-        border-radius: 50%;
-    }
-    .pie {
-        background: $dark;
-        position: absolute;
-        height: $pie-height;
-        width: $pie-width;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -o-border-radius: 50%;
-        border-radius: 50%;
-        clip: rect(0, 75px, 150px, 0);
-    }
+.grid-item--width2 {
+  width: 100%;
+}
 
-    /*
-     * Bars
-     */
-
-    .outer_barContainer {
-        text-align: left;
-        display: none;
-        
-        div {
-            &.label-left {
-                vertical-align: middle;
-                font-weight: bold;
-                font-size: 14px;
-                line-height: 14px;
-                margin-bottom: 5px;
-            }
-            
-            &.skill-bar {
-                background-color: #2e2e2e;
-                border: 1px solid #3f3f3f;
-                padding: 0;
-                margin-bottom: 20px;
-                
-                div.skill-width {
-                    height: 14px;
-                }
-            }
-        }
-        
-    }
+@media(min-width: 767px) {
+  .grid-sizer, .grid-item--width2 {
+    width: 50%;
+  }
+}

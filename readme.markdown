@@ -14,6 +14,7 @@ I have since changed the CSS framework of the site to use WingCSS instead of Twi
 * [Featherlight](http://noelboss.github.io/featherlight/) as the light lightbox plugin
 * [Loaders.css](https://connoratherton.com/loaders) for the pure css Pacman loader <3
 * [FitText](https://github.com/davatron5000/FitText.js) auto-scaling the font size for the first blog post
+* [Masonry](https://masonry.desandro.com) for the masonry layout and methods
 
 
 ### Future plans (More like a potential list of TODO)

@@ -115,7 +115,7 @@ a {
 }
 
 .col, [class*=" col-"], [class^=col-] {
-    overflow: auto;
+    overflow-x: auto;
 }
 
 .light {
@@ -673,6 +673,8 @@ div.loadMore {
  *  Masonry Grid for Blog Catalog
  * * * * * * * * * * */
 .grid:after {
+    content: '';
+    display: block;
     clear: both;
 }
 
@@ -680,6 +682,8 @@ div.loadMore {
     width: 100%;
     margin-bottom: 50px;
 }
+
+.grid-item--width2 { width: 40% }
 
 @media(min-width: 767px) {
     .grid-sizer, .grid-item { width: 33.33% }
