@@ -66,10 +66,15 @@ $(".menu-dropdown").click(function(event) {
 //      in the small screen, it will not reappear in the large screen.
 $(window).on('resize', function(event) {
     event.preventDefault();
+    var displayProperty = $(".nav-items").css("display");
 
     if ($(window).width() > 767) {
-        if ( $(".nav-items").css("display") == "none" ) {
+        if ( displayProperty == "none" ) {
             $(".nav-items").css("display", "block");
+        }
+    } else {
+        if ( displayProperty == "block" ) {
+            $(".nav-items").css("display", "none");
         }
     }
 });

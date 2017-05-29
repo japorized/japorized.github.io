@@ -594,7 +594,7 @@ span.article_excerpt {
 }
 
 p.post-info {
-    text-align: left;
+    text-align: center;
     line-height: 1em;
     margin: 0;
     font-size: 14px;
@@ -638,6 +638,7 @@ div.loadMore {
         cursor: pointer;
         border: 1px solid #fff;
         padding: 10px 20px;
+        line-height: 40px;
 
         -webkit-transition: all .2s ease-in-out;
         -moz-transition: all .2s ease-in-out;
@@ -666,4 +667,21 @@ div.loadMore {
         background: #444;
         color: #fff;
     }
+}
+
+/* * * * * * * * * * *
+ *  Masonry Grid for Blog Catalog
+ * * * * * * * * * * */
+.grid:after {
+    clear: both;
+}
+
+.grid-sizer, .grid-item {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+@media(min-width: 767px) {
+    .grid-sizer, .grid-item { width: 33.33% }
+    .grid-item--width2 { width: 40% }
 }

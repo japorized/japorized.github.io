@@ -17,14 +17,13 @@
 					<div id="blog_container" data-curPage="{{ paginator.page }}" data-totalPages="{{ paginator.total_pages }}">
 
 						{% for post in paginator.posts %}
-							{% if forloop.index0 != 0 or paginator.page != 1 %}
-								{% capture remainder %}{{ forloop.index0 | modulo: 3 }}{% endcapture %}
-
-								{% if remainder == "1" %}
-								<div class="row">
+							{% if forloop.index0 != 0 %}
+								{% if forloop.index0 == 1 %}
+								<div class="grid">
+									<div class="grid-sizer"></div>
 								{% endif %}
 
-								<article class="col-4" style="margin-bottom: 50px;">
+								<article class="grid-item">
 									<p class="post-info">{{ post.date | date:"%A, %b %d, %Y" }} <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">. {{ post.category | upcase }} .</a> <a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></p>
 
 									<br style="line-height: 20px;" />
@@ -37,7 +36,7 @@
 										</a>
 								</article>
 
-								{% if remainder == "0" or forloop.last %}
+								{% if forloop.last %}
 								</div>
 								{% endif %}
 
