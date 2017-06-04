@@ -1,16 +1,12 @@
-/*!
- * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
 // jQuery to collapse the navbar on scroll
+
 $(window).scroll(function() {
     if ($(".nav").offset().top > 50) {
         $(".nav").addClass("top-nav-collapse");
     } else {
         $(".nav").removeClass("top-nav-collapse");
     }
+
 });
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
@@ -23,6 +19,7 @@ $(function() {
         , function(){ $anchor.blur(); });
         event.preventDefault();
     });
+
 });
 
 // Creating a function that toggles between clicks
