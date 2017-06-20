@@ -142,6 +142,7 @@ ol {
     margin: 0;
     letter-spacing: 1px;
     padding: 0;
+    z-index: 1000;
 
     a {
         color: $light;
@@ -172,7 +173,6 @@ span.menu-dropdown {
 .menu-items {
     list-style: none;
     position: relative;
-    z-index: 1000;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -210,7 +210,7 @@ span.menu-dropdown {
     .nav {
         border-bottom: none;
         background: transparent;
-        padding: 30px;
+        padding: $lg-nav-padding;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -224,7 +224,7 @@ span.menu-dropdown {
 
         .nav-items {
             width: auto;
-            line-height: 20px;
+            line-height: $lg-nav-item-line-height;
             font-size: 14px;
             margin: 0;
             background: transparent;
@@ -270,11 +270,8 @@ span.menu-dropdown {
     }
 
     .top-nav-collapse {
-        padding: 13px 30px;
+        padding: $lg-nav-collapsed-vertical-padding $lg-nav-padding;
         background-color: $dark;
-    }
-
-    .nav.top-nav-collapse {
         border-bottom: 1px solid rgba($light, 0.3);
     }
 }

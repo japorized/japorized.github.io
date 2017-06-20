@@ -10,6 +10,17 @@
 
     {% include navigation.html %}
 
+    <div class="big-paginations">
+
+    <div class="paginate-newer"> <div>Newer</div> </div>
+    <div class="paginate-older"> <div>Older</div> </div>
+    <div class="paginate-hovered-title">
+      <h1 class="paginate-upcoming-title"></h1>
+      <br />
+      <span class="paginate-upcoming-description"></span>
+    </div>
+    </div>
+
     <section id="{{ page.title }}" class="container content-section text-center">
       <div class="row">
         <div class="col-1"></div>
@@ -71,6 +82,54 @@
     {% include footer.html %}
 
     {% include js.html %}
+
+    <script>
+    {% if page.next.id == nil %}
+    $(".paginate-newer").hide();
+    {% else %}
+    $(".paginate-newer")
+      .click(function(event) {
+        window.location.href = "{{site.baseurl}}{{page.next.url}}";
+      })
+      .stop()
+      .hover(function() {
+          $(".paginate-hovered-title").fadeIn('fast');
+          $(".paginate-upcoming-title").html("Next Post: {{page.next.title}}")
+          $(".paginate-upcoming-description").text("{{page.next.description}}");
+        }, function() {
+          $(".paginate-hovered-title").hide();
+    });
+
+    $("body").keydown(function(e) {
+      if( e.keyCode == 37 ) { // left
+        window.location.href = "{{site.baseurl}}{{page.next.url}}";
+      }
+    });
+    {% endif %}
+
+    {% if page.previous.id == nil %}
+    $(".paginate-older").hide();
+    {% else %}
+    $(".paginate-older")
+      .click(function(event) {
+        window.location.href = "{{site.baseurl}}{{page.previous.url}}";
+      })
+      .stop()
+      .hover(function() {
+          $(".paginate-hovered-title").fadeIn('fast');
+          $(".paginate-upcoming-title").html("Previous Post: {{page.previous.title}}")
+          $(".paginate-upcoming-description").text("{{page.previous.description}}");
+      }, function() {
+          $(".paginate-hovered-title").hide();
+    });
+
+    $("body").keydown(function(e) {
+      if( e.keyCode == 39 ) { // right
+        window.location.href = "{{site.baseurl}}{{page.previous.url}}";
+      }
+    });
+    {% endif %}
+    </script>
 
   </body>
 </html>
