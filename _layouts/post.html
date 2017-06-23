@@ -101,7 +101,7 @@
     });
 
     $("body").keydown(function(e) {
-      if( e.keyCode == 37 ) { // left
+      if( e.keyCode == 37 && $(".search").css('display') == "none" ) { // left
         window.location.href = "{{site.baseurl}}{{page.next.url}}";
       }
     });
@@ -124,7 +124,7 @@
     });
 
     $("body").keydown(function(e) {
-      if( e.keyCode == 39 ) { // right
+      if( e.keyCode == 39 && $(".search").css('display') == "none" ) { // right
         window.location.href = "{{site.baseurl}}{{page.previous.url}}";
       }
     });

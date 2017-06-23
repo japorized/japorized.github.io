@@ -30,6 +30,7 @@
 					{% for p in site.pages_list %}
 						<a class="page-scroll nav-item" href="#{{ p[0] }}"><li>{{ p[0] }}</li></a> 
 					{% endfor %}
+						<a class="nav-item searchBtn"><li class="hide-largeScreen">Search</li></a>
 
 				{% elsif page.section-type == "blog" or page.section-type == "post" or page.section-type == "tag" or page.section-type == "category" %}
 				<!-- Blog, Post, Tag, and Category pages -->
@@ -45,6 +46,7 @@
 							<a class="page-scroll nav-item" href="{{ site.baseurl }}/index.html#{{ p[1] }}"><li>{{ p[0] }}</li></a>
 						{% endif %}
 					{% endfor %}
+					<a class="nav-item searchBtn"><li class="hide-largeScreen">Search</li></a>
 				{% else %}
 				<!-- About and Default pages -->
 					{% for p in site.pages_list %}
@@ -59,11 +61,15 @@
 							<a class="page-scroll nav-item" href="{{ site.baseurl }}/index.html#{{ p[1] }}"><li>{{ p[0] }}</li></a>
 						{% endif %}
 					{% endfor %}
+					<a class="nav-item searchBtn"><li class="hide-largeScreen">Search</li></a>
 				{% endif %}
 			</ul>
 		</div>
 		<div style="clear: both"></div>
 
+	</div>
+	<div class="search">
+		{% include search.html %}
 	</div>
 </div>
 
