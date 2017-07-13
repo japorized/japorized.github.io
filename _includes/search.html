@@ -1,10 +1,15 @@
-<center><h2>Search Blog</h2></center>
-<form action="get" id="site_search">
-	<center>
-	  <input style="font-size:20px;" type="text" id="search_box" placeholder="Enter query here...">
-	</center>
-</form>
-<br/>&nbsp;
-<br/>&nbsp;
+<div class="search">
+	<form action="get" id="site_search">
+		<center>
+		  <input style="font-size:20px;" type="text" id="search_box" placeholder="Enter query here..." autocomplete="off">
+		</center>
+	</form>
 
-<ul id="search_results"></ul>
+	<p>Search by</p>
+	<div class="search-suggestions">
+		<a href="{{site.baseurl}}/tags/">Tags</a>
+		<a href="{{site.baseurl}}/categories/">Categories</a>
+	</div>
+
+	<ul id="search_results"></ul>
+</div>

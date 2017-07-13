@@ -240,14 +240,25 @@ span.menu-dropdown {
     padding: 20px;
     border: .1px solid rgba($light, 0.3);
     border-radius: 5px;
+    font-size: 20px;
     display: none;
+    text-align: center;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+    p {
+        font-weight: 700;
+        margin: 0;
+        text-transform: uppercase;
+    }
 
     #site_search #search_box {
         font-size: 30px;
         background: transparent;
-        border-width: 0 0 1px 0;
+        border-width: 0 0 3px 0;
+        border-radius: 0;
         color: #fff;
         font-style: italic;
+        text-align: left;
 
         &:hover, &:focus {
             border-color: $primary;
@@ -260,18 +271,23 @@ span.menu-dropdown {
 
     #search_results {
         list-style: none;
-        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 25px;
         font-weight: 700;
-        text-align: center;
         text-transform: uppercase;
         padding: 0;
-        margin: 0;
+        margin: 40px 0 0 0;
+        display: none;
 
         li {
             margin: 8px 0;
         }
     }
+}
+
+.search-suggestions {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
 }
 
 @media(min-width:767px) {

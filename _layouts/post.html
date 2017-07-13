@@ -21,7 +21,7 @@
     </div>
     </div>
 
-    <section id="{{ page.title }}" class="container content-section text-center">
+    <section id="{{ page.title }}" class="container content-section text-center" href="http://google.com">
       <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
@@ -31,6 +31,7 @@
             {% for tag in page.tags %}
               <a href="{{site.baseurl}}/tags/{{tag}}.html">#{{ tag }}</a>
             {% endfor %}
+
             </small>
           </h4>
         </div>
@@ -47,12 +48,24 @@
       {% endunless %}
 
       {% unless page.title-img == blank %}
-      <figure class="title_img">
-        <img src="/img/posts/{{ page.title-img }}" />
-        <figcaption>{{ page.title-img-caption }}</figcaption>
-      </figure>
+        {% assign a = page.title-img | slice: 0, 4 %}
+
+        {% if a != 'http' %}
+          <figure class="title_img">
+            <div style="position:absolute; left:50%;">
+              <img id="title_img" src="/img/posts/{{ page.title-img }}" />
+            </div>
+            <figcaption>{{ page.title-img-caption }}</figcaption>
+          </figure>
+        {% else %}
+          <figure class="title_img">
+            <img id="title_img" src="{{ page.title-img }}" />
+            <figcaption>{{ page.title-img-caption }}</figcaption>
+          </figure>
+        {% endif %}
       {% endunless %}
     
+      <div style="clear: both"></div>
 
       <div class="row">
         <div class="col-1 hide-phone"></div>

@@ -3,8 +3,20 @@
 //
 var $title_img = $(".title_img");
 
-// Adjust height of the div to fit the height of the image
-$title_img.height( $title_img.children('img').height() );
+function adjustHeight() {
+	$("#title_img").on('load', function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		// Adjust height of the div to fit the height of the image
+		var childImgHeight = $(this).height();
+		$title_img.height(childImgHeight);
+	});
+}
+
+window.onload = adjustHeight();
+$(document).ready(function(){
+	adjustHeight();
+});
 
 // Hover Action: Slide up to display caption, slide down to hide caption
 $title_img.hover(function() {

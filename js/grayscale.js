@@ -23,12 +23,19 @@ $(window).scroll(function() {
 //      Note: The dropdown menu is only valid in small screens,
 //      i.e. phones and tablets
 
-// This function hides the navigation bar when one of
+// This function hides the navigation dropdown when one of
 //      the links is clicked when we have a small or medium screen
-//      being used by the user
+//      being used by the user, and hides the search box if it's active
 $(".menu-items a").click(function(e) {
     if ( $(window).width() <= 767 ) {
         $(".nav-items").slideUp('fast');
+    }
+
+    if ( $(".search").css('display') != 'none' ) {
+        $(".search").fadeOut('fast', function(){
+          $("#search_box").val('');
+          $("#search_results").empty().stop().hide();
+        });
     }
 });
 
@@ -75,5 +82,29 @@ $(function() {
         , function(){ $anchor.blur(); });
         event.preventDefault();
     });
-
 });
+
+// Search box UX
+$(".searchBtn").click(function(event) {
+  event.preventDefault();
+  toggleSearchBox();
+});
+
+$(window).keydown(function(e){
+  if( e.shiftKey && e.ctrlKey ){
+    toggleSearchBox();
+  }
+});
+
+function toggleSearchBox() {
+  var $search = $(".search");
+  if ( $search.css('display') == "none" ) {
+    $(".search").fadeIn('fast');
+    $("#search_box").focus();
+  } else {
+    $(".search").fadeOut('fast', function(){
+      $("#search_box").val('');
+      $("#search_results").empty().stop().hide();
+    });
+  }
+}

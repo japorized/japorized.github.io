@@ -1,3 +1,7 @@
+//
+//  Script in reference to RayHightower
+//  http://rayhightower.com/blog/2016/01/04/how-to-make-lunrjs-jekyll-work-together/
+//
 jQuery(function() {
   // Initialize lunr with the fields to be searched, plus the boost.
   window.idx = lunr(function () {
@@ -26,6 +30,7 @@ jQuery(function() {
       var query = $("#search_box").val(); // Get the value for the text field
       var results = window.idx.search(query); // Get lunr to perform a search
       display_search_results(results); // Hand the results off to be displayed
+      $("#search_results").show();
   });
 
   function display_search_results(results) {
@@ -55,24 +60,3 @@ jQuery(function() {
     });
   }
 });
-
-$(".searchBtn").click(function(event) {
-  event.preventDefault();
-  toggleSearchBox();
-});
-
-$(window).keydown(function(e){
-  if( e.shiftKey && e.ctrlKey ){
-    toggleSearchBox();
-  }
-});
-
-function toggleSearchBox() {
-  var $search = $(".search");
-  if ( $search.css('display') == "none" ) {
-    $(".search").fadeIn('fast');
-    $("#search_box").focus();
-  } else {
-    $(".search").fadeOut('fast');
-  }
-}
