@@ -1,30 +1,39 @@
 
 <!-- Share Buttons Start -->
 
-<div>
+<h4 style="margin-bottom: 10px;">Share this post to</h4>
+
+<div class="share">
 
   {% if site.fb-share %}
-    <div style="float:left; padding: 0 5px; vertical-align:top">
-      <div class="fb-share-button" data-href="{{site.url}}{{site.baseurl}}{{page.url}}" data-layout="button_count"></div>
+    <div>
+      <a class="fa fa-facebook-official" href="http://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}&title={{ page.title }}" target="_blank" title="Facebook"></a>
     </div>
   {% endif %}
 
   {% if site.twitter-share %}
-    <div style="float:left; padding: 0 5px; vertical-align:top">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{site.url}}{{ site.baseurl}}{{page.url}}" data-text="{{page.title}} {% for tag in page.tags%}#{{ tag }} {% endfor %}"></a>
+    <div>
+      <a class="fa fa-twitter" href="http://twitter.com/intent/tweet?status={{ page.title }}+{{ site.url }}{{ page.url }}" target="_blank" title="Twitter"></a>
     </div>
   {% endif %}
 
   {% if site.reddit-share %}
-    <div style="float:left; padding: 0 5px; vertical-align:top">
-      <script type="text/javascript">reddit_newwindow='1'</script>
-      <script type="text/javascript">reddit_title='{{page.title}}'</script>
-      <script type="text/javascript">reddit_url='{{site.url}}{{site.baseurl}}{{page.url}}'</script>
-      <script type="text/javascript" src="//www.redditstatic.com/button/button1.js"></script>
+    <div>
+      <a class="fa fa-reddit" href="http://www.reddit.com/submit?url={{ site.url }}{{ page.url }}&title={{ page.title }}" target="_blank" title="Reddit"></a>
     </div>
   {% endif %}
 
-  <div style="clear: both"></div>
+  {% if site.stumbleupon-share %}
+    <div>
+      <a class="fa fa-stumbleupon" href="http://www.stumbleupon.com/submit?url={{ site.url }}{{ page.url }}&title={{ page.title }}" target="_blank" title="StumbleUpon"></a>
+    </div>
+  {% endif %}
+
+  {% if site.tumblr-share %}
+    <div>
+    <a class="fa fa-tumblr" href="http://tumblr.com/widgets/share/tool?canonicalUrl={{ site.url }}{{ page.url }}" target="_blank" title="Tumblr"></a>
+    </div>
+  {% endif %}
 
 </div>
 

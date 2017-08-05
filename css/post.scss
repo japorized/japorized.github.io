@@ -100,88 +100,30 @@
 }
 
 /* * * * * * * * * * *
- *  Large Paginations
+ *  Pagination
  * * * * * * * * * * */
-.big-paginations {
-    position: fixed;
-    width: 100%;
-    margin-top: $top-margin-after-sm-nav;
-    text-align: center;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    vertical-align: middle;
-    -webkit-transition: margin .5s ease-in-out;
-    -moz-transition: margin .5s ease-in-out;
-    transition: margin .5s ease-in-out;
+.pagination {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
 
-    .paginate-hovered-title {
-        width: 80%;
-        height: 2000px;
-        background: rgba(30, 30, 30, 0.95);
-        margin-left: 10%;
-        padding: 10% 30px;
-        display: none;
-        -webkit-transition: all .3s ease-in-out;
-        -moz-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out;
-
-        & span.paginate-upcoming-description {
-            color: #777;
-            font-family: "Cormorant+Garamond", serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-style: italic;
-        }
+    div {
+        padding: 20px 0px;
+        max-width: 40%;
     }
 
-    .paginate-newer, .paginate-older {
-        position: absolute;
-        width: 10%;
-        height: 100%;
-        padding: 50% 0;
-        color: #333;
+    a {
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 700;
         text-transform: uppercase;
-        vertical-align: middle;
-        cursor: pointer;
-        -webkit-transition: all .3s ease-in-out;
-        -moz-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out;
-        overflow: hidden;
-
-        &:hover {
-            background-color: rgba($light, 0.3);
-
-            & div {
-                display: block;
-            }
-        }
-
-        & div {
-            font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-weight: 700;
-            display: none;
-        }
-    }
-
-    .paginate-newer {
-        left: 0;
-    }
-
-    .paginate-older {
-        right: 0;
-    }
-
-    
-}
-
-@media(min-width: 767px) {
-    .big-paginations {
-        margin-top: $top-margin-after-lg-nav;
-
-        .paginate-newer, .paginate-older {
-            padding: 25% 0;
-        }
-
-        &.big-paginations-expand {
-            margin-top: $top-margin-after-lg-nav-collapse;
-        }
     }
 }
+
+/* * * * * * * * * * *
+ *  Signature
+ * * * * * * * * * * */
+ .signature {
+    font-family: 'Satisfy', cursive;
+    font-size: 24px;
+    margin: 20px 0;
+ }

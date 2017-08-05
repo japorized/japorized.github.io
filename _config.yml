@@ -68,6 +68,9 @@ paginate: 5
 
 fb-share: True
 twitter-share: True
+reddit-share: True
+stumbleupon-share: True
+tumblr-share: True
 disqus-shortname: "japorized"
 syntax-highlight: True
 

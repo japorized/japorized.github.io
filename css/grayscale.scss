@@ -775,3 +775,16 @@ div.loadMore {
     .grid-sizer, .grid-item { width: 33.33% }
     .grid-item--width2 { width: 40% }
 }
+
+/* * * * * * * * * * *
+ *  Social Media Sharing
+ * * * * * * * * * * */
+ .share {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+
+    div {
+        padding: 0 10px;
+    }
+ }
