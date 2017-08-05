@@ -2,8 +2,9 @@
 ### { Personal } Jekyll Theme
 
 Big thanks to [{ PannosSakkos }](https://github.com/PanosSakkos/personal-jekyll-theme) to have created this theme.
-I have since changed the CSS framework of the site to use WingCSS instead of Twitter Bootstrap, and have since not followed the development of the theme developed by PannosSakkos.
+I have since changed the CSS framework of the site to use WingCSS instead of Twitter Bootstrap, and have since not followed the development of the theme under by PannosSakkos.
 
+### CSS Framework in use
 [WingCSS](https://github.com/KingPixil/wing)
 
 ### Special thanks to these sources
