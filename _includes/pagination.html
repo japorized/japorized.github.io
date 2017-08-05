@@ -3,11 +3,11 @@
 
 <div class="pagination">
 
-  {% if page.previous.url != blank %}
+  {% if page.previous.url != nil %}
     <div><a href="{{ site.baseurl }}{{ page.previous.url }}">Previously: {{ page.previous.title }}</a></div>
   {% endif %}
 
-  {% if page.next.url != blank %}
+  {% if page.next.url != nil %}
     <div><a href="{{ site.baseurl }}{{ page.next.url }}">Next: {{ page.next.title }}</a></div>
   {% endif %}
 
