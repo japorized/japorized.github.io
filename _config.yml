@@ -1,7 +1,8 @@
 # Gems
-plugins:
-  - jekyll-paginate
+plugins_dir:
+#  - jekyll-paginate
   - jemoji
+gems: [jekyll-paginate]
 
 # Site settings
 
