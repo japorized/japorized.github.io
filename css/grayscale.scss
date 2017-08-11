@@ -141,10 +141,6 @@ a {
     }
 }
 
-.col, [class*=" col-"], [class^=col-] {
-    overflow-x: auto;
-}
-
 .light {
     font-weight: 400;
 }
@@ -773,7 +769,6 @@ div.loadMore {
 
 @media(min-width: 767px) {
     .grid-sizer, .grid-item { width: 33.33% }
-    .grid-item--width2 { width: 40% }
 }
 
 /* * * * * * * * * * *
@@ -794,4 +789,56 @@ div.loadMore {
  * * * * * * * * * * */
  code.highlighter-rouge {
     background: #23241f;
+ }
+
+/* * * * * * * * * * *
+ * Tag & Category pages
+ * * * * * * * * * * */
+.post-list {
+  text-align: left;
+  border: none;
+  width: 100%;
+
+  .list-item {
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    
+    .post-date {
+      letter-spacing: 1px;
+      font-size: 1.17em;
+      width: 40%;
+    }
+
+    .post-title {
+      width: 50%;
+    }
+  }
+}
+
+@media(min-width: 767px) {
+.post-list{
+  .list-item {
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    
+    .post-date {
+      letter-spacing: 1px;
+      font-size: 1.17em;
+      width: 35%;
+    }
+
+    .post-title {
+      width: 65%;
+    }
+  }
+}
+}
+
+/* * * * * * * * * * *
+ *  Signature
+ * * * * * * * * * * */
+ .signature {
+    font-family: 'Satisfy', cursive;
+    font-size: 24px;
+    margin: 20px 0;
  }

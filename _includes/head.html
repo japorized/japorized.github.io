@@ -45,6 +45,9 @@
 
   <!-- Custom Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i,500|Montserrat:500:600" rel="stylesheet">
+  {% if page.layout == "post" or page.layout == "about" %}
+  <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+  {% endif %}
 
   <!-- Can't be a Pure Math major without having LaTeX!! -->
   <script src='https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js'></script>

@@ -9,40 +9,37 @@
 
     {% include navigation.html %}
 
-    <section class="container content-section text-center">
+    <section id="{{ page.title }}" class="container content-section">
       <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col-2"></div>
+        <div class="col-8">
 
           {% assign category = page.title %}
 
-          <h3 id="#{{ category }}"><span class="fa fa-folder-open-o"></span> Category: {{ category }}</h3>
+          <center><h3 id="#{{ category }}"><span class="fa fa-folder-open-o"></span> Category: {{ category }}</h3></center>
 
+
+          <table class="post-list">
           {% for post in site.posts %}
             {% if post.category contains category %}
-              
-              {% capture counter %}{{ counter | plus: 1 }}{% endcapture %}
-              {% capture remainder %}{{ counter | modulo: 2 }}{% endcapture %}
-              
-              {% if remainder == "1" %}
-              <div class="row">
-              {% endif %}
 
-                <div class="col-6">
-                  <h5 align="left"><strong>{{ post.date | date_to_string }}</strong> <small>. {{ post.tags | array_to_sentence_string:'' }} .</small></h5>
-                  <h4 align="left"> <a href="{{site.baseurl}}{{ post.url }}"> <strong>{{ post.title }} </strong></a> <small><a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></small></h4>
-                  {{ post.excerpt | truncatewords: 50 | strip_html | markdownify }}
-                </div>
-
-              {% if remainder == "0" or forloop.last %}
-              </div>
-              {% endif %}
+            <tr class="list-item">
+              <td valign=top class="post-date">
+                 <strong>{{ post.date | date_to_string }}</strong>
+              </td>
+              <td valign=top class="post-title">
+                <a href="{{site.baseurl}}{{ post.url }}">
+                  <strong>{{ post.title }} </strong>
+                </a>
+              </td>
+            </tr>
 
             {% endif %}
           {% endfor %}
+          </table>
 
         </div>
-        <div class="col-1"></div>
+        <div class="col-2"></div>
       </div>
     </section>
 

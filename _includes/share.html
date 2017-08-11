@@ -1,7 +1,11 @@
 
 <!-- Share Buttons Start -->
 
+{% if page.layout == "post" %}
 <h4 style="margin-bottom: 10px;">Share this post to</h4>
+{% else %}
+<h4 style="margin-bottom: 10px;">Share this page to</h4>
+{% endif %}
 
 <div class="share">
 
