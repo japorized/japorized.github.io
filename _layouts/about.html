@@ -1,0 +1,39 @@
+<!-- About Layout Start -->
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+  {% include head.html %}
+
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    {% include navigation.html %}
+    
+    <section id="{{ page.title }}" class="container content-section text-center"> 
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+          
+          {{ page.content | markdownify }}
+
+          <div class="signature"> - Japorized -</div>
+
+        </div>
+        <div class="col-2"></div>
+      </div>
+    </section>
+
+    <section id="{{ page.title }}" class="container content-section text-center">
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+          <h5>Find me on</h5>
+          {% include social-buttons.html %}
+        </div>
+        <div class="col-2"></div>
+      </div>
+    </section>
+
+    {% include footer.html %}
+    
+    {% include js.html %}
+  </body>
+</html>
+<!-- About Layout End -->
