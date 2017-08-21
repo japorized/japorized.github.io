@@ -1,0 +1,29 @@
+---
+- language: English
+  level: 4
+  description: Bilingual Proficiency
+
+- language: Mandarin
+  level: 4
+  description: Mother Tongue (Malaysian)
+
+- language: Cantonese
+  level: 2
+  description: Working Proficiency
+
+- language: Hokkien
+  level: 3
+  description: Working Proficiency
+
+- language: Malay
+  level: 3
+  description: Working Proficiency
+
+- language: Teochew
+  level: 1
+  description: Limited Proficiency
+
+- language: Japanese
+  level: 0
+  description: Basic Proficiency
+...

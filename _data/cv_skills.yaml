@@ -1,0 +1,53 @@
+---
+# @param name - Skill name
+# @param level - Skill level (out of 10)
+# @param field - Relevant field of the skill, comma delimited
+#                Available values: stats, probability, finance, actuarial,
+#                                  microsoft, coding, math, graphic, webdev,
+#                                  others
+
+- name: Microsoft Excel
+  level: 9
+  field: stats, probability, finance, actuarial, microsoft
+
+- name: VBA
+  level: 9
+  field: stats, probability, finance, actuarial, microsoft
+
+- name: Microsoft Word
+  level: 9
+  field: microsoft
+
+- name: Microsoft Powerpoint
+  level: 8
+  field: finance, actuarial, microsoft
+
+- name: Microsoft Access
+  level: 4
+  field: stats, probability, finance, actuarial, microsoft
+
+- name: SQL
+  level: 5
+  field: stats, probability, finance, actuarial, microsoft, coding
+
+- name: Python
+  level: 2
+  field: stats, probability, coding, webdev
+
+- name: Javascript/jQuery
+  level: 5
+  field: coding, webdev
+
+- name: HTML
+  level: 6
+  field: coding, webdev
+
+- name: CSS/SCSS
+  level: 7
+  field: coding, webdev
+
+- name: LaTeX
+  level: 6
+  field: coding, math
+  
+...

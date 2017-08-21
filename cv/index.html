@@ -4,7 +4,15 @@ section-type: resume
 title: CV
 ---
 
-<h1><span class="fa fa-exclamation-triangle"></span> THIS PAGE IS UNDER RECONSTRUCTION <span class="fa fa-exclamation-triangle"></span></h1>
+<div class="center myInfo">
+  <img class="cv-head" src="{{ site.baseurl }}/img/myface.jpg" />
+  <br />
+  <h2 class="myName">Johnson Ng</h2>
+  3A Student | University of Waterloo
+
+  <div class="about">$$ x \in $$ Pure Mathematics | Actuarial Science | <span class="fa fa-apple"></span>  | Photography | <span class="fa fa-leaf"></span> | Taekwondo | Programming | Design | Anime | Philosophy | Gaming | Coffee & Tea</div>
+
+</div>
 
 <div class="grid" style="height: auto;">
     <div class="grid-sizer"></div>
@@ -20,27 +28,30 @@ title: CV
     </div>
     <div class="grid-item grid-item--width2">
         <h5>Work Experience</h5>
-        {% for exp in site.data.workexp %}
-            <div>
-                <b>{{ exp.position }}</b> <small>({{ exp.duration }})</small><br />
-                {{ exp.employer }}
-                {% if exp.department != nil %}
-                 | {{ exp.department }}
-                {% endif %}
+        <div class="workexp-container">
+          {% for exp in site.data.workexp %}
+              <div class="duration-num">
+                {{ exp.durationNum }}
+              </div>
+              <div class="job-info">
+                  <span class="durationPeriod">{{ exp.durationPeriod }}</span> ({{ exp.period }})<br />
+                  <span class="job-pos">{{ exp.position }}</span> <br />
+                  {{ exp.employer }}
+                  {% if exp.department != nil %}
+                   | {{ exp.department }}
+                  {% endif %}
 
-                <br />
+                  <br />
 
-                <ul>
-                {% for desc in exp.description %}
-                    <li>{{ desc }}</li>
-                {% endfor %}
-                </ul>
-            </div>
+                  <ul class="job-desc">
+                  {% for desc in exp.description %}
+                      <li>{{ desc }}</li>
+                  {% endfor %}
+                  </ul>
+              </div>
 
-            {% if forloop.last == false %}
-            <br />
-            {% endif %}
-        {% endfor %}
+          {% endfor %}
+        </div>
     </div>
     <div class="grid-item grid-item--width2">
         <h5>Education</h5>
@@ -56,91 +67,88 @@ title: CV
         {% endfor %}
     </div>
     <div class="grid-item grid-item--width2">
-        <h5>Skill Highlights</h5>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
-    <div class="grid-item grid-item--width2">
         <h5>Certifications</h5>
         <div class="row">
-        <div class="col-2 center"><span class="fa fa-briefcase" style="font-size: 48px;"></span></div>
-        <div class="col-5">
-            <b>Passed Actuarial Examinations</b>
-            <br />
-            SOA/CAS Exam P/1
-        </div>
-        <div class="col-5">
-            <b>Attempted Actuarial Examinations</b>
-            <br />
-            SOA/CAS Exam FM/2
-        </div>
+          <div class="col-2 center"><span class="fa fa-briefcase" style="font-size: 48px;"></span></div>
+          <div class="col-5">
+              <b>Passed Actuarial Examinations</b>
+              <br />
+              SOA/CAS Exam P/1
+          </div>
+          <div class="col-5">
+              <b>Attempted Actuarial Examinations</b>
+              <br />
+              SOA/CAS Exam FM/2
+          </div>
         </div>
     </div>
     <div class="grid-item grid-item--width2">
         <h5>Skills & Knowledge</h5>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <div class="skills-container">
+          {% for skill in site.data.cv_skills %}
+            <div class="skill-item skill">{{ skill.name }}</div>
+            <div class="skill-item level">
+              {% for i in (1..10) %}
+                {% if i <= skill.level %}
+                  <img src="{{ site.baseurl }}/img/cv/skillpt.svg" />
+                {% else %}
+                  <img src="{{ site.baseurl }}/img/cv/noskillpt.svg" />
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
     </div>
-    <div class="grid-item grid-item--width2">
+    <div class="grid-item grid-item--width1">
         <h5>Language Skills</h5>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <div class="language-container">
+          {% for lang in site.data.cv_language %}
+            <div class="language lang-lvl{{ lang.level }}">
+              <b>{{ lang.language }}</b><br />
+              {{ lang.description }}
+            </div>
+          {% endfor %}
+        </div>
     </div>
-    <div class="grid-item grid-item--width2">
+    <div class="grid-item grid-item--width1">
         <h5>Hobbies & Interests</h5>
-        <div class="hobby-row">
-            <div class="hobby-item">
-                <span class="fa fa-headphones"></span><br />
-                <span>Music</span>
-            </div>
-            <div class="hobby-item">
-                <span class="fa fa-gamepad"></span><br />
-                <span>Games</span>
-            </div>
-            <div class="hobby-item">
-                <span class="fa fa-book"></span><br />
-                <span>Reading</span>
-            </div>
-        </div>
-        <div class="hobby-row">
-            <div class="hobby-item">
-                <span class="fa fa-coffee"></span><br />
-                <span>Coffee</span>
-            </div>
-            <div class="hobby-item">
-                <span class="fa fa-camera-retro"></span><br />
-                <span>Photo</span>
-            </div>
-            <div class="hobby-item">
-                <span class="fa fa-sticky-note-o"></span><br />
-                <span>Math</span>
-            </div>
-        </div>
-        <div class="hobby-row">
-            <div class="hobby-item">
-                <span class="fa fa-leaf"></span><br />
-                <span>Leaves</span>
-            </div>
-            <div class="hobby-item">
-                <span class="fa fa-cloud"></span><br />
-                <span>Clouds</span>
-            </div>
-            <div class="hobby-item">
-                <span class="fa fa-male"></span><br />
-                <span>TKD</span>
-            </div>
+        <div class="hobby-container">
+          <div class="hobby-item">
+              <span class="fa fa-headphones"></span><br />
+              <span>Music</span>
+          </div>
+          <div class="hobby-item">
+              <span class="fa fa-gamepad"></span><br />
+              <span>Games</span>
+          </div>
+          <div class="hobby-item">
+              <span class="fa fa-book"></span><br />
+              <span>Reading</span>
+          </div>
+          <div class="hobby-item">
+              <span class="fa fa-coffee"></span><br />
+              <span>Coffee</span>
+          </div>
+          <div class="hobby-item">
+              <span class="fa fa-camera-retro"></span><br />
+              <span>Photo</span>
+          </div>
+          <div class="hobby-item">
+              <span class="fa fa-sticky-note-o"></span><br />
+              <span>Math</span>
+          </div>
+          <div class="hobby-item">
+              <span class="fa fa-leaf"></span><br />
+              <span>Leaves</span>
+          </div>
+          <div class="hobby-item">
+              <span class="fa fa-cloud"></span><br />
+              <span>Clouds</span>
+          </div>
+          <div class="hobby-item">
+              <span class="fa fa-male"></span><br />
+              <span>TKD</span>
+          </div>
         </div>
     </div>
 </div>

@@ -2,7 +2,9 @@
 - position: Junior Data Analyst
   employer: Ontario Ministry of the Environment and Climate Change
   department: EAASIB, Financial Assurance and Brownfield Services
-  duration: 4 months
+  durationNum: 4
+  durationPeriod: months
+  period: September - December 2016
   description:
     - Dealt mainly with statistical analysis of workload and
       Record of Site Condition trends.
@@ -12,11 +14,14 @@
       worksheet.
 
 - position: Undergraduate Research Assistant
-  employer: Dr. Malissa Maria Mahmud
+  employer: Dr. Malissa M.M.
   department: 
-  duration: 9 months
+  durationNum: 9
+  durationPeriod: months
+  period: December 2014 - August 2015
   description:
     - Meta-analyzed over 1000 articles.
-    - Dealt mainly with data input, organization, and analysis
+    - Collected, organized, and analysed data collected from selected articles.
+    - Self-studied statistical models.
 
 ...
