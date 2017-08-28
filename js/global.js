@@ -49,3 +49,39 @@ function fetchMorePosts() {
 $("img.lazy").lazyload({
 	effect: "fadeIn"
 });
+
+$(function(){
+	var base_url = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=johnson5756&api_key=05639839701ccb3b35cfaf6bd2944037&format=json"
+
+	$.getJSON(base_url, function(data){
+    var showLimit = 1,
+        albumCoverSize = 'large';
+		if($.type(data.recenttracks.track) === "array") {
+			showLimit = 3;
+			var	recentTracks = [],
+					listeningText = "Recently listened to "
+			for (var i = 0; i < showLimit; i++) {
+				recentTracks[i] = data.recenttracks.track[i];
+			}
+		} else { return; }
+		
+		$(".lastfm-displayText").text(listeningText);
+
+    for (var i = 0; i < showLimit; i++) {
+      var trackName = recentTracks[i].name,
+          trackArtist = recentTracks[i].artist['#text'],
+          lastfmURL = recentTracks[i].url;
+
+      for (var j = 0; j < recentTracks[i].image.length; j++){
+        if (recentTracks[i].image[j].size == albumCoverSize) {
+          var albumURL = recentTracks[i].image[j]['#text'];
+        }
+      }
+
+      var song = '<div class="track"><a href="' + lastfmURL + '" target="_blank"><div class="album-cover"><img src="' + albumURL + '" /></div><div class="trackDesc"><div class="track-artist">' + trackArtist + '</div><div class="track-name">' + trackName  + '</div></div></a></div>';
+      $(".lastfm-recent").append($( song ));
+    }
+		
+	});
+});
+

@@ -842,3 +842,40 @@ div.loadMore {
     font-size: 24px;
     margin: 20px 0;
  }
+
+/* * * * * * * * * * *
+ *  LastFM Recently Played
+ * * * * * * * * * * */
+.lastfm-recent {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto;
+  grid-row-gap: 10px;
+  justify-content: space-between;
+  align-content: start;
+
+  a:link, a:hover, a:visited, a:active {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .track {
+    .trackDesc {
+      width: 174px;
+      margin: 0 auto;
+      padding: 5px;
+      background: rgba(0, 0, 0, 0.3);
+
+      .track-artist {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media(min-width: 767px) {
+  .lastfm-recent {
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-rows: auto;
+  }
+}
