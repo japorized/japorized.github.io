@@ -61,10 +61,26 @@ $(function(){
 		if($.type(data.recenttracks.track) === "array") {
 			showLimit = 3;
 			var	recentTracks = [],
-					listeningText = "Recently listened to "
-			for (var i = 0; i < showLimit; i++) {
-				recentTracks[i] = data.recenttracks.track[i];
-			}
+					listeningText = "Recently listened to ",
+          i = 0,
+          counter = -1,
+          albumExists = false,
+          iteratedTrack;
+
+      // Pick the tracks in a way such that all 3 tracks are not from the same album
+			do {
+        albumExists = false;
+        iteratedTrack = data.recenttracks.track[++counter];
+        for (var j = 0; j < recentTracks.length; j++) {
+          if (recentTracks[j].album['#text'] == iteratedTrack.album['#text']) {
+            albumExists = true;
+          }
+        }
+
+        if (!albumExists){
+				  recentTracks[i++] = iteratedTrack;
+        }
+			} while (i < showLimit);
 		} else { return; }
 		
 		$(".lastfm-displayText").text(listeningText);
