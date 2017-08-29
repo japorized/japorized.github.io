@@ -1,3 +1,5 @@
+---
+---
 // Masonry.js
 var $grid = $('.grid').masonry({
   // options
@@ -75,6 +77,9 @@ $(function(){
       for (var j = 0; j < recentTracks[i].image.length; j++){
         if (recentTracks[i].image[j].size == albumCoverSize) {
           var albumURL = recentTracks[i].image[j]['#text'];
+          if (albumURL == "") {
+            albumURL = "{{ site.baseurl }}/img/noartwork.jpg";
+          }
         }
       }
 
