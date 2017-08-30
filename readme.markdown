@@ -19,4 +19,7 @@ I have since changed the CSS framework of the site to use WingCSS instead of Twi
 * [Lunr.js](https://lunrjs.com) for the quick static site search, right from the client's side. Thanks [RayHighTower](http://rayhightower.com/blog/2016/01/04/how-to-make-lunrjs-jekyll-work-together/) for the guide.
 
 
-### Future plans (More like a potential list of TODO)
+### TODO
+* Get local copy of jQuery easing 1.4
+* Check if syntax highlighting needs highlight.min.js
+* Check how to get MathJax back
