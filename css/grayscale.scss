@@ -774,22 +774,26 @@ div.loadMore {
 /* * * * * * * * * * *
  *  Social Media Sharing
  * * * * * * * * * * */
- .share {
-    display: flex;
-    justify-content: center;
-    font-size: 24px;
+.share {
+   display: flex;
+   justify-content: center;
+   font-size: 24px;
 
-    div {
-        padding: 0 10px;
-    }
- }
+   div {
+       padding: 0 10px;
+   }
+}
 
  /* * * * * * * * * * *
  *  Code Highlighter
  * * * * * * * * * * */
- code.highlighter-rouge {
-    background: #23241f;
- }
+code {
+  background: #2d2d2d;
+}
+
+code.highlighter-rouge {
+  background: #23241f;
+}
 
 /* * * * * * * * * * *
  * Tag & Category pages
