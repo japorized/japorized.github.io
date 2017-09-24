@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<h1>Beautiful Gradients</h1>
+
+This is essentially my own notes. Check out more at <a href="https://webgradients.com" target="_blank">Web Gradients</a>.
+
+<div class="big-box">
+</div>
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  var bigbox = $(".big-box");
+
+  $.getJSON( "./gradients.json", function(data) {
+    $.each(data.gradients, function(i, gradient) {
+      var itemStr = '<div>' +
+        '<div class="box" style="' + gradient.style + '"></div>' +
+        gradient.name +
+      '</div>';
+      bigbox.append(itemStr);
+    });
+    
+  });
+});
+</script>
+
+<style>
+.big-box {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  margin: 50px auto;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 10px auto;
+}
+</style>
