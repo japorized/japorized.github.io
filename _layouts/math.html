@@ -1,0 +1,50 @@
+<!-- Math Layout Start -->
+
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+  {% include head.html %}
+  
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    {% include navigation.html %}
+
+    <section id="{{ page.title }}" class="container content-section">
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-9">
+          <h1 class="text-center"><strong>{{ page.title }}</strong></h1>
+
+          {{ content | markdownify }}
+
+          <div class="text-center">
+            {% include share.html %}
+
+            {% include comments.html %}
+          </div>
+        </div>
+        <div class="col-2"></div>
+      </div>
+    </section>
+    
+    <section id="{{ page.title }}" class="container content-section text-center">
+      <div class="row">
+        <div class="col-2 hide-phone"></div>
+        <div class="col-8">
+          {% include social-buttons.html %}
+        </div>
+        <div class="col-2 hide-phone"></div>
+      </div>
+    </section>
+
+    {% include footer.html %}
+
+    {% include js.html %}
+
+    <style type="text/css">
+    .MathJax {
+      /* font-size: 2.5em; */
+    }
+    </style>
+
+  </body>
+</html>
+
