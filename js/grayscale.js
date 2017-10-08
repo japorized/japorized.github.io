@@ -90,12 +90,6 @@ $(".searchBtn").click(function(event) {
   toggleSearchBox();
 });
 
-$(window).keydown(function(e){
-  if( e.shiftKey && e.ctrlKey ){
-    toggleSearchBox();
-  }
-});
-
 function toggleSearchBox() {
   var $search = $(".search");
   if ( $search.css('display') == "none" ) {

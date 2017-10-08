@@ -231,7 +231,7 @@ span.menu-dropdown {
 
 .search {
     background: rgba($dark, 0.7);
-    width: 50%;
+    width: 90%;
     margin: 25px auto;
     padding: 20px;
     border: .1px solid rgba($light, 0.3);
@@ -329,6 +329,7 @@ span.menu-dropdown {
 
             .menu-items {
                 text-align: right;
+                margin: 0 10px 0 0;
 
                 a:hover {
                     -webkit-transition: background .3s ease-in-out;
@@ -357,6 +358,10 @@ span.menu-dropdown {
 
     .hide-largeScreen {
         display: none !important;
+    }
+
+    .search {
+      width: 75%;
     }
 }
 
