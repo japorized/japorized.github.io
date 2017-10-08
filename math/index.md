@@ -1,6 +1,5 @@
 ---
 layout: defaultMarkdown
-title: Math Scribbles
 ---
 
 ## Personal Math Scribbles
@@ -12,3 +11,5 @@ title: Math Scribbles
 {% endfor %} 
 
 Check out the [repo](https://github.com/japorized/TeX_notes){:target="_blank"} instead.
+
+Go to [my notes](./notes) on this site instead.
