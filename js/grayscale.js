@@ -90,10 +90,22 @@ $(".searchBtn").click(function(event) {
   toggleSearchBox();
 });
 
+var $search = $(".search"),
+    // Function to hide search box when clicking outside of it.
+    // Unbinds the listener when the search box is hidden.
+    // An interesting piece in this snippet is that the function is recursive. ;)
+    searchOuterClick = function(e){
+      if (!$search.is(e.target) && $search.has(e.target).length == 0 ) {
+        $search.fadeOut('fast');
+        $(document).unbind("click", searchOuterClick);
+      }
+    };
+
 function toggleSearchBox() {
-  var $search = $(".search");
   if ( $search.css('display') == "none" ) {
-    $(".search").fadeIn('fast');
+    $(".search").fadeIn('fast', function(){
+      $(document).bind("click", searchOuterClick);
+    });
     $("#search_box").focus();
   } else {
     $(".search").fadeOut('fast', function(){
