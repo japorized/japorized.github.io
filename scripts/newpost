@@ -7,14 +7,15 @@ IMG_DIR = 'img/posts/'
 
 post = ARGV[0]
 post_slug = post.downcase.tr(" ", "-")
+filename = Date.today.strftime("%Y-%m-%d-") + post_slug
 
 # Creates a new post
-File.open(POSTS_DIR + Date.today.strftime("%Y-%m-%d-") + post_slug + '.md', 'w') {|f| f.write(
-  "---\nlayout: post\nsection-type: post\ntitle: " + post + "\ndescription: \ntitle-img: \ntitle-img-caption: \nimage-folder: " + post_slug + " \ncategory: <Category>\ntags: [ '<tag1>', '<tag2>' ]\n---")
+File.open(POSTS_DIR + filename + '.md', 'w') {|f| f.write(
+  "---\nlayout: post\nsection-type: post\ntitle: " + post + "\ndescription: \ntitle-img: \ntitle-img-caption: \ncategory: <Category>\ntags: [ '<tag1>', '<tag2>' ]\n---")
 }
 
 # Creates an image directory, matters not if the folder will be used or not
-Dir.mkdir IMG_DIR + post_slug
+Dir.mkdir IMG_DIR + filename
 
 puts('[+] Created ' + post + ' post')
-puts('[+] Created image directory ' + post_slug)
+puts('[+] Created image directory ' + filename)

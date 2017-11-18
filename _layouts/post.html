@@ -39,11 +39,11 @@
       {% unless page.title-img == blank %}
         {% assign a = page.title-img | slice: 0, 4 %}
 
+        {% capture post_slug %}{{ page.date | date: "%Y-%m-%d"  }}-{{ page.title | slugify }}{% endcapture %}
+
         {% if a != 'http' %}
           <figure class="title_img">
-            <div style="position:absolute; left:50%;">
-              <img id="title_img" src="/img/posts/{{ page.title-img }}" />
-            </div>
+            <img id="title_img" src="/img/posts/{{ post_slug }}/{{ page.title-img }}" />
             <figcaption>{{ page.title-img-caption }}</figcaption>
           </figure>
         {% else %}
