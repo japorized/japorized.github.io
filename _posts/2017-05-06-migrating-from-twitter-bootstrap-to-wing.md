@@ -5,7 +5,6 @@ title: Migrating from Twitter Bootstrap to Wing
 description: I have successfully converted this website from using Bootstrap to now using Wing, a CSS framework that (I believe) is less cumbersome. This blog will discuss about my reason for the migration, the kinks that I have encountered during the move, my opinion on Wing, and some reflections along the process of the migration.
 title-img: 
 title-img-caption: 
-image-folder: migrating-from-twitter-bootstrap-to-wing
 category: coding
 tags: [ 'bootstrap', 'wingcss', 'web-loadtime-optimization', 'technical-debt' ]
 ---

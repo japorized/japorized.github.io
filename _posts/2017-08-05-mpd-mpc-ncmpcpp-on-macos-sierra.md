@@ -5,7 +5,6 @@ title: mpd + mpc + ncmpcpp on macOS Sierra
 description: We look into how I have setup mpd, mpc and ncmpcpp in the terminal on macOS Sierra, documenting the gimmicks that I have encountered, and how I have worked around them. Hopefully this will provide the help that some Mac users are looking for.
 title-img: 
 title-img-caption: 
-image-folder: mpd-mpc-ncmpcpp-on-macos-sierra
 category: Coding
 tags: [ 'shell', 'music', 'macos', 'mpd', 'mpc' ,'ncmpcpp', 'homebrew' ]
 ---

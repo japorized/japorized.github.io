@@ -5,7 +5,6 @@ title: Artificial Intelligence
 description: This is an old blog post of mine taken from my previous blog. Having written this almost 3 years ago, I still harbour the same feelings from time to time. For the sake of readability, since I did not proofread it the last time I wrote it, there will be some editing, and perhaps some improvements compared to the original post, but I have tried to retain the original essence of the piece.
 title-img: 
 title-img-caption: 
-image-folder:
 category: personal
 tags: [ 'personal', 'philosophical' ]
 ---

@@ -5,7 +5,6 @@ title: The Garbage
 description: “Sometimes, I'm the mess. Sometimes, I'm the broom. On the hardest days, I have to be both.” - Rudy Francisco
 title-img: 
 title-img-caption: 
-image-folder: the-garbage 
 category: Personal
 tags: [ 'personal' ]
 ---

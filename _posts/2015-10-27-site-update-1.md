@@ -5,7 +5,6 @@ title: Site Update 1
 description: 
 title-img: 
 title-img-caption: 
-image-folder:
 category: siteupdate
 tags: [ 'siteupdate' ]
 ---
