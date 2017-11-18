@@ -1,38 +1,9 @@
 
-<!-- <1!-- Disqus Comments Start --1> -->
+<!-- Disqus Comments Start -->
 
-<!-- {% if site.disqus-shortname %} -->
-<!--   <div id="disqus_thread"></div> -->
-<!--   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
-<!-- {% endif %} -->
+{% if site.disqus-shortname %}
+  <div id="disqus_thread"></div>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+{% endif %}
 
-<!-- <1!-- Disqus Comments End --1> -->
-
-<!-- Comments Start -->
-
-  {% capture post_slugged %}{{ page.date | date: "%Y-%m-%d"  }}-{{ page.title | slugify }}{% endcapture %}
-
-  <div id="comments-container">
-    <h3>Comments <span class="fa fa-comment-o"></span></h3>
-    <div class="comments">
-      {% if site.data.comments[post_slugged] %}
-        {% assign comments = site.data.comments[post_slugged] | sort %}
-
-        {% for comment in comments %}
-          {% assign author=comment[1].name %}
-          {% assign email=comment[1].email %}
-          {% assign url=comment[1].url %}
-          {% assign date=comment[1].date %}
-          {% assign msg=comment[1].msg %}
-
-          {% include comment.html index=forloop.index author=author email=email url=url date=date message=msg %}
-        {% endfor %}
-      {% else %}
-        There are currently no comments. :'(
-      {% endif %}
-    </div>
-    <h4>Post a new comment</h4>
-    {% include new-comment.html %}
-  </div>
-
-<!-- Comments End -->
+<!-- Disqus Comments End -->

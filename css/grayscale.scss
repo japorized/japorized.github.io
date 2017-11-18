@@ -27,11 +27,10 @@
  * 5. Navigation                                       |css-nav|
  * 6. Index Styles                                   |css-index|
  * 7. Index Header                                  |css-header|
- * 8. General Footer                                |css-footer|
+ * 8. Genral Footer                                 |css-footer|
  * 9. Post Catalog                                   |css-posts|
  * 10. Tags & Categories Page                   |css-categories|
- * 11. Commenting System                          |css-comments|
- * 12. Miscellaneous                                  |css-misc|
+ * 11. Miscellaneous                                  |css-misc|
  */
 
 // Normalizations     |css-norma|
@@ -198,30 +197,6 @@ ol {
 }
 
 // General styling      |css-genstyle|
-.content-section {
-    padding-top: 100px;
-}
-
-.download-section {
-    width: 100%;
-    padding: 50px 0;
-    color: $light;
-    background-color: $dark;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-@media(min-width:767px) {
-    .content-section {
-        padding-top: 250px;
-    }
-
-    .download-section {
-        padding: 100px 0;
-    }
-}
 
 .fixed {
     z-index: 101;
@@ -542,6 +517,7 @@ span.menu-dropdown {
 }
 
 // Index Styles     |css-index|
+
 .intro {
     display: table;
     width: 100%;
@@ -581,6 +557,31 @@ span.menu-dropdown {
                 font-size: 25px;
             }
         }
+    }
+}
+
+.content-section {
+    padding-top: 100px;
+}
+
+.download-section {
+    width: 100%;
+    padding: 50px 0;
+    color: $light;
+    background-color: $dark;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+@media(min-width:767px) {
+    .content-section {
+        padding-top: 250px;
+    }
+
+    .download-section {
+        padding: 100px 0;
     }
 }
 
@@ -772,53 +773,10 @@ h1.medium-title {
   }
 }
 
-// Commenting System      |css-comments|
-#comments-container {
-  margin-top: 50px;
-  padding: 50px 0;
-}
-
-.comments {
-  padding-bottom: 50px;
-}
-
-#post-new-comment {
-  .text-field {
-    background: #2d2d2d;
-    font-family: "Cormorant+Garamond", serif, "Helvetica Neue", Helvetica,Arial,sans-serif;
-    font-size: 20px;
-    border: 1px solid #5d5d5d;
-    border-radius: 0;
-    color: #ededed;
-    margin: 1rem 0;
-    padding: 10px;
-    resize: vertical;
-    width: 100%;
-
-    &:focus, &:hover {
-      border-color: $primary;
-    }
-  }
-  
-  textarea {
-    min-height: 170px;
-  }
-
-  .form-submit {
-    background: #2d2d2d;
-    font-size: 16px;
-    padding: 15px 50px;
-    cursor: pointer;
-    
-    &:hover, &:focus {
-      background: $primary;
-    }
-  }
-}
-
 // Miscellaneous      |css-misc|
 
  // === MathJax
+ * * * * * * * * * * */
 code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
 
  // ===  Featherlight Style Overriding

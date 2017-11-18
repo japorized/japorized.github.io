@@ -75,11 +75,6 @@ tumblr-share: True
 disqus-shortname: "japorized"
 syntax-highlight: True
 
-############
-# Comments #
-############
-staticmanURL: https://api.staticman.net/v2/entry/japorized/japorized.github.io/master/comments
-
 ###############
 # Life Events #
 ###############
