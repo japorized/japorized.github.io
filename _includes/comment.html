@@ -1,7 +1,7 @@
 
 <div class="comment-{{ include.index }}">
   <div class="comment__author">
-    {% if include.url == '' %}
+    {% if include.url != '' %}
       <a href="{{ include.url }}" target="_blank">{{ include.author }}</a>
     {% else %}
       {{ include.author }}

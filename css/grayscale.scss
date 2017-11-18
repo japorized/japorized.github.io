@@ -57,7 +57,7 @@ body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-family: "Cormorant+Garamond", serif, "Helvetica Neue", Helvetica,Arial,sans-serif;
+    font-family: $font-body;
     font-size: 14px;
     color: $light;
     background-color: $dark;
@@ -92,7 +92,7 @@ h5,
 h6 {
     margin: 0 0 35px;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: $font-headers;
     font-weight: 700;
     letter-spacing: 1px;
 
@@ -100,7 +100,7 @@ h6 {
         font-size: 75%;
         font-weight: 400;
         line-height: 1;
-        color: #777;
+        color: $dark-font;
     }
 }
 
@@ -337,7 +337,7 @@ ol {
 .nav {
     background: #000;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: $font-headers;
     margin: 0;
     letter-spacing: 1px;
     padding: 0;
@@ -415,7 +415,7 @@ span.menu-dropdown {
     font-size: 20px;
     display: none;
     text-align: center;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: $font-headers;
 
     p {
         font-weight: 700;
@@ -664,12 +664,12 @@ p.post-info {
     line-height: 1em;
     margin: 0;
     font-size: 14px;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: $font-headers;
     text-transform: uppercase;
 
     a.category {
         &:link, &:visited {
-            color: #777;
+            color: $dark-font;
             font-weight: 400;
             font-size: 80%;
         }
@@ -738,7 +738,7 @@ h1.medium-title {
   width: 100%;
 
   .list-item {
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: $font-headers;
     font-weight: 700;
     
     .post-date {
@@ -756,7 +756,7 @@ h1.medium-title {
 @media(min-width: 767px) {
   .post-list{
     .list-item {
-      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-family: $font-headers;
       font-weight: 700;
       
       .post-date {
@@ -780,16 +780,40 @@ h1.medium-title {
 
 .comments {
   padding-bottom: 50px;
+  text-align: left;
+
+  .comment__author {
+    font-family: $font-headers;
+    font-size: 25px;
+    font-weight: 700;
+
+    a:link, a:visited {
+      color: $light;
+    }
+
+    a:hover, a:active {
+      color: #dedede;
+    }
+  }
+
+  .comment_timestamp {
+    font-family: $font-headers;
+
+    a:link, a:visited, a:hover, a:active {
+      color: $dark-font;
+      cursor: default;
+    }
+  }
 }
 
 #post-new-comment {
   .text-field {
     background: #2d2d2d;
-    font-family: "Cormorant+Garamond", serif, "Helvetica Neue", Helvetica,Arial,sans-serif;
+    font-family: $font-body;
     font-size: 20px;
     border: 1px solid #5d5d5d;
     border-radius: 0;
-    color: #ededed;
+    color: $light;
     margin: 1rem 0;
     padding: 10px;
     resize: vertical;
@@ -887,7 +911,7 @@ code.highlighter-rouge {
   align-content: start;
 
   a:link, a:hover, a:visited, a:active {
-    color: #fff;
+    color: $light;
     text-decoration: none;
   }
   
