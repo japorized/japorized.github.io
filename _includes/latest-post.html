@@ -12,7 +12,7 @@
         <h4> <strong> {{ post.date | date_to_string }} </strong>
           <small>. {{ post.category }} .</small>
           <strong> <a href="{{site.baseurl}}{{ post.url }}">{{post.title}} </a> </strong>
-          <small> <a href="{{site.baseurl}}{{post.url}}#disqus_thread">Comments</a></small>
+          <small> <a href="{{site.baseurl}}{{post.url}}#comments-container">{% include aids/count-comments.html post=post %} Comments</a></small>
         </h4>
 
         {{ post.excerpt | strip_html | markdownify }}

@@ -1,0 +1,7 @@
+{% capture post_slug %}{{ include.post.date | date: "%Y-%m-%d"  }}-{{ include.post.title | slugify  }}{% endcapture %}
+
+{% if site.data.comments[post_slug] %}
+{{ site.data.comments[post_slug] | size }}
+{% else %}
+0
+{% endif %}

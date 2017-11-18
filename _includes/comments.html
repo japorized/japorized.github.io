@@ -19,7 +19,9 @@
           {% include comment.html index=forloop.index author=author email=email url=url date=date message=message %}
         {% endfor %}
       {% else %}
+      <center style="font-size: 20px;">
         There are currently no comments. :'(
+      </center>
       {% endif %}
     </div>
     <h4>Post a new comment</h4>
