@@ -1,0 +1,18 @@
+
+<div class="comment-{{ include.index }}">
+  <div class="comment__author">
+    {% if include.url == '' %}
+      <a href="{{ include.url }}" target="_blank">{{ include.author }}</a>
+    {% else %}
+      {{ include.author }}
+    {% endif %}
+  </div>
+  <div class="comment_timestamp">
+    <a href="#comment-{{include.index}}">
+      {% include aids/format-date.html date=include.date time=true %}
+    </a>
+  </div>
+  <div class="comment_message">
+    {{ include.message | markdownify }}
+  </div>
+</div>
