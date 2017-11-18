@@ -43,4 +43,4 @@ The next plan is to perhaps start modularizing my CSS files, so that it makes it
 
 Speaking of JS tools, perhaps the plan that follows after restructuring my CSS files will be to start using npm to manage some of the libraries that I use. I have not begun using too much of nodejs, still managing my libraries (not yet frameworks) the old-fashioned way that I have adopted since almost 8 years ago. It is high time that I start learning these new fancy tools as I also start to get more familiar with command line tools.
 
-<small>This post is written using terminal vim, with i3-gaps as tiling manager, all on an XOrg server on Window :wink: But I shall leave that in another post to talk about.</small>
+<small>This post is written using terminal vim, with i3-gaps as tiling manager, all on an XOrg server on a Windows OS :wink: But I shall leave that in another post to talk about.</small>
