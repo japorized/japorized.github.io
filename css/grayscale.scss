@@ -10,18 +10,48 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
- * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
- }
+/*
+ * This theme is originally based on Bootstrap Grayscale, and then
+ * modified by https://github.com/le4ker/personal-jekyll-theme. It
+ * has forked from there since Sep 17, 2015, the birthdate of this
+ * Github Page.
+ */
 
- :after, :before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
- }
+/* 
+ * Table of Contents
+ * =============================================================
+ * 1. Normalizations                                 |css-norma|
+ * 2. Body and General Fonts, Headers and Images      |css-body|
+ * 3. General styling                             |css-genstyle|
+ * 4. Animations                                |css-animations|
+ * 5. Navigation                                       |css-nav|
+ * 6. Index Styles                                   |css-index|
+ * 7. Index Header                                  |css-header|
+ * 8. Genral Footer                                 |css-footer|
+ * 9. Post Catalog                                   |css-posts|
+ * 10. Tags & Categories Page                   |css-categories|
+ * 11. Miscellaneous                                  |css-misc|
+ */
 
+// Normalizations     |css-norma|
+* {
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+html {
+   width: 100%;
+   height: 100%;
+}
+
+:after, :before {
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+// Body and General Fonts, Headers and Images      |css-body|
 body {
     width: 100%;
     height: 100%;
@@ -30,11 +60,27 @@ body {
     font-size: 14px;
     color: $light;
     background-color: $dark;
+    webkit-tap-highlight-color: rgba($light, 0.2);
 }
 
-html {
-    width: 100%;
-    height: 100%;
+::-moz-selection {
+    text-shadow: none;
+    background: #fcfcfc;
+    background: rgba($light, 0.2);
+}
+
+::selection {
+    text-shadow: none;
+    background: #fcfcfc;
+    background: rgba($light, 0.2);
+}
+
+img::selection {
+    background: transparent;
+}
+
+img::-moz-selection {
+    background: transparent;
 }
 
 h1,
@@ -141,10 +187,6 @@ a {
     }
 }
 
-.light {
-    font-weight: 400;
-}
-
 .ul,
 ol {
   text-align: center;
@@ -154,10 +196,119 @@ ol {
   list-style-position: inside;
 }
 
+// General styling      |css-genstyle|
+
 .fixed {
     z-index: 101;
 }
 
+.light {
+    font-weight: 400;
+}
+
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    border: 2px solid $light;
+    border-radius: 35px;
+    font-size: 40px;
+    color: $light;
+    background: transparent;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+    &:hover,
+    &:focus {
+		outline: none;
+		color: $light;
+		background: rgba($light, 0.1);
+    }
+    i.animated {
+        -webkit-transition-property: -webkit-transform;
+        -webkit-transition-duration: 1s;
+        -moz-transition-property: -moz-transform;
+        -moz-transition-duration: 1s;
+    }
+    &:hover {
+        i.animated {
+            -webkit-animation-name: pulse;
+            -moz-animation-name: pulse;
+            -webkit-animation-duration: 1.5s;
+            -moz-animation-duration: 1.5s;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            -moz-animation-timing-function: linear;
+        }
+    }
+}
+
+.inline-list {
+    padding: 0;
+    list-style: none;
+    display: inline-flex;
+
+    li {
+        padding: 0 5px 0 5px;
+    }
+}
+
+// Anications     |css-animations|
+@-webkit-keyframes pulse {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes pulse {
+    fom {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -moz-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+// Navigation     |css-nav|
 .nav {
     background: #000;
     text-transform: uppercase;
@@ -365,6 +516,8 @@ span.menu-dropdown {
     }
 }
 
+// Index Styles     |css-index|
+
 .intro {
     display: table;
     width: 100%;
@@ -407,89 +560,6 @@ span.menu-dropdown {
     }
 }
 
-.btn-circle {
-    width: 70px;
-    height: 70px;
-    margin-top: 15px;
-    padding: 7px 16px;
-    border: 2px solid $light;
-    border-radius: 35px;
-    font-size: 40px;
-    color: $light;
-    background: transparent;
-    -webkit-transition: background .3s ease-in-out;
-    -moz-transition: background .3s ease-in-out;
-    transition: background .3s ease-in-out;
-    &:hover,
-    &:focus {
-		outline: none;
-		color: $light;
-		background: rgba($light, 0.1);
-    }
-    i.animated {
-        -webkit-transition-property: -webkit-transform;
-        -webkit-transition-duration: 1s;
-        -moz-transition-property: -moz-transform;
-        -moz-transition-duration: 1s;
-    }
-    &:hover {
-        i.animated {
-            -webkit-animation-name: pulse;
-            -moz-animation-name: pulse;
-            -webkit-animation-duration: 1.5s;
-            -moz-animation-duration: 1.5s;
-            -webkit-animation-iteration-count: infinite;
-            -moz-animation-iteration-count: infinite;
-            -webkit-animation-timing-function: linear;
-            -moz-animation-timing-function: linear;
-        }
-    }
-}
-
-.inline-list {
-    padding: 0;
-    list-style: none;
-    display: inline-flex;
-
-    li {
-        padding: 0 5px 0 5px;
-    }
-}
-
-@-webkit-keyframes pulse {
-    from {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-
-    50% {
-        -webkit-transform: scale(1.2);
-        transform: scale(1.2);
-    }
-
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-}
-
-@-moz-keyframes pulse {
-    fom {
-        -moz-transform: scale(1);
-        transform: scale(1);
-    }
-
-    50% {
-        -moz-transform: scale(1.2);
-        transform: scale(1.2);
-    }
-
-    100% {
-        -moz-transform: scale(1);
-        transform: scale(1);
-    }
-}
-
 .content-section {
     padding-top: 100px;
 }
@@ -498,18 +568,11 @@ span.menu-dropdown {
     width: 100%;
     padding: 50px 0;
     color: $light;
-    background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
     background-color: $dark;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-}
-
-#map {
-    width: 100%;
-    height: 200px;
-    margin-top: 100px;
 }
 
 @media(min-width:767px) {
@@ -520,33 +583,22 @@ span.menu-dropdown {
     .download-section {
         padding: 100px 0;
     }
-
-    #map {
-        height: 400px;
-        margin-top: 250px;
-    }
 }
 
-ul.banner-social-buttons {
-    margin-top: 0;
+// Index Header     |css-header|
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+    font-size: 30px;
 }
 
-@media(max-width:1199px) {
-    ul.banner-social-buttons {
-        margin-top: 15px;
-    }
-}
-
-@media(max-width:767px) {
-    ul.banner-social-buttons {
-        li {
-            display: block;
-            margin-bottom: 20px;
-            padding: 0;
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
+// General Footer     |css-footer|
+footer {
+    padding: 50px 0;
+    p {
+        margin: 0;
     }
 }
 
@@ -573,79 +625,7 @@ ul.social-buttons li a {
     }
 }
 
-footer {
-    padding: 50px 0;
-    p {
-        margin: 0;
-    }
-}
-
-::-moz-selection {
-    text-shadow: none;
-    background: #fcfcfc;
-    background: rgba($light, 0.2);
-}
-
-::selection {
-    text-shadow: none;
-    background: #fcfcfc;
-    background: rgba($light, 0.2);
-}
-
-img::selection {
-    background: transparent;
-}
-
-img::-moz-selection {
-    background: transparent;
-}
-
-body {
-    webkit-tap-highlight-color: rgba($light, 0.2);
-}
-
-.typed-cursor{
-    opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
-    font-size: 30px;
-}
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-
-/* * * * * * * * * * *
- *  LaTeX being friendly with kramdown - MathJax
- * * * * * * * * * * */
-code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
-
-/* * * * * * * * * * *
- *  Large font scaling to viewport
- * * * * * * * * * * */
-h1.large-title {
-    @include responsive-font(5vw, 30px);
-}
-
-h1.medium-title {
-    @include responsive-font(3vw, 25px);
-}
-
-/* * * * * * * * * * *
- *  Post Catalog Styles
- * * * * * * * * * * */
+// Post Catalog     |css-posts|
 #blog_container article {
     -webkit-transition: background .2s ease-in-out;
     -moz-transition: background .2s ease-in-out;
@@ -743,66 +723,16 @@ div.loadMore {
     margin-left: 40%;
 }
 
-/* * * * * * * * * * *
- *  Featherlight Style Overriding
- * * * * * * * * * * */
-.featherlight .featherlight-content {
-    background: #0f0f0f;
-    box-shadow: 0px 0px 5px #555;
-
-    .featherlight-close-icon {
-        background: #444;
-        color: #fff;
-    }
+  // === FitText
+h1.large-title {
+    @include responsive-font(5vw, 30px);
 }
 
-/* * * * * * * * * * *
- *  Masonry Grid for Blog Catalog
- * * * * * * * * * * */
-.grid:after {
-    content: '';
-    display: block;
-    clear: both;
+h1.medium-title {
+    @include responsive-font(3vw, 25px);
 }
 
-.grid-sizer, .grid-item {
-    width: 100%;
-    margin-bottom: 50px;
-}
-
-.grid-item--width2 { width: 40% }
-
-@media(min-width: 767px) {
-    .grid-sizer, .grid-item { width: 33.33% }
-}
-
-/* * * * * * * * * * *
- *  Social Media Sharing
- * * * * * * * * * * */
-.share {
-   display: flex;
-   justify-content: center;
-   font-size: 24px;
-
-   div {
-       padding: 0 10px;
-   }
-}
-
- /* * * * * * * * * * *
- *  Code Highlighter
- * * * * * * * * * * */
-code {
-  background: #2d2d2d;
-}
-
-code.highlighter-rouge {
-  background: #23241f;
-}
-
-/* * * * * * * * * * *
- * Tag & Category pages
- * * * * * * * * * * */
+// Tags & Categories Page     |css-categories|
 .post-list {
   text-align: left;
   border: none;
@@ -825,36 +755,87 @@ code.highlighter-rouge {
 }
 
 @media(min-width: 767px) {
-.post-list{
-  .list-item {
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    
-    .post-date {
-      letter-spacing: 1px;
-      font-size: 1.17em;
-      width: 35%;
-    }
-
-    .post-title {
-      width: 65%;
+  .post-list{
+    .list-item {
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: 700;
+      
+      .post-date {
+        letter-spacing: 1px;
+        font-size: 1.17em;
+        width: 35%;
+      }
+  
+      .post-title {
+        width: 65%;
+      }
     }
   }
 }
+
+// Miscellaneous      |css-misc|
+
+ // === MathJax
+ * * * * * * * * * * */
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+
+ // ===  Featherlight Style Overriding
+.featherlight .featherlight-content {
+    background: #0f0f0f;
+    box-shadow: 0px 0px 5px #555;
+
+    .featherlight-close-icon {
+        background: #444;
+        color: #fff;
+    }
 }
 
-/* * * * * * * * * * *
- *  Signature
- * * * * * * * * * * */
- .signature {
-    font-family: 'Satisfy', cursive;
-    font-size: 24px;
-    margin: 20px 0;
- }
+ // ===  Masonry Grids
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
 
-/* * * * * * * * * * *
- *  LastFM Recently Played
- * * * * * * * * * * */
+.grid-sizer, .grid-item {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.grid-item--width2 { width: 40% }
+
+@media(min-width: 767px) {
+    .grid-sizer, .grid-item { width: 33.33% }
+}
+
+ // ===  Social Media Sharing
+.share {
+   display: flex;
+   justify-content: center;
+   font-size: 24px;
+
+   div {
+       padding: 0 10px;
+   }
+}
+
+ // ===  Code Highlighter
+code {
+  background: #2d2d2d;
+}
+
+code.highlighter-rouge {
+  background: #23241f;
+}
+
+ // ===  Signature
+.signature {
+  font-family: 'Satisfy', cursive;
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+ // ===  LastFM Recently Played
 .lastfm-recent {
   display: grid;
   grid-template-columns: 100%;
