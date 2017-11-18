@@ -1,0 +1,25 @@
+
+  <!-- Post new comment Begin -->
+
+    <div class="new-comment">
+      <form id="post-new-comment" method="POST" action="{{ site.staticmanURL }}">
+        <input type="hidden" name="options[redirect]" value="{{ site.baseurl }}{{ post.url }}" />
+        <input type="hidden" name="options[slug]" value="{{ page_slugged }}">
+
+        <input type="hidden" name="options[reCaptcha][siteKey]" value="6LdXQTkUAAAAAOLlPJZ8A6ENhvr7ZDky6ktsyQfF" />
+        <input type="hidden" name="options[reCaptcha][secret]" value="cdO2m1DKcNYkU2xhizmtYcUC8G7KVvXoNhPQELuJ9Uw1yecQq9MVoxA8OvlFYZY5okxpxwxmvy1rRtQ0UuWPWHDwtUQhm8Q70QTwtx1Yso+gcoS/BGevb37qyvu80wq+9Q307JAS16V6FP+zQhvoHD/6hDY6I1MDujSfSuq43WA=" />
+        
+        <input class="text-field" type="text" name="fields[name]" placeholder="Name" required />
+        <input class="text-field" type="email" name="fields[email]" placeholder="Email (will be encrypted)" required />
+        <input class="text-field" type="url" name="fields[url]" placeholder="Website (optional)" />
+        <textarea class="text-field" rows="5" name="fields[message]" placeholder="Your comment here (markdown enabled)" required></textarea>
+        
+        <div style="display: flex; justify-content: space-around;" class="g-recaptcha" data-theme="dark" data-sitekey="6LdXQTkUAAAAAOLlPJZ8A6ENhvr7ZDky6ktsyQfF"></div>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+
+        <input class="form-submit" type="Submit" value="Send" />
+      </form>
+    </div>
+
+  <!-- Post new comment End -->
+
