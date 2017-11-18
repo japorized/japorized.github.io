@@ -3,5 +3,5 @@ _parent: 2017-11-18-revamped-site-comment-system
 name: Japorized
 email: f26989a1457a216680e066e64cf97434
 url: 'https:/japorized.github.io'
-message: "This is a test comment.\r\n\r\n# Header 1\r\n## Header 2\r\n\r\n*bold* _italic_ \r\n\r\n$$\\LaTeX 1$$ $$x \\in \\mathcal{P}(X)$$"
+message: "This is a test comment.\r\n\r\n# Header 1\r\n## Header 2\r\n\r\n**bold** _italic_ \r\n\r\n$$\\LaTeX 1$$ $$x \\in \\mathcal{P}(X)$$"
 date: 1511045997
