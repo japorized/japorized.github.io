@@ -21,38 +21,25 @@
     position: relative;
     margin-bottom: 75px;
 
+    /*This is used to hide the figcaption*/
+    overflow-y: hidden;
+
     img {
       max-width: 100%;
     }
 
     figcaption {
+        background: rgba(0,0,0, 0.5);
         width: 100%;
         padding: 10px 0;
-        color: $light;
+        color: #eee;
         text-align: center;
-    }
-}
 
-@media(min-width:767px) {
-  .title_img {
-    overflow-y: hidden;
-
-    figcaption {
-      background: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      bottom: 0;
-      margin-bottom: -50px;
-      z-index: 1;
-      -webkit-transition: margin .2s ease-in-out;
-      -moz-transition: margin .2s ease-in-out;
-      -o-transition: margin .2s ease-in-out;
-      transition: margin .2s ease-in-out;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: -50px;
+        z-index: 1;
     }
-
-    &:hover figcaption {
-      margin-bottom: 0;
-    }
-  }
 }
 
 /* * * * * * * * * * *
