@@ -935,3 +935,16 @@ code.highlighter-rouge {
     grid-template-rows: auto;
   }
 }
+
+ // === g-recaptcha styling for responsiveness
+ .g-recaptcha {
+    display: flex;
+    justify-content: space-around;
+ }
+
+@media screen and (max-width: 767px) {
+  #rc-imageselect, .g-recaptcha {
+    transform:scale(0.77);
+    -webkit-transform:scale(0.77);
+  }
+}
