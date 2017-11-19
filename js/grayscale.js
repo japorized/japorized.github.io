@@ -1,14 +1,22 @@
-// jQuery to collapse the navbar on scroll
+// Collapse the navbar once page has been scrolled down to about 50px away from the
+// top of the document. Document ready function takes care of the navbar not being
+// in collapse mode when the user refreshes the browser at a location below 50px
+
+var $nav = $(".nav");
 
 $(window).scroll(function() {
-    if ($(".nav").offset().top > 50) {
-        $(".nav").addClass("top-nav-collapse");
-        $(".big-paginations").addClass('big-paginations-expand');
+    if ($nav.offset().top > 50) {
+        $nav.addClass("top-nav-collapse");
     } else {
-        $(".nav").removeClass("top-nav-collapse");
-        $(".big-paginations").removeClass('big-paginations-expand');
+        $nav.removeClass("top-nav-collapse");
     }
 
+});
+
+$(document).ready(function(){
+  if ($nav.offset().top > 50) {
+    $nav.addClass("top-nav-collapse");
+  }
 });
 
 // Creating a function that toggles between clicks
