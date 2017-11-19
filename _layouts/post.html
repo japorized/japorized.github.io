@@ -42,20 +42,22 @@
         {% capture post_slug %}{{ page.date | date: "%Y-%m-%d"  }}-{{ page.title | slugify }}{% endcapture %}
 
         {% if a != 'http' %}
-          <figure class="title_img">
-            <img id="title_img" src="/img/posts/{{ post_slug }}/{{ page.title-img }}" />
-            <figcaption>{{ page.title-img-caption }}</figcaption>
-          </figure>
+          <div class="row">
+            <figure class="title_img">
+              <img id="title_img" src="/img/posts/{{ post_slug }}/{{ page.title-img }}" />
+              <figcaption>{{ page.title-img-caption }}</figcaption>
+            </figure>
+          </div>
         {% else %}
-          <figure class="title_img">
-            <img id="title_img" src="{{ page.title-img }}" />
-            <figcaption>{{ page.title-img-caption }}</figcaption>
-          </figure>
+          <div class="row">
+            <figure class="title_img">
+              <img id="title_img" src="{{ page.title-img }}" />
+              <figcaption>{{ page.title-img-caption }}</figcaption>
+            </figure>
+          </div>
         {% endif %}
       {% endunless %}
     
-      <div style="clear: both"></div>
-
       <div class="row">
         <div class="col-2 hide-phone"></div>
         <div class="post_content col-9">

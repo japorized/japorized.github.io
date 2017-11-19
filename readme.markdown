@@ -20,6 +20,8 @@ I have since changed the CSS framework of the site to use WingCSS instead of Twi
 
 
 ### TODO
-* Get local copy of jQuery easing 1.4
+* Get local copy of jQuery easing 1.4 (planning to use npm for this)
 * Check if syntax highlighting needs highlight.min.js
-* Check how to get MathJax back
+* Check how to get MathJax back (planning to use npm for this)
+* Switch from using the Jekyll build tool from Github Pages to TravisCI: utilize newer Jekyll version, open up choice for more Jekyll plugins, perhaps switch to Pandoc for certain page generation (e.g. regenerate CV into a pdf on build), better control over build process (e.g. minifying js)
+* SEO? There is a gem for this `jekyll-seo-tags`
