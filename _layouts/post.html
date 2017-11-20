@@ -16,7 +16,7 @@
         <div class="col-10">
           <h1><strong>{{ page.title }}</strong></h1>
           <h4><strong>{{ page.date | date:"%A, %B %d, %Y" }}</strong>
-            <small> . <span class="fa fa-folder-open-o"></span> <a href="{{site.baseurl}}/categories/{{ page.category }}.html">{{ page.category }}</a> . <a href="{{ site.baseurl }}{{ page.url }}#comments-container">{% include aids/count-comments.html post=page %} Comments</a><br />
+            <small> . <span class="fa fa-folder-open-o"></span> <a href="{{site.baseurl}}/categories/{{ page.category }}.html">{{ page.category }}</a> . <a class="page-scroll" href="#comments-container">{% include aids/count-comments.html post=page %} Comments</a><br />
             {% for tag in page.tags %}
               <a href="{{site.baseurl}}/tags/{{tag}}.html">#{{ tag }}</a>
             {% endfor %}
