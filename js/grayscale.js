@@ -4,7 +4,7 @@
 
 var $nav = $(".nav");
 
-$(window).scroll(function() {
+$(window).on('scroll', function() {
     if ($nav.offset().top > 50) {
         $nav.addClass("top-nav-collapse");
     } else {
@@ -13,7 +13,7 @@ $(window).scroll(function() {
 
 });
 
-$(document).ready(function(){
+$(function(){
   if ($nav.offset().top > 50) {
     $nav.addClass("top-nav-collapse");
   }
@@ -34,7 +34,7 @@ $(document).ready(function(){
 // This function hides the navigation dropdown when one of
 //      the links is clicked when we have a small or medium screen
 //      being used by the user, and hides the search box if it's active
-$(".menu-items a").click(function(e) {
+$(".menu-items a").on('click', function(e) {
     if ( $(window).width() <= 767 ) {
         $(".nav-items").slideUp('fast');
     }
@@ -53,7 +53,7 @@ $(".menu-items a").click(function(e) {
 //      2. When the dropdown is hidden by the above click event,
 //         the toggling click event does not record the slideUp, and thus
 //         the next click of the menu button does nothing (visually)
-$(".menu-dropdown").click(function(event) {
+$(".menu-dropdown").on('click', function(event) {
     if ($(".nav-items").css("display") == "block") {
         $(".nav-items").slideUp('fast');
     } else {
@@ -93,7 +93,7 @@ $(function() {
 });
 
 // Search box UX
-$(".searchBtn").click(function(event) {
+$(".searchBtn").on('click', function(event) {
   event.preventDefault();
   toggleSearchBox();
 });
