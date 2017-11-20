@@ -7,6 +7,7 @@ title-img:
 title-img-caption: 
 category: Personal
 tags: [ 'personal' ]
+comments-enabled: true
 ---
 
 I guess it does not help to describe an ailing mental health using phrases like “the mess” or “the garbage” metaphorically. I believe that in the next decade or so, a good portion of the world would be more aware and accepting of mental health issues as if they are physical illness, and this blog post would be condemned for its title *snicker*. (That somehow turned out to be more positive than I thought).

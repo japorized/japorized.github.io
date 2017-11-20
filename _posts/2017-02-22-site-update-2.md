@@ -7,6 +7,7 @@ title-img:
 title-img-caption: 
 category: siteupdate
 tags: [ 'siteupdate' ]
+comments-enabled: true
 ---
 
 Here's to my little celebration over my various <strike>achievements</strike> efforts in bringing nice little updates to my site. :tada:  <strike>All this while I further procrastinate from actually writing anything.</strike>

@@ -7,6 +7,7 @@ title-img:
 title-img-caption: 
 category: siteupdate
 tags: [ 'siteupdate' ]
+comments-enabled: true
 ---
 
 Our title may say Site Update #1 but the blog is already nearing its stabilizing stages.

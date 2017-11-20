@@ -7,6 +7,7 @@ title-img: staticman_banner.png
 title-img-caption: Bringing user-generated contents to static sites! Wait! Does that mean that the site is now dynamic!?
 category: siteupdate
 tags: [ 'siteupdate', 'staticman', 'disqus', 'commentsystem' ]
+comments-enabled: true
 ---
 
 While this site originally relied on Disqus for its commenting system, I have decided to entirely replace that dependency with a system that is more design-customizable. Disqus has more features, indeed, allowing me to have avatars for the commenters in a painless way, for example. All that, if the reader opens up an account of Disqus. Given my targetted audience, who are mostly those that I know in reality, that is likely a big turn off for them to communicate with me here if they do not have such an account.

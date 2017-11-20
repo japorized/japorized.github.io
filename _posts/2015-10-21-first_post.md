@@ -7,6 +7,7 @@ title-img:
 title-img-caption: 
 category: personal
 tags: [ 'personal' ]
+comments-enabled: true
 ---
 
 Let's kick off the site with a geeky, developer-esque greeting...

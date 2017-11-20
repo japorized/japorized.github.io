@@ -5,27 +5,31 @@
 
   <div id="comments-container">
     <h3>Comments <span class="fa fa-comment-o"></span></h3>
-    <div class="comments">
-      {% if site.data.comments[post_slug] %}
-        {% assign comments = site.data.comments[post_slug] | sort %}
+      <div class="comments">
+        {% if site.data.comments[post_slug] %}
+          {% assign comments = site.data.comments[post_slug] | sort %}
 
-        {% for comment in comments %}
-          {% assign author=comment[1].name %}
-          {% assign email=comment[1].email %}
-          {% assign url=comment[1].url %}
-          {% assign date=comment[1].date %}
-          {% assign message=comment[1].message %}
+          {% for comment in comments %}
+            {% assign author=comment[1].name %}
+            {% assign email=comment[1].email %}
+            {% assign url=comment[1].url %}
+            {% assign date=comment[1].date %}
+            {% assign message=comment[1].message %}
 
-          {% include comment.html index=forloop.index author=author email=email url=url date=date message=message %}
-        {% endfor %}
+            {% include comment.html index=forloop.index author=author email=email url=url date=date message=message %}
+          {% endfor %}
+        {% else %}
+        <center style="font-size: 20px;">
+          There are currently no comments. :'(
+        </center>
+        {% endif %}
+      </div>
+      {% if page.comments-enabled %}
+        <h4>Post a new comment</h4>
+        {% include new-comment.html %}
       {% else %}
-      <center style="font-size: 20px;">
-        There are currently no comments. :'(
-      </center>
+        Comments have been temporarily disabled for this post.
       {% endif %}
-    </div>
-    <h4>Post a new comment</h4>
-    {% include new-comment.html %}
   </div>
 
 <!-- Comments End -->

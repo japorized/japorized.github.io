@@ -7,6 +7,7 @@ title-img:
 title-img-caption: 
 category: Coding
 tags: [ 'shell', 'music', 'macos', 'mpd', 'mpc' ,'ncmpcpp', 'homebrew' ]
+comments-enabled: true
 ---
 
 This was a fun thing I was doing by the side and thinking it would be pretty neat to have a music player right from my terminal, with hotkeys that allow me to blaze through my playlists and library. That was definitely something that iTunes could not do, not without clicking all over the application, fumbling through your songs that has the same title and cover art but of different versions or different instruments, which I would usually append with something like (violin) or (piano) to the title, over the tiny dropdown from the search bar. To clarify, I do not dislike the iTunes app. I used it very frequently, and I use an iPhone. It is a decent app, but not particularly great.

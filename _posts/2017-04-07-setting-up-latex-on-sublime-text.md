@@ -7,6 +7,7 @@ title-img:
 title-img-caption: 
 category: coding
 tags: [ 'sublimetext3', 'latex', 'mactex', 'macos' ]
+comments-enabled: true
 ---
 
 I have long developed the habit of keeping handwritten notes for my studies. Even today, I still hold onto my notes for Calculus from more than 3 years ago. But as I continue on further, it does seem more and more cumbersome to bring all of my finalized hard copies with me to wherever I move, even more so with my current nomadic lifestyle, switching between Co-op jobs and studies every term. And so I have decided to give $$\LaTeX$$ a try.

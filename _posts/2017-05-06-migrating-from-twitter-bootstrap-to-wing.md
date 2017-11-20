@@ -7,6 +7,7 @@ title-img:
 title-img-caption: 
 category: coding
 tags: [ 'bootstrap', 'wingcss', 'web-loadtime-optimization', 'technical-debt' ]
+comments-enabled: true
 ---
 
 My interest for optimizing webpage load times in my own projects were first found when I used to have wallpaper-sized images loading in every page of my old blog when I was much younger (yes the remains are still visible). I was not aware of the problem at first, attributing the problem to my slow internet connection, until when I invited others to my blog and they too noticed the problem. It was not an immediately visible problem unless if you stayed long enough on the page to notice that the header wallpaper was a timed event that changes every few seconds. And if I remember the structure correctly, it fetches images from an array of url to display the images, i.e. I have been sending infinite requests to fetch these images when you simply are staring at a single page, perhaps not even looking at the header. My inexperience and lack of knowledge had brought upon quite the disaster (laughs).
