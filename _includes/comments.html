@@ -6,8 +6,8 @@
   <div id="comments-container">
     <h3>Comments <span class="fa fa-comment-o"></span></h3>
       <div class="comments">
-        {% if site.data.comments[post_slug] %}
-          {% assign comments = site.data.comments[post_slug] | sort %}
+        {% if site.data.comments[page.type][post_slug] %}
+          {% assign comments = site.data.comments[page.type][post_slug] | sort %}
 
           {% for comment in comments %}
             {% assign author=comment[1].name %}

@@ -2,7 +2,7 @@
 layout: til
 type: til
 title: I do not need a JS Framework -- for now
-comments-enabled: false
+comments-enabled: true
 ---
 
 I have been programming on the web for about a quarter of my life, as a hobby, without actually being too serious about it until rather recently. Of course I could not stand all the buzz around web development today, but the tools that have been developed for the past 5 years or so have come a lot to my attention. So I spent most of today reading, articles after articles of JS frameworks, to try to understand the workings behind them and how I can use them for myself, as a hobbyist programmer on the web. The biggest takeaway that I can get from all the reading, and after giving React a little hands-on, is that I still do not need a Javascript Framework.
