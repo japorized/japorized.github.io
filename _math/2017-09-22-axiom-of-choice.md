@@ -1,6 +1,8 @@
 ---
 layout: math
+type: math
 title: Axiom of Choice
+comments-enabled: false
 ---
 
 In PMATH351 F17, I was (re)introduced to the Axiom of Choice. The following is my understanding and interpretation, or at least my attempt at interpreting the axiom, and other statements that are equivalent to it.

@@ -156,9 +156,28 @@ pages_list:
 # Pagination path
 paginate_path: "blog/page:num"
 
+# Collections
+collections:
+  til:
+    output: true
+    permalink: /:collection/:title
+  math:
+    output: true
+    permalink: /:collection/:title
+
 # Enable minification SASS
 sass:
   style: compressed
 
 # Exclusion list from the generated _site
-exclude: ["Rakefile", "LICENSE", "readme.markdown", "vendor"]
+exclude: [
+  "Rakefile", 
+  "LICENSE", 
+  "readme.markdown", 
+  "vendor",
+  "scripts/",
+  "node_modules/",
+  "package.json",
+  "Gemfile",
+  "Gemfile.lock"
+]

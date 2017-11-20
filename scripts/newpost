@@ -11,7 +11,7 @@ filename = Date.today.strftime("%Y-%m-%d-") + post_slug
 
 # Creates a new post
 File.open(POSTS_DIR + filename + '.md', 'w') {|f| f.write(
-  "---\nlayout: post\nsection-type: post\ntitle: " + post + "\ndescription: \ntitle-img: \ntitle-img-caption: \ncategory: <Category>\ntags: [ '<tag1>', '<tag2>' ]\n---")
+  "---\nlayout: post\ntype: post\ntitle: " + post + "\ndescription: \ntitle-img: \ntitle-img-caption: \ncategory: <Category>\ntags: [ '<tag1>', '<tag2>' ]\ncomments-enabled: true\n---")
 }
 
 # Creates an image directory, matters not if the folder will be used or not

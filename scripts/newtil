@@ -1,0 +1,21 @@
+#!/usr/bin/ruby
+
+require 'date'
+
+TIL_DIR = '_til/'
+IMG_DIR = 'img/til/'
+
+til = ARGV[0]
+til_slug = til.downcase.tr(" ", "-")
+filename = Date.today.strftime("%Y-%m-%d-") + til_slug
+
+# Creates a new til post
+File.open(TIL_DIR + filename + '.md', 'w') {|f| f.write(
+  "---\nlayout: til\ntype: til\ntitle: " + til + "\ncomments-enabled: true\n---")
+}
+
+# Creates an image directory, matters not if the folder will be used or not
+Dir.mkdir IMG_DIR + filename
+
+puts('[+] Created ' + til + ' til post')
+puts('[+] Created image directory ' + filename)

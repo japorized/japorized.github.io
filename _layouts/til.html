@@ -1,0 +1,61 @@
+
+<!-- Post Layout Start -->
+
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+
+  {% include head.html %}
+
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    {% include navigation.html %}
+
+    <section id="{{ page.title }}" class="container content-section text-center"> 
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <h1><strong>{{ page.title }}</strong></h1>
+          <h4><strong>{{ page.date | date:"%A, %B %d, %Y" }}</strong>
+            <small> . <a class="page-scroll" href="#comments-container">{% include aids/count-comments.html post=page %} Comments</a><br /></small>
+          </h4>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      
+      <div class="row">
+        <div class="col-2 hide-phone"></div>
+        <div class="post_content col-9">
+
+          {{ page.content | markdownify }}
+
+          <div class="signature">- Japorized -</div>
+
+          {% include pagination.html %}
+
+          {% include share.html %}
+
+          {% include comments.html %}
+
+        </div>
+        <div class="col-2 hide-phone"></div>
+      </div>
+    </section>
+
+    <section id="{{ page.title }}" class="container content-section text-center">
+      <div class="row">
+        <div class="col-2 hide-phone"></div>
+        <div class="col-8">
+          {% include social-buttons.html %}
+        </div>
+        <div class="col-2 hide-phone"></div>
+      </div>
+    </section>
+
+    {% include footer.html %}
+
+    {% include js.html %}
+
+  </body>
+</html>
+
+<!-- Post Layout End -->

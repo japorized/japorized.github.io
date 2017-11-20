@@ -1,0 +1,21 @@
+#!/usr/bin/ruby
+
+require 'date'
+
+MATH_DIR = '_math/'
+IMG_DIR = 'img/math/'
+
+title = ARGV[0]
+title_slug = title.downcase.tr(" ", "-")
+filename = Date.today.strftime("%Y-%m-%d-") + title_slug
+
+# Creates a new math post
+File.open(MATH_DIR + filename + '.md', 'w') {|f| f.write(
+  "---\nlayout: math\ntype: math\ntitle: " + title + "\ncomments-enabled: true\n---")
+}
+
+# Creates an image directory, matters not if the folder will be used or not
+Dir.mkdir IMG_DIR + filename
+
+puts('[+] Created ' + title + ' math post')
+puts('[+] Created image directory ' + filename)
