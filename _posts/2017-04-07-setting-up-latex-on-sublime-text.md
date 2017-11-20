@@ -1,6 +1,6 @@
 ---
 layout: post
-section-type: post
+type: post
 title: Setting up LaTeX on Sublime Text
 description: The following is a documentation of my setup for LaTeX on Sublime Text 3, along with what I have tried as I complete my setup up till my current point. Hopefully my experience will give someone an idea as to what they might want to try if they are setting up a workspace for LaTeX.
 title-img: 

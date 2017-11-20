@@ -52,7 +52,7 @@
   <!-- Can't be a Pure Math major without having LaTeX!! -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-  {% if page.section-type == "post" %}
+  {% if page.layout == "post" %}
   <!-- CSS for Blog posts -->
   <link rel="stylesheet" href="{{site.baseurl}}/css/post.css">
   {% endif %}

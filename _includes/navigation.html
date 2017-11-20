@@ -35,10 +35,10 @@
 					{% endfor %}
 						<a class="nav-item searchBtn hide-largeScreen"><li>Search</li></a>
 
-				{% elsif page.section-type == "blog" or page.section-type == "post" or page.section-type == "tag" or page.section-type == "category" %}
+				{% elsif page.type == "post" or page.section-type == "tag" or page.section-type == "category" %}
 				<!-- Blog, Post, Tag, and Category pages -->
 					{% for p in site.pages_list %}
-						{% if page.section-type == "blog" and p[0] == "Blog" %}
+						{% if page.type == "post" and p[0] == "Blog" %}
 						<!-- Blog button does not refresh page when on blog catalog page -->
 							<a class="page-scroll nav-item" href="#blog"><li>{{ p[0] }}</li></a>
 						{% elsif p[0] == "Blog" %}

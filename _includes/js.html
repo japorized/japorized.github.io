@@ -37,7 +37,7 @@
 
 {% endif %}
 
-{% if page.section-type == "post" or page.section-type == "index" or page.section-type == "math" or page.section-type == "blog" %}
+{% if page.type == "post" or page.section-type == "index" or page.section-type == "math" or page.section-type == "blog" %}
 <!-- FitText.js -->
   <script type="text/javascript" src="{{site.baseurl}}/js/jquery.fittext.js"></script>
   
@@ -112,7 +112,7 @@
 <script src="//cdn.rawgit.com/noelboss/featherlight/1.7.2/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- Syntax highlighting -->
-{% if site.syntax-highlight and page.section-type == "post" %}
+{% if site.syntax-highlight and page.type == "post" %}
 
   <!-- Syntax highlight in post pages-->
 

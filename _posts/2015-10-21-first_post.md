@@ -1,6 +1,6 @@
 ---
 layout: post
-section-type: post
+type: post
 title: First Post!
 description: 
 title-img: 

@@ -1,6 +1,6 @@
 ---
 layout: post
-section-type: post
+type: post
 title: Site Update 2
 description: 
 title-img: 

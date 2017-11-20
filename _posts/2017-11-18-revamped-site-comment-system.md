@@ -1,6 +1,6 @@
 ---
 layout: post
-section-type: post
+type: post
 title: Revamped Site Comment System
 description: 
 title-img: staticman_banner.png
