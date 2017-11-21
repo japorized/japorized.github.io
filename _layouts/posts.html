@@ -20,7 +20,7 @@
 							{% if forloop.index0 == 0 and paginator.page == 1 %}
 								<div class="row">
 								<article class="col-12">
-                  <p class="post-info" style="text-align: center;">{{ post.date | date:"%A, %b %d, %Y" }} <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">. {{ post.category | upcase }} .</a> <a href="{{site.baseurl}}{{post.url}}#comments-container">{% include aids/count-comments.html post=post %} Comments</a></p>
+                  <p class="post-info" style="text-align: center;">{{ post.date | date:"%A, %b %d, %Y" }} <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">. {{ post.category | upcase }} .</a> <a href="{{site.baseurl}}{{post.url}}#comments-container">{% include aids/count-comments.html post=post %} <span class="fa fa-comment-o"></span></a></p>
 
 									<br />
 
@@ -40,7 +40,7 @@
 								{% endif %}
 
 								<article class="grid-item">
-                  <p class="post-info">{{ post.date | date:"%A, %b %d, %Y" }} <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">. {{ post.category | upcase }} .</a> <a href="{{site.baseurl}}{{post.url}}#comments-container">{% include aids/count-comments.html post=post %} Comments</a></p>
+                  <p class="post-info">{{ post.date | date:"%A, %b %d, %Y" }} <a class="category" href="{{site.baseurl}}/categories/{{post.category | downcase}}.html">. {{ post.category | upcase }} .</a> <a href="{{site.baseurl}}{{post.url}}#comments-container">{% include aids/count-comments.html post=post %} <span class="fa fa-comment-o"></span></a></p>
 
 									<br style="line-height: 20px;" />
 
