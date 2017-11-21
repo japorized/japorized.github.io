@@ -38,7 +38,7 @@ function addOlderTILs(offset) {
           <div class="post-info-container__til">
             <ul class="post-info__til">
               <li><span class="fa fa-calendar-o"></span> ${til_posts_json[i].date}</li>
-              <li><span class="fa fa-comment-o"></span> <a href="{{ site.baseurl }}${ til_posts_json[i].url }/#comments-container">${til_posts_json[i].comments} Comments</a></li>
+              <li><span class="fa fa-comment-o"></span> <a href="{{ site.baseurl }}${ til_posts_json[i].url }#comments-container">${til_posts_json[i].comments} Comments</a></li>
               <li><span class="fa fa-hashtag"></span> ${tagsHtmlStr}</li>
             </ul>
           </div>

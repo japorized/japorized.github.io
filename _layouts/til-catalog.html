@@ -23,7 +23,7 @@
               <div class="post-info-container__{{ page_slug }}">
                 <ul class="post-info__{{ page_slug }}">
                   <li><span class="fa fa-calendar-o"></span> {{ til.date | date:"%B %d, %Y" }}</li>
-                  <li><span class="fa fa-comment-o"></span> <a href="{{ site.baseurl }}{{ til.url }}/#comments-container">{% include aids/count-comments.html post=til %} Comments</a></li>
+                  <li><span class="fa fa-comment-o"></span> <a href="{{ site.baseurl }}{{ til.url }}#comments-container">{% include aids/count-comments.html post=til %} Comments</a></li>
                   <li>
                     <span class="fa fa-hashtag"></span> 
                     {% for tag in til.tags %}
