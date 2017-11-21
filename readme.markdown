@@ -10,7 +10,7 @@ I have since changed the CSS framework of the site to use WingCSS instead of Twi
 ### Special thanks to these sources
 * [jQuery](http://jquery.com)
 * [FontAwesome](http://fontawesome.io) for awesome icons
-* Eduardo Boucas (@eduardoboucas) for the inspiration on Ajaxifying the Blog Index Page.
+* Eduardo Boucas for the inspiration on Ajaxifying the Blog Index Page.
 * [MathJax](https://www.mathjax.org/) for parsing LaTeX in HTML
 * [Featherlight](http://noelboss.github.io/featherlight/) as the light lightbox plugin.
 * [Loaders.css](https://connoratherton.com/loaders) for the pure css Pacman loader <3
@@ -21,7 +21,13 @@ I have since changed the CSS framework of the site to use WingCSS instead of Twi
 
 ### TODO
 * Navigation System needs a rework with both TIL and Math contents added
-* Switch from using the Jekyll build tool from Github Pages to TravisCI: utilize newer Jekyll version, open up choice for more Jekyll plugins, perhaps switch to Pandoc for certain page generation (e.g. regenerate CV into a pdf on build), better control over build process (e.g. minifying js)
+* Switch from using the Jekyll build tool from Github Pages to TravisCI
+  * utilize newer Jekyll version
+  * open up choice for more Jekyll plugins
+  * perhaps switch to Pandoc for certain page generation (e.g. regenerate CV into a pdf on build)
+  * better control over build process (e.g. minifying js)
+  * automatically build my categories and tags (finally never forgetting those)
+* Slowly breaking away from being overly dependent on jQuery
 * Get local copy of jQuery easing 1.4 (planning to use npm for this)
 * Check how to get MathJax back (planning to use npm for this)
 * SEO? There is a gem for this `jekyll-seo-tags`
