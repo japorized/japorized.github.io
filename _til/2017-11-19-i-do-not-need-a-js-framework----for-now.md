@@ -2,6 +2,7 @@
 layout: til
 type: til
 title: I do not need a JS Framework -- for now
+tags: ['webdev', 'js']
 comments-enabled: true
 ---
 

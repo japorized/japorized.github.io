@@ -11,7 +11,7 @@ filename = Date.today.strftime("%Y-%m-%d-") + til_slug
 
 # Creates a new til post
 File.open(TIL_DIR + filename + '.md', 'w') {|f| f.write(
-  "---\nlayout: til\ntype: til\ntitle: " + til + "\ncomments-enabled: true\n---")
+  "---\nlayout: til\ntype: til\ntitle: " + til + "\ntags: []\ncomments-enabled: true\n---")
 }
 
 # Creates an image directory, matters not if the folder will be used or not

@@ -36,7 +36,7 @@
   <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.2/release/featherlight.min.css" type="text/css" rel="stylesheet" />
 
   <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Custom CSS -->
   <link href="{{site.baseurl}}/css/grayscale.css" rel="stylesheet">
@@ -53,8 +53,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
   {% if page.layout == "post" %}
-  <!-- CSS for Blog posts -->
-  <link rel="stylesheet" href="{{site.baseurl}}/css/post.css">
+    <!-- CSS for Blog posts -->
+    <link rel="stylesheet" href="{{site.baseurl}}/css/post.css">
+  {% elsif page.layout == "til-catalog" %}
+    <!-- CSS for TIL Catalog -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/til-catalog.css">
   {% endif %}
     
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

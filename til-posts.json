@@ -1,0 +1,18 @@
+---
+layout: null
+---
+{%- assign tils = site.til | sort | reverse -%}
+{ {%- for til in tils offset:site.til_paginate  -%}
+  "{{- forloop.index0 -}}" : {
+    "type" : "{{- til.type -}}",
+    "title" : "{{- til.title | xml_escape -}}",
+    "date" : "{{- til.date | date:"%B %d, %Y" -}}",
+    "url" : "{{- til.url | xml_escape -}}",
+    "tags" : [
+      {%- for tag in til.tags -%}"{{- tag -}}"{%- unless forloop.last -%}, {%- endunless -%}{%- endfor -%}
+     ],
+    "comments" : "{%- include aids/count-comments.html post=til -%}",
+    "content"	 : "{{- til.content | truncatewords: 50 | strip_html | strip_newlines | remove:  "	" | escape | remove: "\"-}}"
+  }{%- unless forloop.last -%},
+  {%- endunless-%}{%- endfor -%}
+}

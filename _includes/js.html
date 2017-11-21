@@ -105,7 +105,10 @@
     <!-- Script for CV page -->
     <script type="text/javascript" src="{{site.baseurl}}/js/cv_page.js"></script>
     <link rel="stylesheet" href="{{site.baseurl}}/css/cv.css">
+{% endif %}
 
+{% if page.layout == "til-catalog" %}
+    <script type="text/javascript" src="{{site.baseurl}}/js/append-til-post.js"></script>
 {% endif %}
 
 <!-- Featherlight Lightbox JS -->

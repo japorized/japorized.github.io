@@ -1,7 +1,1 @@
-{% capture post_slug %}{{ include.post.date | date: "%Y-%m-%d"  }}-{{ include.post.title | slugify  }}{% endcapture %}
-
-{% if site.data.comments[include.post.type][post_slug] %}
-{{ site.data.comments[include.post.type][post_slug] | size }}
-{% else %}
-0
-{% endif %}
+{%- capture post_slug -%}{{- include.post.date | date: "%Y-%m-%d" -}}-{{- include.post.title | slugify-}}{%- endcapture -%}{%- if site.data.comments[include.post.type][post_slug] -%}{{- site.data.comments[include.post.type][post_slug] | size -}}{%- else -%}0{%- endif -%}

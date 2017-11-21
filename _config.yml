@@ -3,7 +3,7 @@ plugins_dir: _plugins
 data_dir: _data
 
 # Gems
-gems: [jekyll-paginate, jemoji]
+plugins: [jekyll-paginate, jemoji]
 
 # Site settings
 
@@ -67,6 +67,7 @@ enable-gesture-navigation: true
 post-preview-words: 80
 
 paginate: 5
+til_paginate: 5
 
 fb-share: True
 twitter-share: True

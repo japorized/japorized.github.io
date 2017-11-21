@@ -106,3 +106,7 @@ $(function(){
 	});
 });
 
+// Object "length"
+Object.size = function(obj) {
+  return Object.keys(obj).length;
+}

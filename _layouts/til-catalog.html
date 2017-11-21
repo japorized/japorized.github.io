@@ -8,36 +8,59 @@
 
 		{% include navigation.html %}
 
-    <section id="{{ page.title }}" class="text-center content-section">
+    {% assign page_slug = page.title | slugify %}
+
+    <section id="{{ page_slug }}" class="text-center content-section">
 			<div class="row">
 				<div class="col-2"></div>
 				<div class="col-8">
 					{{ page.content | markdownify }}
 
-          <table class="post-list">
-          {% for post in site.til %}
+          <div class="outer-container__{{ page_slug }}">
+            {%- assign tils = site.til | sort | reverse -%}
+            {% for til in tils limit:site.til_paginate %}
+            <div class="post-container__{{ page_slug }}">
+              <div class="post-info-container__{{ page_slug }}">
+                <ul class="post-info__{{ page_slug }}">
+                  <li><span class="fa fa-calendar-o"></span> {{ til.date | date:"%B %d, %Y" }}</li>
+                  <li><span class="fa fa-comment-o"></span> {% include aids/count-comments.html post=til %}</li>
+                  <li>
+                    <span class="fa fa-hashtag"></span> 
+                    {% for tag in til.tags %}
+                      <a href="{{ site.baseurl }}/{{ tag }}.html">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+                    {% endfor %}
+                  </li>
+                </ul>
+              </div>
+              <div class="post-content__{{ page_slug }}">
+                <div class="post-title__{{ page_slug }}">
+                  <h1>
+                    <a href="{{ site.baseurl }}{{ til.url }}">{{ til.title }}</a>
+                  </h1>
+                </div>
+                <div class="post-excerpt__{{ page_slug }}">
+                  {{ til.content | truncatewords: 50 }}
+                  <br />
+                  <a href="{{ site.baseurl }}{{ til.url }}">Read on  <span class="fa fa-angle-right"></span></a>
+                </div>
+              </div>
+            </div>
 
-            <tr class="list-item">
-              <td valign=top class="post-date">
-                <strong>{{ post.date | date_to_string }}</strong>
-              </td>
-              <td valign=top class="post-title">
-                <a href="{{ site.baseurl }}{{ post.url }}">
-                  <strong>{{ post.title }}</strong>
-                </a>
-                <br />
-                {{ post.content | truncatewords: 50 }}
-              </td>
-            </tr>
+            {% unless forloop.last %}<hr />{% endunless %}
+            {% endfor %}
+          </div>
 
-          {% endfor %}
-          </table>
+          {%- assign tils_size = tils | size -%}
+          {%- assign totalTILs = tils_size | plus: 0 -%}
+          {%- if totalTILs > site.til_paginate -%}
+          <div id="loadMore__{{ page_slug }}">Load More</div>
+          {%- endif -%}
 
         </div>
         <div class="col-2"></div>
       </div>
 
-		<section id="{{ page.title }}" class="container content-section text-center">
+		<section class="container content-section text-center">
 			<div class="row">
 				<div class="col-2"></div>
 				<div class="col-8">

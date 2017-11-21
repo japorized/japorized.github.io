@@ -10,14 +10,19 @@
 
     {% include navigation.html %}
 
-    <section id="{{ page.title }}" class="container content-section text-center"> 
+    <section id="{{ page.type }}-contents" class="container content-section text-center"> 
       <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
           <h1><strong>{{ page.title }}</strong></h1>
           <h4><strong>{{ page.date | date:"%A, %B %d, %Y" }}</strong>
-            <small> . <a class="page-scroll" href="#comments-container">{% include aids/count-comments.html post=page %} Comments</a><br /></small>
+            <small> . <a class="page-scroll" href="#comments-container"><span class="fa fa-comment-o"></span> {% include aids/count-comments.html post=page %}</a><br /></small>
           </h4>
+          <h4><small style="text-transform: lowercase">
+            {% for tag in page.tags %}
+              <a href="{{ site.baseurl }}/tags/{{ tag }}.html" title="#{{ tag }}">#{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+            </small></h4>
         </div>
         <div class="col-1"></div>
       </div>
@@ -41,7 +46,7 @@
       </div>
     </section>
 
-    <section id="{{ page.title }}" class="container content-section text-center">
+    <section class="container content-section text-center">
       <div class="row">
         <div class="col-2 hide-phone"></div>
         <div class="col-8">
