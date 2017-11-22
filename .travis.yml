@@ -34,6 +34,6 @@ branches:
     - src
 
 cache:
-  - bundler: true
-  - directories:
+  bundler: true
+  directories:
     - "node_modules"
