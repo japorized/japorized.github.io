@@ -3,7 +3,7 @@ rbm:
   - 2.4.2
 
 before_install:
-  - yarn install --save --save-dev
+  - npm install --save --save-dev
 
 install: 
   - gem install jekyll
