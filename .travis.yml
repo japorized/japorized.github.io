@@ -3,6 +3,7 @@ rbm:
   - 2.4.2
 
 before_install:
+  - npm install -g gulp-cli
   - npm install --save --save-dev
 
 install: 
@@ -21,7 +22,7 @@ before_script:
 
 script:
   - set -e
-  - jekyll build # Or jekyll build or whatever command you use to generate your site
+  - gulp build # Or jekyll build or whatever command you use to generate your site
   - git checkout -b master # Replace master with gh-pages if applicable
   - git add -f _site/ # Replace _site/ with the build's output directory
   - 'git commit -m "${COMMIT_MESSAGE}"'
@@ -31,3 +32,7 @@ script:
 branches:
   only:
     - src
+
+cache:
+  directories:
+    - "node_modules"
