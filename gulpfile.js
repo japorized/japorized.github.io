@@ -1,25 +1,15 @@
 const gulp = require('gulp'),
       changed = require('gulp-changed'),
-      rename = require('gulp-rename'),
-      uglify = require('gulp-uglify'),
+      uglify = require('gulp-uglifyes'),
       child = require('child_process'),
       gulpUtil = require('gulp-util'),
-      run = require('gulp-run');
+      htmlmin = require('gulp-htmlmin'),
       browserSync = require('browser-sync').create();
 
-const JS_SRC = "js/*.js",
-      JS_ALL = [ JS_SRC, '!js/global.js', '!js/append-til-post.js' ],
-      JS_DEST = "js/min",
-      SITE_ROOT = "_site/";
+const SITE_ROOT = "_site/",
+      JS_SRC = SITE_ROOT + "js/*.js",
+      JS_DEST = SITE_ROOT + "js/";
   
-gulp.task('minifyjs', () => {
-  return gulp.src( JS_ALL )
-          .pipe(changed(JS_DEST))
-          .pipe(uglify())
-          .pipe(rename({ suffix: '.min' }))
-          .pipe(gulp.dest(JS_DEST));
-});
-
 gulp.task('upgradeJSLib', () => {
   return gulp.src([ 
     'node_modules/jquery/dist/jquery.min.js',
@@ -28,11 +18,10 @@ gulp.task('upgradeJSLib', () => {
   ]).pipe(gulp.dest(JS_DEST));
 });
 
-gulp.task('jekyll', () => {
+gulp.task('jekyll', (done) => {
   const jekyll = child.spawn('jekyll', ['build',
                     '--watch',
-                    '--incremental',
-                    '--drafts'
+                    '--incremental'
         ]),
 
         jekyllLog = (buffer) => {
@@ -43,9 +32,43 @@ gulp.task('jekyll', () => {
 
   jekyll.stdout.on('data', jekyllLog);
   jekyll.stderr.on('data', jekyllLog);
+
+  done();
 });
 
-gulp.task('serve', () => {
+gulp.task('jekyll-build-only', (done) => {
+  return child.spawn('jekyll', ['build'], {stdio: 'inherit'})
+    .on('close', done);
+});
+
+gulp.task('minifyjs', () => {
+  return gulp.src( JS_SRC )
+    .pipe(uglify({
+      mangle: false,
+      ecma: 6
+    }))
+    .pipe(gulp.dest(JS_DEST));
+});
+
+gulp.task('minifyhtml', (done) => {
+  gulp.src(SITE_ROOT + "*.html")
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      removeComments: true
+    }))
+    .pipe(gulp.dest(SITE_ROOT));
+
+  gulp.src(SITE_ROOT + "**/*.html")
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      removeComments: true
+    }))
+    .pipe(gulp.dest(SITE_ROOT + "./"));
+  
+  done();
+});
+
+gulp.task('serve', gulp.series('jekyll', () => {
   browserSync.init({
     files: [ SITE_ROOT + "/**" ],
     port: 4000,
@@ -54,18 +77,7 @@ gulp.task('serve', () => {
     },
     https: false
   });
+}));
 
-  gulp.watch(JS_ALL, 'minifyjs');
-
-});
-
-gulp.task('jekyll-build-only', () => {
-  const shellCmd = 'jekyll build';
-
-  return gulp.src('')
-    .pipe(run(shellCmd))
-    .on('error', gulpUtil.log);
-});
-
-gulp.task('build', ['minifyjs', 'jekyll-build-only']);
-gulp.task('default', ['minifyjs', 'jekyll', 'serve' ]);
+gulp.task('build', gulp.series( 'jekyll-build-only', 'minifyjs', 'minifyhtml' ));
+gulp.task('default', gulp.series('serve') );

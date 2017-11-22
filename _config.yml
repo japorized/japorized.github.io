@@ -1,7 +1,6 @@
 # Directories
 plugins_dir: _plugins
 data_dir: _data
-js_dir: /js/min
 
 # Gems
 plugins: [jekyll-paginate, jemoji]
@@ -185,5 +184,6 @@ exclude: [
   "package-lock.json",
   "Gemfile",
   "Gemfile.lock",
-  "gulpfile.js"
+  "gulpfile.js",
+  "staticman.yml"
 ]

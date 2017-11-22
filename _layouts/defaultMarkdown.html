@@ -9,21 +9,21 @@
     
     {% include navigation.html %}
       
-        <section id="{{ page.title }}" class="container content-section text-center">
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8">
-        
-                    {{ content | markdownify }}
+    <section id="{{ page.title | slugify }}" class="container content-section text-center">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+    
+                {{ content | markdownify }}
 
-                    {% include share.html %}
-                    
-                </div>
-                <div class="col-2"></div>
+                {% include share.html %}
+                
             </div>
-        </section>
+            <div class="col-2"></div>
+        </div>
+    </section>
         
-    <section id="{{ page.title }}" class="container content-section text-center">
+    <section id="{{ page.title | slugify }}" class="container content-section text-center">
       <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
