@@ -1,6 +1,7 @@
 # Directories
 plugins_dir: _plugins
 data_dir: _data
+js_dir: /js/min
 
 # Gems
 plugins: [jekyll-paginate, jemoji]
@@ -170,6 +171,9 @@ collections:
 sass:
   style: compressed
 
+include:
+  - .nojekyll
+    
 # Exclusion list from the generated _site
 exclude: [
   "Rakefile", 
@@ -179,6 +183,8 @@ exclude: [
   "scripts/",
   "node_modules/",
   "package.json",
+  "package-lock.json",
   "Gemfile",
-  "Gemfile.lock"
+  "Gemfile.lock",
+  "gulpfile.js"
 ]

@@ -1,24 +1,32 @@
 
 <!-- Javascript Start -->
 
-<!-- jQuery : Version 3.2.1-->
-<script type="text/javascript" src="{{site.baseurl}}/js/jquery.min.js"></script>
-
-<!-- Lunr.js | Blog Searching Utility -->
-<script type="text/javascript" src="{{site.baseurl}}/js/lunr.min.js"></script>
-<script type="text/javascript" src="{{site.baseurl}}/js/search.js"></script>
-
-<!-- LazyLoad plugin -->
-<script type="text/javascript" src="{{ site.baseurl }}/js/jquery.lazyload.min.js"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 <!-- jQuery Easing plugin -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+<!-- jQuery and co. fallbacks -->
+<script>
+  window.jQuery || document.write(`
+    <script type="text/javascript" src="{{ site.js_dir }}/jquery.min.js"><\/script>
+      <script type="text/javascript" src="{{ site.js_dir }}/jquery.easing.min.js"><\/script>
+    `)
+</script>
+
+<!-- Lunr.js | Blog Searching Utility -->
+<script type="text/javascript" src="{{ site.js_dir }}/lunr.min.js"></script>
+<script type="text/javascript" src="{{ site.js_dir }}/search.min.js"></script>
+
+<!-- LazyLoad plugin -->
+<script type="text/javascript" src="{{ site.js_dir }}/jquery.lazyload.min.js"></script>
 
 <!-- Masonry JS -->
-<script type="text/javascript" src="{{site.baseurl}}/js/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="{{ site.js_dir }}/masonry.pkgd.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="{{site.baseurl}}/js/grayscale.js"></script>
+<script src="{{ site.js_dir }}/grayscale.min.js"></script>
 
 {% if site.google-tracking-id %}
 
@@ -39,7 +47,7 @@
 
 {% if page.type == "post" or page.section-type == "index" or page.section-type == "math" or page.section-type == "blog" %}
 <!-- FitText.js -->
-  <script type="text/javascript" src="{{site.baseurl}}/js/jquery.fittext.js"></script>
+<script type="text/javascript" src="{{ site.js_dir }}/jquery.fittext.min.js"></script>
   
   <script type="text/javascript">
   // Fittext.js
@@ -52,7 +60,7 @@
 
   <!-- Dynamic Typing Start -->
 
-  <script type="text/javascript" src="{{site.baseurl}}/js/typed.js"></script>
+  <script type="text/javascript" src="{{ site.js_dir }}/typed.min.js"></script>
   <script type="text/javascript">
 
   var myQuotes =  new Array();
@@ -97,18 +105,18 @@
   <!-- Dynamic Typing End  -->
 
   <!-- Index Anchoring and Navigation Highlighting -->
-  <script type="text/javascript" src="{{site.baseurl}}/js/indexAnchors.js"></script>  
+  <script type="text/javascript" src="{{ site.js_dir }}/indexAnchors.min.js"></script>  
 
 {% endif %}
 
 {% if page.title == "CV" %}
     <!-- Script for CV page -->
-    <script type="text/javascript" src="{{site.baseurl}}/js/cv_page.js"></script>
+    <script type="text/javascript" src="{{ site.js_dir }}/cv_page.min.js"></script>
     <link rel="stylesheet" href="{{site.baseurl}}/css/cv.css">
 {% endif %}
 
 {% if page.layout == "til-catalog" %}
-    <script type="text/javascript" src="{{site.baseurl}}/js/append-til-post.js"></script>
+  <script type="text/javascript" src="{{ site.js_dir }}/append-til-post.js"></script>
 {% endif %}
 
 <!-- Featherlight Lightbox JS -->
@@ -125,7 +133,7 @@
 {% endif %}
 
     <!-- global.js -->
-    <script src="{{site.baseurl}}/js/global.js"></script>
+    <script src="{{ site.js_dir }}/global.js"></script>
 
     <!-- LaTeX being friendly with kramdown -->
     <script type="text/javascript">

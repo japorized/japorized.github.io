@@ -1,0 +1,42 @@
+{
+  "name": "japorized.github.io",
+  "version": "1.0.0",
+  "description": "Personal Website on Github",
+  "main": "/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/japorized/japorized.github.io.git"
+  },
+  "keywords": [
+    "personal",
+    "website",
+    "github",
+    "pages",
+    "github",
+    "blog"
+  ],
+  "author": "Japorized",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/japorized/japorized.github.io/issues"
+  },
+  "homepage": "https://github.com/japorized/japorized.github.io#readme",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery.easing": "^1.4.1",
+    "mathjax": "^2.7.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^3.1.1",
+    "gulp-pandoc": "^0.2.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-scss": "^1.4.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8"
+  }
+}

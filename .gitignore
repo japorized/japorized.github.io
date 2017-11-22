@@ -51,4 +51,7 @@ _site/
 Session.vim
 .netrwhist
 *~
-tags
+
+# npm #
+#######
+node_modules/

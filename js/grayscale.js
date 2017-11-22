@@ -1,6 +1,7 @@
 // Collapse the navbar once page has been scrolled down to about 50px away from the
 // top of the document. Document ready function takes care of the navbar not being
 // in collapse mode when the user refreshes the browser at a location below 50px
+console.log("test");
 
 var $nav = $(".nav");
 

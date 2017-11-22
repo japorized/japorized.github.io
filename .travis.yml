@@ -1,0 +1,32 @@
+language: ruby
+rbm:
+  - 2.4.2
+
+before_install:
+  - npm install
+
+install: 
+  - gem install jekyll
+
+before_script: 
+  - openssl aes-256-cbc -K $encrypted_03d8220b8877_key -iv $encrypted_03d8220b8877_iv -in .travisdeploykey.enc -out .travisdeploykey -d
+  - chmod go-rwx .travisdeploykey
+  - eval 'ssh-agent -s'
+  - ssh-add .travisdeploykey
+  - git config user.name "Travis-CI"
+  - git config user.name "noreply@travis-ci.org"
+  - COMMIT_MESSAGE="Publishing site on `date "+%Y-%m-%d %H:%M:%S"` from
+    `git log -n 1 --format='commit %h - %s'`"
+
+script:
+  - set -e
+  - gulp build # Or jekyll build or whatever command you use to generate your site
+  - git checkout -b master # Replace master with gh-pages if applicable
+  - git add -f _site/ # Replace _site/ with the build's output directory
+  - 'git commit -m "${COMMIT_MESSAGE}"'
+  - git filter-branch -f --subdirectory-filter _site/ # Again, replace _site/
+  - git push -f git@github.com:japorized/japorized.github.io.git  master:master
+
+branches:
+  only:
+    - source
