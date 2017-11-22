@@ -1,4 +1,4 @@
-# { Japorized } japorized.github.io
+# { Japorized } | japorized.github.io [![Build Status](https://travis-ci.org/japorized/japorized.github.io.svg?branch=src)](https://travis-ci.org/japorized/japorized.github.io)
 ### { Personal } Jekyll Theme
 
 Big thanks to [{ PannosSakkos }](https://github.com/PanosSakkos/personal-jekyll-theme) to have created this theme.

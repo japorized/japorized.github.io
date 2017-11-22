@@ -178,7 +178,6 @@ include:
 exclude: [
   "Rakefile", 
   "LICENSE", 
-  "readme.markdown", 
   "vendor",
   "scripts/",
   "node_modules/",
