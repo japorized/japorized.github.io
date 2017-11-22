@@ -4,6 +4,7 @@ const gulp = require('gulp'),
       uglify = require('gulp-uglify'),
       child = require('child_process'),
       gulpUtil = require('gulp-util'),
+      run = require('gulp-run');
       browserSync = require('browser-sync').create();
 
 const JS_SRC = "js/*.js",
@@ -58,5 +59,13 @@ gulp.task('serve', () => {
 
 });
 
-gulp.task('build', ['minifyjs', 'jekyll']);
+gulp.task('jekyll-build-only', () => {
+  const shellCmd = 'jekyll build';
+
+  return gulp.src('')
+    .pipe(run(shellCmd))
+    .on('error', gulpUtil.log);
+});
+
+gulp.task('build', ['minifyjs', 'jekyll-build-only']);
 gulp.task('default', ['minifyjs', 'jekyll', 'serve' ]);

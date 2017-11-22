@@ -36,6 +36,7 @@
     "gulp-cli": "^1.4.0",
     "gulp-pandoc": "^0.2.2",
     "gulp-rename": "^1.2.2",
+    "gulp-run": "^1.7.1",
     "gulp-scss": "^1.4.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8"
