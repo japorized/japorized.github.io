@@ -52,7 +52,7 @@ gulp.task('minifyjs', () => {
       mangle: false,
       ecma: 6
     }))
-    .pipe(gulp.dest(JS_DEST));
+    .pipe(gulp.dest(SITE_ROOT + "js/"));
 });
 
 gulp.task('minifyhtml', (done) => {
