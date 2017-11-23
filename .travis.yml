@@ -1,5 +1,5 @@
 language: ruby
-rbm:
+rvm:
   - 2.4.2
 
 before_install:

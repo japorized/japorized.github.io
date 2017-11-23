@@ -35,11 +35,15 @@
     "gulp-changed": "^3.1.1",
     "gulp-cli": "^1.4.0",
     "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^4.0.0",
     "gulp-pandoc": "^0.2.2",
     "gulp-rename": "^1.2.2",
     "gulp-run": "^1.7.1",
     "gulp-scss": "^1.4.0",
     "gulp-uglifyes": "^0.1.2",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "imagemin-gifsicle": "^5.2.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-pngquant": "^5.0.1"
   }
 }

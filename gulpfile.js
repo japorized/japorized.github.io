@@ -4,11 +4,15 @@ const gulp = require('gulp'),
       child = require('child_process'),
       gulpUtil = require('gulp-util'),
       htmlmin = require('gulp-htmlmin'),
+      imagemin = require('gulp-imagemin'),
+      pngquant = require('imagemin-pngquant'),
+      gifsicle = require('imagemin-gifsicle'),
       browserSync = require('browser-sync').create();
 
 const SITE_ROOT = "_site/",
+      SITE_IMG = SITE_ROOT + "img/",
       JS_SRC = SITE_ROOT + "js/*.js",
-      JS_DEST = SITE_ROOT + "js/";
+      JS_DEST = "js/";
   
 gulp.task('upgradeJSLib', () => {
   return gulp.src([ 
@@ -68,6 +72,23 @@ gulp.task('minifyhtml', (done) => {
   done();
 });
 
+gulp.task('minifyimg', (done) => {
+  return gulp.src([
+    SITE_IMG + '*.jpg',
+    SITE_IMG + '*.jpeg',
+    SITE_IMG + '*.png',
+    SITE_IMG + '*.gif'
+  ])
+    .pipe(imagemin({
+        progressive: false,
+        svgoPlugins: [{removeViewBox: false}],
+        use: [pngquant(), jpegtran(), gifsicle()]
+    }))
+    .pipe(gulp.dest(SITE_IMG));
+
+  done();
+});
+
 gulp.task('serve', gulp.series('jekyll', () => {
   browserSync.init({
     files: [ SITE_ROOT + "/**" ],
@@ -79,5 +100,5 @@ gulp.task('serve', gulp.series('jekyll', () => {
   });
 }));
 
-gulp.task('build', gulp.series( 'jekyll-build-only', 'minifyjs', 'minifyhtml' ));
+gulp.task('build', gulp.series( 'jekyll-build-only', 'minifyjs', 'minifyhtml', 'minifyimg' ));
 gulp.task('default', gulp.series('serve') );
