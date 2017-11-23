@@ -56,29 +56,21 @@ gulp.task('minifyjs', () => {
 });
 
 gulp.task('minifyhtml', (done) => {
-  gulp.src(SITE_ROOT + "*.html")
-    .pipe(htmlmin({
-      collapseWhitespace: true,
-      removeComments: true
-    }))
-    .pipe(gulp.dest(SITE_ROOT));
-
-  gulp.src(SITE_ROOT + "**/*.html")
+  return gulp.src([
+      SITE_ROOT + "*.html",
+      SITE_ROOT + "**/*.html"
+    ])
     .pipe(htmlmin({
       collapseWhitespace: true,
       removeComments: true
     }))
     .pipe(gulp.dest(SITE_ROOT + "./"));
-  
-  done();
 });
 
 gulp.task('minifyimg', (done) => {
   return gulp.src([
-    SITE_IMG + '*.jpg',
-    SITE_IMG + '*.jpeg',
-    SITE_IMG + '*.png',
-    SITE_IMG + '*.gif'
+    SITE_IMG + '*.jpg', SITE_IMG + '*.jpeg', SITE_IMG + '*.png', SITE_IMG + '*.gif',
+    SITE_IMG + '**/*.jpg', SITE_IMG + '**/*.jpeg', SITE_IMG + '**/*.png', SITE_IMG + '**/*.gif' 
   ])
     .pipe(imagemin({
         progressive: false,
@@ -86,11 +78,9 @@ gulp.task('minifyimg', (done) => {
         use: [pngquant(), jpegtran(), gifsicle()]
     }))
     .pipe(gulp.dest(SITE_IMG));
-
-  done();
 });
 
-gulp.task('serve', gulp.series('jekyll', () => {
+gulp.task('serve', gulp.series('jekyll', (done) => {
   browserSync.init({
     files: [ SITE_ROOT + "/**" ],
     port: 4000,
@@ -99,6 +89,8 @@ gulp.task('serve', gulp.series('jekyll', () => {
     },
     https: false
   });
+
+  done();
 }));
 
 gulp.task('build', gulp.series( 'jekyll-build-only', 'minifyjs', 'minifyhtml', 'minifyimg' ));
