@@ -6,6 +6,7 @@ const gulp = require('gulp'),
       htmlmin = require('gulp-htmlmin'),
       imagemin = require('gulp-imagemin'),
       pngquant = require('imagemin-pngquant'),
+      jpegtran = require('imagemin-jpegtran'),
       gifsicle = require('imagemin-gifsicle'),
       browserSync = require('browser-sync').create();
 
