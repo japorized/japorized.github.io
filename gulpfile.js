@@ -23,6 +23,25 @@ gulp.task('upgradeJSLib', () => {
   ]).pipe(gulp.dest(JS_DEST));
 });
 
+gulp.task('generateTags', (done) => {
+  const genTags = child.spawn('scripts/generate-tags', [''], {stdio: 'inherit'}),
+        genCats = child.spawn('scripts/generate-categories', [''], {stdio: 'inherit'});
+  done();
+});
+
+gulp.task('minifyimg', (done) => {
+  return gulp.src([
+    SITE_IMG + '*.jpg', SITE_IMG + '*.jpeg', SITE_IMG + '*.png', SITE_IMG + '*.gif',
+    SITE_IMG + '**/*.jpg', SITE_IMG + '**/*.jpeg', SITE_IMG + '**/*.png', SITE_IMG + '**/*.gif' 
+  ])
+    .pipe(imagemin({
+        progressive: false,
+        svgoPlugins: [{removeViewBox: false}],
+        use: [pngquant(), jpegtran(), gifsicle()]
+    }))
+    .pipe(gulp.dest(SITE_IMG));
+});
+
 gulp.task('jekyll', (done) => {
   const jekyll = child.spawn('jekyll', ['build',
                     '--watch',
@@ -34,18 +53,13 @@ gulp.task('jekyll', (done) => {
             .split(/\n/)
             .forEach((message) => gulpUtil.log("Jekyll: " + message));
         };
-
   jekyll.stdout.on('data', jekyllLog);
   jekyll.stderr.on('data', jekyllLog);
-
   done();
 });
 
 gulp.task('jekyll-build-only', (done) => {
-  const genTags = child.spawn('scripts/generate-tags', [''], {stdio: 'inherit'}),
-        genCats = child.spawn('scripts/generate-categories', [''], {stdio: 'inherit'}),
-        jekyll = child.spawn('jekyll', ['build'], {stdio: 'inherit'});
-
+  const jekyll = child.spawn('jekyll', ['build'], {stdio: 'inherit'});
   done();
 });
 
@@ -70,19 +84,6 @@ gulp.task('minifyhtml', (done) => {
     .pipe(gulp.dest(SITE_ROOT + "./"));
 });
 
-gulp.task('minifyimg', (done) => {
-  return gulp.src([
-    SITE_IMG + '*.jpg', SITE_IMG + '*.jpeg', SITE_IMG + '*.png', SITE_IMG + '*.gif',
-    SITE_IMG + '**/*.jpg', SITE_IMG + '**/*.jpeg', SITE_IMG + '**/*.png', SITE_IMG + '**/*.gif' 
-  ])
-    .pipe(imagemin({
-        progressive: false,
-        svgoPlugins: [{removeViewBox: false}],
-        use: [pngquant(), jpegtran(), gifsicle()]
-    }))
-    .pipe(gulp.dest(SITE_IMG));
-});
-
 gulp.task('serve', gulp.series('jekyll', (done) => {
   browserSync.init({
     files: [ SITE_ROOT + "/**" ],
@@ -96,5 +97,5 @@ gulp.task('serve', gulp.series('jekyll', (done) => {
   done();
 }));
 
-gulp.task('build', gulp.series( 'jekyll-build-only', 'minifyjs', 'minifyhtml', 'minifyimg' ));
+gulp.task('build', gulp.series( 'jekyll-build-only', 'minifyjs', 'minifyhtml'));
 gulp.task('default', gulp.series('serve') );
