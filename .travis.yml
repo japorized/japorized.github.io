@@ -1,39 +1,39 @@
 language: ruby
 rvm:
-  - 2.4.2
-
+- 2.4.2
 before_install:
-  - npm install -g gulp-cli
-  - npm install --save --save-dev
-
-install: 
-  - gem install jekyll
-  - bundle check || bundle install
-
-before_script: 
-  - openssl aes-256-cbc -K $encrypted_03d8220b8877_key -iv $encrypted_03d8220b8877_iv -in .travisdeploykey.enc -out .travisdeploykey -d
-  - chmod go-rwx .travisdeploykey
-  - eval $(ssh-agent -s)
-  - ssh-add .travisdeploykey
-  - git config user.name "Travis-CI"
-  - git config user.name "noreply@travis-ci.org"
-  - COMMIT_MESSAGE="Publishing site on `date "+%Y-%m-%d %H:%M:%S"` from
-    `git log -n 1 --format='commit %h - %s'`"
-
+- npm install -g gulp-cli
+- npm install --save --save-dev
+install:
+- gem install jekyll
+- bundle check || bundle install
+before_script:
+- openssl aes-256-cbc -K $encrypted_03d8220b8877_key -iv $encrypted_03d8220b8877_iv
+  -in .travisdeploykey.enc -out .travisdeploykey -d
+- chmod go-rwx .travisdeploykey
+- eval $(ssh-agent -s)
+- ssh-add .travisdeploykey
+- git config user.name "Travis-CI"
+- git config user.name "noreply@travis-ci.org"
+- COMMIT_MESSAGE="Publishing site on `date "+%Y-%m-%d %H:%M:%S"` from `git log -n
+  1 --format='commit %h - %s'`"
 script:
-  - set -e
-  - gulp build # Or jekyll build or whatever command you use to generate your site
-  - git checkout -b master # Replace master with gh-pages if applicable
-  - git add -f _site/ # Replace _site/ with the build's output directory
-  - 'git commit -m "${COMMIT_MESSAGE}"'
-  - git filter-branch -f --subdirectory-filter _site/ # Again, replace _site/
-  - git push -f git@github.com:japorized/japorized.github.io.git  master:master
-
+- set -e
+- gulp build
+- git checkout -b master
+- git add -f _site/
+- git commit -m "${COMMIT_MESSAGE}"
+- git filter-branch -f --subdirectory-filter _site/
+- git push -f git@github.com:japorized/japorized.github.io.git  master:master
 branches:
   only:
-    - src
-
+  - src
 cache:
   bundler: true
   directories:
-    - "node_modules"
+  - node_modules
+notifications:
+  slack:
+    secure: biSaA1hPZogwjQBU2h6YD7sbMvTrTn3HN0pImNZZUZE+WNGQtTgNLWAskPbEdZcFOG5fH1bjIcswOHhjLXhSr2P4rghxGTkPtb0UeF5n8o0g3lsRNUSoB6hkIH9niE9zruT66CcDQqAFyqPKwMT8MrNqzjPllmvzZcksbSc9d/Q4ZJbHWHomGfZc0IzefcOt7/17/Z2ctEEdPHpt+CdYJKouBWmgflBCbNTZQzogSxgXYRYKz+G+LpataXV++817AVoE5JiMIb+0nkAxCHs/NV292G2vZpjIM5kXIzGn6dwI0l0m019AFnKQnmStXldlg3bxXoIrfGnSK9uj2Mr0kJAC5Ve5An3eS5azsXg0FMp+2lgh4uc376m2wgpjyqeI8eu3lpsrd1wp6ZedV1LPPEBQv7tT8Xt2GCSu3hMJpvfgilaxT42HNI+ZBAhHrXdxgwtZjRPrZubIrFIg4QxuyPq1ylcdLjV6qglM6/EnGy4AwX+cOu3IZMJ+mI7ic4ELlQW34sCCwiHm9Ny/rN1noiHbzXH8SKTsgTGIxRf+Rr+wJQqFd2edUmk+kr0WoPv76jCkyLPSlI0J9/lK+/2Om9SQ6ber06YIqRtuSi6mNtyfnZJ7EnCHOgwU6HbcuyAevABTt3quRDG/F5x3HT6ovfhYuyHzcAOEJAG1ih/gx+o=
+    on_success: always
+    on_failure: always

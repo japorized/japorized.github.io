@@ -42,8 +42,11 @@ gulp.task('jekyll', (done) => {
 });
 
 gulp.task('jekyll-build-only', (done) => {
-  return child.spawn('jekyll', ['build'], {stdio: 'inherit'})
-    .on('close', done);
+  const jekyll = child.spawn('jekyll', ['build'], {stdio: 'inherit'}),
+        genTags = child.spawn('scripts/generate-tags', [''], {stdio: 'inherit'}),
+        genCats = child.spawn('scripts/generate-categories', [''], {stdio: 'inherit'});
+
+  done();
 });
 
 gulp.task('minifyjs', () => {
