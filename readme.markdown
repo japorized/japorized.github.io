@@ -32,3 +32,4 @@ I have since changed the CSS framework of the site to use WingCSS instead of Twi
 * Check how to get MathJax back (planning to use npm for this)
 * SEO? There is a gem for this `jekyll-seo-tags`
 * Check if syntax highlighting needs highlight.min.js
+* Rant section
