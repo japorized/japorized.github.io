@@ -30,7 +30,7 @@
 					{% for p in site.pages_list %}
 						<a class="page-scroll nav-item" href="#{{ p[0] }}"><li>{{ p[0] }}</li></a> 
               {% if forloop.last %}
-                <a class="page-scroll nav-item searchBtn hide-phone hide-tablet" href="#"><li><span class="fa fa-search"></span></li></a>
+                <a class="nav-item searchBtn hide-phone hide-tablet" href="#" onclick="return false;"><li><span class="fa fa-search"></span></li></a>
               {% endif %}
 					{% endfor %}
 						<a class="nav-item searchBtn hide-largeScreen"><li>Search</li></a>
@@ -48,7 +48,7 @@
 						{% else %}
 							<a class="page-scroll nav-item" href="{{ site.baseurl }}/index.html#{{ p[1] }}"><li>{{ p[0] }}</li></a>
               {% if forloop.last %}
-                <a class="page-scroll nav-item searchBtn hide-phone hide-tablet" href="#"><li><span class="fa fa-search"></span></li></a>
+                <a class="nav-item searchBtn hide-phone hide-tablet" href="#" onclick="return false;"><li><span class="fa fa-search"></span></li></a>
               {% endif %}
 						{% endif %}
 					{% endfor %}
@@ -66,7 +66,7 @@
 						{% else %}
 							<a class="page-scroll nav-item" href="{{ site.baseurl }}/index.html#{{ p[1] }}"><li>{{ p[0] }}</li></a>
               {% if forloop.last %}
-                <a class="page-scroll nav-item searchBtn hide-phone hide-tablet" href="#"><li><span class="fa fa-search"></span></li></a>
+                <a class="nav-item searchBtn hide-phone hide-tablet" href="#" onclick="return false;"><li><span class="fa fa-search"></span></li></a>
               {% endif %}
 						{% endif %}
 					{% endfor %}

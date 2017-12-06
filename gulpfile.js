@@ -44,9 +44,8 @@ gulp.task('minifyimg', (done) => {
 
 gulp.task('jekyll', (done) => {
   const jekyll = child.spawn('jekyll', ['build',
-                    '--watch',
-                    '--incremental'
-        ]),
+    '--watch'
+  ]),
 
         jekyllLog = (buffer) => {
           buffer.toString()
@@ -66,8 +65,11 @@ gulp.task('jekyll-build-only', (done) => {
 gulp.task('minifyjs', () => {
   return gulp.src( JS_SRC )
     .pipe(uglify({
-      mangle: false,
-      ecma: 6
+      compress: {
+        collapse_vars: true
+      },
+      mangle: true,
+      ecma: 8
     }))
     .pipe(gulp.dest(SITE_ROOT + "js/"));
 });

@@ -4,6 +4,9 @@
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
+<!-- My Library -->
+<script src="{{ site.baseurl }}/js/myLib.js"></script>
+
 <!-- jQuery Easing plugin -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
@@ -17,7 +20,6 @@
 
 <!-- Lunr.js | Blog Searching Utility -->
 <script type="text/javascript" src="{{ site.baseurl }}/js/lunr.min.js"></script>
-<script type="text/javascript" src="{{ site.baseurl }}/js/search.js"></script>
 
 <!-- LazyLoad plugin -->
 <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.lazyload.js"></script>
@@ -56,7 +58,7 @@
 
 {% endif %}
 
-{% if site.dynamic-typing and page.section-type == "index"%}
+{% if site.dynamic-typing and page.section-type == "index" %}
 
   <!-- Dynamic Typing Start -->
 
@@ -100,15 +102,17 @@
 
   <!-- Dynamic Typing End  -->
 
-  <!-- Index Anchoring and Navigation Highlighting -->
-  <script type="text/javascript" src="{{ site.baseurl }}/js/indexAnchors.js"></script>  
-
+  <script type="text/javascript" src="{{ site.baseurl }}/js/indexAnchors.js"></script>
 {% endif %}
 
 {% if page.title == "CV" %}
     <!-- Script for CV page -->
-    <script type="text/javascript" src="{{ site.baseurl }}/js/cv_page.js"></script>
+    {% comment %} <script type="text/javascript" src="{{ site.baseurl }}/js/cv.js"></script> {% endcomment %}
     <link rel="stylesheet" href="{{site.baseurl}}/css/cv.css">
+{% endif %}
+
+{% if page.layout == "posts" %}
+  <script type="text/javascript" src="{{ site.baseurl }}/js/append-posts.js"></script>
 {% endif %}
 
 {% if page.layout == "til-catalog" %}

@@ -1,51 +1,13 @@
----
----
-
-// Masonry.js
-var $grid = $('.grid').masonry({
-  // options
-  itemSelector: '.grid-item',
-  columnWidth: '.grid-sizer',
-  transitionDuration: '0.2s',
-  percentPosition: true
-});
-
-// Inspired by Eduardo Boucas (@eduardoboucas)
-$(".loadMore").click(fetchMorePosts);
-
-function fetchMorePosts() {
-  var _this = this;
-  var $blogContainer = $("#blog_container");
-  var nextPage = parseInt($blogContainer.attr("data-curPage")) + 1;
-  var totalPages = parseInt($blogContainer.attr("data-totalPages"));
-
-  $(this).addClass("loading");
-  $(this).find(".loadMore_txt").hide().end().find(".pacman").css('display', 'block');
-  
-  window.setTimeout(function(){
-  	$.get("/blog/page" + nextPage + "/", function (data) {
-	    var htmlData = $.parseHTML(data);
-	    var $articles = $(htmlData).find("article");
-
-	    $blogContainer.attr("data-curPage", nextPage);
-
-	    $articles.attr('style', '');
-
-	    console.log($articles);
-
-	    $articles.addClass("grid-item").removeClass("col-12");
-
-	    $grid.append($articles).masonry('appended', $articles);
-
-	    if (totalPages == nextPage) {
-	      $(".loadMore").remove();
-	    }
-
-	    $(_this).find(".pacman").css('display', 'none').end().find(".loadMore_txt").show();
-	    $(_this).removeClass("loading");
-	  });  
-
-  }, 1500);
+// Masonry.js Initiate
+var msnryGrid = document.querySelector('.grid');
+if (msnryGrid != null) {
+  var msnry = new Masonry( msnryGrid, {
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        transitionDuration: '0.2s',
+        percentPosition: true
+      });
 }
 
 // Lazyload Initiate
@@ -53,61 +15,73 @@ $("img.lazy").lazyload({
 	effect: "fadeIn"
 });
 
-$(function(){
-	var base_url = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=johnson5756&api_key=05639839701ccb3b35cfaf6bd2944037&format=json"
+//
+//  Script in reference to RayHightower
+//  http://rayhightower.com/blog/2016/01/04/how-to-make-lunrjs-jekyll-work-together/
+//
+document.addEventListener('DOMContentLoaded', function(event) {
+  // Initialize lunr with the fields to be searched, plus the boost.
+  window.idx = lunr(function () {
+    this.field('id');
+    this.field('title');
+    this.field('description');
+    this.field('content', { boost: 10 });
+    this.field('categories');
+  });
 
-	$.getJSON(base_url, function(data){
-    var showLimit = 1,
-        albumCoverSize = 'large';
-		if($.type(data.recenttracks.track) === "array") {
-			showLimit = 3;
-			var	recentTracks = [],
-					listeningText = "Recently listened to ",
-          i = 0,
-          counter = -1,
-          albumExists = false,
-          iteratedTrack;
+  // Get the generated search_data.json file so lunr.js can search it locally.
+  window.data = $.getJSON('/searchData.json');
 
-      // Pick the tracks in a way such that all 3 tracks are not from the same album
-			do {
-        albumExists = false;
-        iteratedTrack = data.recenttracks.track[++counter];
-        for (var j = 0; j < recentTracks.length; j++) {
-          if (recentTracks[j].album['#text'] == iteratedTrack.album['#text']) {
-            albumExists = true;
-          }
-        }
+  // Wait for the data to load and add it to lunr
+  window.data.then(function(loaded_data){
+    $.each(loaded_data, function(index, value){
+      window.idx.add(
+        $.extend({ "id": index }, value)
+      );
+    });
+  });
 
-        if (!albumExists){
-				  recentTracks[i++] = iteratedTrack;
-        }
-			} while (i < showLimit);
-		} else { return; }
-		
-		$(".lastfm-displayText").text(listeningText);
+  // Event when the form is submitted
+  document.getElementById('site_search').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var query = document.getElementById('search_box').value,
+        results = window.idx.search(query);
+    display_search_results(results);
+    document.getElementById('search_results').style.display = 'block';
+  });
 
-    for (var i = 0; i < showLimit; i++) {
-      var trackName = recentTracks[i].name,
-          trackArtist = recentTracks[i].artist['#text'],
-          lastfmURL = recentTracks[i].url;
+  // $("#site_search").submit(function(event){
+  //     event.preventDefault(); // RTH: per Google, preventDefault() might be the culprit in Firefox
+  //     var query = $("#search_box").val(); // Get the value for the text field
+  //     var results = window.idx.search(query); // Get lunr to perform a search
+  //     display_search_results(results); // Hand the results off to be displayed
+  //     $("#search_results").show();
+  // });
 
-      for (var j = 0; j < recentTracks[i].image.length; j++){
-        if (recentTracks[i].image[j].size == albumCoverSize) {
-          var albumURL = recentTracks[i].image[j]['#text'];
-          if (albumURL == "") {
-            albumURL = "{{ site.baseurl }}/img/noartwork.jpg";
-          }
-        }
+  function display_search_results(results) {
+    var $search_results = document.getElementById('search_results');
+
+    // Wait for data to load
+    window.data.then(function(loaded_data) {
+
+      // Are there any results?
+      if (results.length) {
+        $search_results.innerHTML = ''; // Clear old results
+
+        // Iterate over the results
+        results.forEach(function(result) {
+          var item = loaded_data[result.ref];
+
+          // Build a snippet of HTML for this result
+          var appendString = '<li><a href="' + item.url + '">' + item.title + '</a></li>';
+
+          // Add the snippet to the collection of results.
+          $search_results.innerHTML += appendString;
+        });
+      } else {
+        // If there are no results, let the user know.
+        $search_results.innerHTML = '<li>No results found</li>';
       }
-
-      var song = '<div class="track"><a href="' + lastfmURL + '" target="_blank"><div class="album-cover"><img src="' + albumURL + '" /></div><div class="trackDesc"><div class="track-artist">' + trackArtist + '</div><div class="track-name">' + trackName  + '</div></div></a></div>';
-      $(".lastfm-recent").append($( song ));
-    }
-		
-	});
+    });
+  }
 });
-
-// Object "length"
-Object.size = function(obj) {
-  return Object.keys(obj).length;
-}

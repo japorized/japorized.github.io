@@ -23,7 +23,7 @@
               <div class="post-info-container__{{ page_slug }}">
                 <ul class="post-info__{{ page_slug }}">
                   <li><span class="fa fa-calendar-o"></span> {{ til.date | date:"%B %d, %Y" }}</li>
-                  <li><span class="fa fa-comment-o"></span> <a href="{{ site.baseurl }}{{ til.url }}#comments-container">{% include aids/count-comments.html post=til %} Comments</a></li>
+                  <li><span class="fa fa-comment-o"></span> <a href="{{ site.baseurl }}{{ til.url }}.html#comments-container">{% include aids/count-comments.html post=til %} Comments</a></li>
                   <li>
                     <span class="fa fa-hashtag"></span> 
                     {% for tag in til.tags %}
@@ -35,13 +35,13 @@
               <div class="post-content__{{ page_slug }}">
                 <div class="post-title__{{ page_slug }}">
                   <h1>
-                    <a href="{{ site.baseurl }}{{ til.url }}">{{ til.title }}</a>
+                    <a href="{{ site.baseurl }}{{ til.url }}.html">{{ til.title }}</a>
                   </h1>
                 </div>
                 <div class="post-excerpt__{{ page_slug }}">
                   {{ til.content | truncatewords: 50 }}
                   <br />
-                  <a href="{{ site.baseurl }}{{ til.url }}">Read on  <span class="fa fa-angle-right"></span></a>
+                  <a href="{{ site.baseurl }}{{ til.url }}.html">Read on  <span class="fa fa-angle-right"></span></a>
                 </div>
               </div>
             </div>

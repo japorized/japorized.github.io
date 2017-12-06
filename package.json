@@ -27,7 +27,8 @@
   "dependencies": {
     "jquery": "^3.2.1",
     "jquery.easing": "^1.4.1",
-    "mathjax": "^2.7.2"
+    "mathjax": "^2.7.2",
+    "vanilla-lazyload": "^8.5.2"
   },
   "devDependencies": {
     "browser-sync": "^2.18.13",
