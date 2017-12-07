@@ -1,0 +1,39 @@
+---
+---
+
+@import "variables";
+
+.kitsu__recent-watched, .kitsu__recent-completed {
+  display: grid;
+  grid-template-columns: 100%;
+
+  a {
+    font-size: 14px;
+    font-weight: 700;
+
+    img {
+      max-width: 80%;
+      border-radius: 5px;
+    }
+
+    &:link, &:visited, &:hover, &:focus {
+      color: $light;
+    }
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .kitsu__recent-watched, .kitsu__recent-completed {
+    display: flex;
+    justify-content: space-around;
+
+    a {
+      margin: 0 10px;
+
+      img {
+        max-width: 200px;
+      }
+
+    }
+  }
+}
