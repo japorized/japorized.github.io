@@ -59,6 +59,7 @@ gulp.task('jekyll', (done) => {
 
 gulp.task('jekyll-build-only', (done) => {
   const jekyll = child.spawn('jekyll', ['build'], {stdio: 'inherit'});
+  const rmpkglock = child.spawn('rm', ['package-lock.json']);
   done();
 });
 
