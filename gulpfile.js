@@ -43,8 +43,8 @@ gulp.task('minifyimg', (done) => {
 });
 
 gulp.task('jekyll', (done) => {
-  const jekyll = child.spawn('jekyll', ['build',
-    '--watch'
+  const jekyll = child.spawn('jekyll', ['serve',
+    "--livereload"
   ]),
 
         jekyllLog = (buffer) => {
@@ -86,18 +86,5 @@ gulp.task('minifyhtml', (done) => {
     .pipe(gulp.dest(SITE_ROOT + "./"));
 });
 
-gulp.task('serve', gulp.series('jekyll', (done) => {
-  browserSync.init({
-    files: [ SITE_ROOT + "/**" ],
-    port: 4000,
-    server: {
-      baseDir: SITE_ROOT
-    },
-    https: false
-  });
-
-  done();
-}));
-
 gulp.task('build', gulp.series( 'jekyll-build-only', 'minifyjs', 'minifyhtml'));
-gulp.task('default', gulp.series('serve') );
+gulp.task('default', gulp.series('jekyll') );
