@@ -20,6 +20,7 @@ before_script:
 script:
 - set -e
 - gulp build
+- git stash
 - git checkout -b master
 - git add -f _site/
 - git commit -m "${COMMIT_MESSAGE}"
