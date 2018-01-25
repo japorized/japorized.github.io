@@ -1,0 +1,7 @@
+_id: 61dbb660-0184-11e8-9a84-7fd1a392669e
+_parent: 2017-11-18-revamped-site-comment-system
+name: Japorized
+email: f26989a1457a216680e066e64cf97434
+url: ''
+message: "@stationer,\r\n\r\nThank you for your comment. There are actually quite some browser compatibility issues that I have recently become aware of, and they hit all the way down to the CSS framework that I am using, which means I will probably have to get that changed soon (more work to do!). I'll do more tests to try to get a good coverage of the popular browsers, although I can't pinpoint what my readers use since I have no plans to use a tracker for analytics.\r\n\r\nThis website will need quite some rework as I start going into that, given the new contents that I've been adding which I can definitely do a better job at presenting them. So thank you again for your comment cause I think I've just gotten a bit of a push on my back. \U0001F601"
+date: 1516852872
