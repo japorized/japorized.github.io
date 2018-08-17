@@ -4,6 +4,4 @@ See the website on https://japorized.gitlab.io
 
 Check out the repo at https://gitlab.com/japorized/japorized.gitlab.io
 
----
-
-I will write up a post of my reasons soon, and it shall be linked here.
+### Why? [See here](https://japorized.gitlab.io/technical/2018/08/17/making-the-move-to-gitlab.html)
