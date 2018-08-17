@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{ Japorized }</title>
+    <style>
+    *, html, body {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #2d2d2d;
+      color: #ededed;
+      font-size: 24px;
+      line-height: 50px;
+    }
+    a:link, a:visited {
+      text-decoration: none;
+      color: #cd98cd;
+    }
+    a:hover, a:focus {
+      color: #a87aa8;
+    }
+    .bg-img {
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: 0;
+    }
+    .bg-img:before {
+      content: "";
+      display: block;
+      position: fixed;
+      z-index: -1;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('background.png');
+      background-repeat: none;
+      background-size: cover;
+      -webkit-filter: blur(5px);
+      -moz-filter: blur(5px);
+      -o-filter: blur(5px);
+      -ms-filter: blur(5px);
+      filter: blur(5px);
+    }
+
+    .wrapper {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .outer-container {
+      position: relative;
+      width: 60%;
+      height: 60%;
+      text-align: center;
+    }
+
+    .avatar {
+      position: fixed;
+      left: calc(50% - 75px);
+    }
+
+    .avatar img {
+      max-width: 150px;
+      border-radius: 100px;
+      border: 5px solid white;
+    }
+
+    .inner-container {
+      background: #2d2d2d;
+      margin-top: 75px;
+      padding: 125px 20px 20px 20px;
+      min-height: 300px;
+    }
+
+    #para1 {
+      font-size: 36px;
+      font-weight: 700;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="bg-img">
+      <div class="wrapper">
+        <div class="outer-container">
+          <div class="avatar">
+            <img src="avatar.png" />
+          </div>
+          <div class="inner-container">
+            <p id="para1">I have moved my site over to Gitlab.</p>
+
+            <p>You'll be redirected to the new address in a few seconds.</p>
+            
+            <p id="countdown">3</p>
+
+            <noscript><p><small>Wait a sec! You've disabled Javascript! <a href="https://japorized.gitlab.io">Click here instead</a></small></p></noscript>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var countdown = document.querySelector('#countdown'), i = 3;
+      setInterval(function() {
+        countdown.innerHTML = --i;
+        if ( i === 0 ) {
+          window.location.href = "https://japorized.gitlab.io";
+        } if ( i < 0 ) {
+          countdown.innerHTML = "<p><small>Something went wrong! <a href='https://japorized.gitlab.io>Click here instead</a></small></p>'";
+        }
+      }, 1000)
+    </script>
+  </body>
+</html>
+
